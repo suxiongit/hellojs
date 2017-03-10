@@ -154,4 +154,28 @@ if (!String.prototype.firstUpperCase) {
     // console.log('HELLO WORLD'.firstUpperCase(1));
 }
 
+if (!String.prototype.cnLength) {
+    /**
+     * 获取字符串的长度（全角算两个字符）
+     * @returns {Number}
+     */
+    String.prototype.cnLength = function() {
+        // return this.replace(/[^\x00-\xff]/g, '^^').length;
+
+        var L = this.length;
+        var T = this.match(/[^\x00-\x80]/ig);
+        if (T) {
+            L += T.length;
+        }
+        return L;
+    }
+
+    // 示例
+    // var str = 'hello';
+    // console.log(str.length);
+    // console.log(str.cnLength());
+    // var str = 'hello你好';
+    // console.log(str.length);
+    // console.log(str.cnLength());
+}
 
