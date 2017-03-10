@@ -1,5 +1,5 @@
 /**
- * Created by p_bearsu on 2017/3/1.
+ * Created by suxiong on 2017/3/1.
  * 对象原型扩展测试
  */
 
@@ -28,3 +28,4 @@ function testArrayForEach() {
     });
 }
 // testArrayForEach();
+

@@ -1,5 +1,5 @@
 /**
- * Created by p_bearsu on 2017/3/1.
+ * Created by suxiong on 2017/3/1.
  * 对象原型扩展
  */
 
@@ -8,6 +8,8 @@
 if (!Array.prototype.contains) {
     /**
      * 数组中是否存在指定的值
+     * @see Array.prototype.includes(searchElement, fromIndex)
+     * 参考https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
      * @param obj
      * @returns {boolean}
      */
@@ -31,7 +33,7 @@ if (!Array.prototype.forEach) {
     /**
      * 数组循环遍历
      * （让IE兼容forEach方法）
-     * https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach
+     * 参考https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach
      * @param callback
      */
     Array.prototype.forEach = function(callback/*, thisArg*/) {
@@ -88,22 +90,22 @@ if (!Date.prototype.format) {
      */
     Date.prototype.format = function(format) {
         var date = {
-            "M+" : this.getMonth() + 1,
-            "d+" : this.getDate(),
-            "h+" : this.getHours(),
-            "m+" : this.getMinutes(),
-            "s+" : this.getSeconds(),
-            "q+" : Math.floor((this.getMonth() + 3) / 3),
-            "S+" : this.getMilliseconds()
+            'M+' : this.getMonth() + 1,
+            'd+' : this.getDate(),
+            'h+' : this.getHours(),
+            'm+' : this.getMinutes(),
+            's+' : this.getSeconds(),
+            'q+' : Math.floor((this.getMonth() + 3) / 3),
+            'S+' : this.getMilliseconds()
         };
         if (/(y+)/i.test(format)) {
             format = format.replace(RegExp.$1, (this.getFullYear() + '')
                 .substr(4 - RegExp.$1.length));
         }
-        for ( var k in date) {
-            if (new RegExp("(" + k + ")").test(format)) {
+        for (var k in date) {
+            if (new RegExp('(' + k + ')').test(format)) {
                 format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? date[k]
-                    : ("00" + date[k]).substr(("" + date[k]).length));
+                    : ('00' + date[k]).substr(('' + date[k]).length));
             }
         }
         return format;
@@ -113,4 +115,43 @@ if (!Date.prototype.format) {
     // var newDate = new Date('2014-07-10 10:21:12');
     // console.log(newDate.format('yyyy年MM月dd日 h时m分s秒'));
 }
+
+
+// String 类型扩展
+
+if (!String.prototype.firstUpperCase) {
+    /**
+     * 字符串首字母转大写
+     * （CSS实现text-transform: capitalize;）
+     * @param perword
+     * @returns {string}
+     */
+    String.prototype.firstUpperCase = function(perword) {
+        if (perword) { // 输出：Hello World
+            return this.toLowerCase().replace(/\b[a-z]/g, function(s) {
+                return s.toUpperCase();
+            });
+
+            // return this.replace(/\b(\w)(\w*)/g, function($0, $1, $2) {
+            //     return $1.toUpperCase() + $2.toLowerCase();
+            // });
+
+            // ES6写法
+            // return this.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
+        } else { // 输出：Hello world
+            return this.toLowerCase().replace(/^\S/g, function(s) {
+                return s.toUpperCase();
+            });
+
+            // return this.toString()[0].toUpperCase() + this.toString().slice(1).toLowerCase();
+        }
+    }
+
+    // 示例
+    // console.log('hello world'.firstUpperCase());
+    // console.log('HELLO WORLD'.firstUpperCase());
+    // console.log('hello world'.firstUpperCase(1));
+    // console.log('HELLO WORLD'.firstUpperCase(1));
+}
+
 
