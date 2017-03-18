@@ -1,6 +1,7 @@
 /**
  * Created by suxiong on 2017/3/1.
  * 对象原型扩展
+ * 更多https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
  */
 
 // Array 类型扩展
@@ -25,8 +26,8 @@ if (!Array.prototype.contains) {
 
     // 示例
     // var countries = ['美国', '俄罗斯', '英国', '法国', '中国'];
-    // console.log(countries.contains('中国'));//true
-    // console.log(countries.contains('日本'));//false
+    // console.log(countries.contains('中国')); // true
+    // console.log(countries.contains('日本')); // false
 }
 
 if (!Array.prototype.forEach) {
@@ -85,18 +86,23 @@ if (!Array.prototype.forEach) {
 if (!Date.prototype.format) {
     /**
      * 日期时间格式化
+     * 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+     * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+     * 示例：
+     * format('yyyy-MM-dd hh:mm:ss.S') ==> 2006-07-02 08:09:04.423
+     * format('yyyy-M-d h:m:s.S')      ==> 2006-7-2 8:9:4.18
      * @param format
      * @returns {*}
      */
     Date.prototype.format = function(format) {
         var date = {
-            'M+' : this.getMonth() + 1,
-            'd+' : this.getDate(),
-            'h+' : this.getHours(),
-            'm+' : this.getMinutes(),
-            's+' : this.getSeconds(),
-            'q+' : Math.floor((this.getMonth() + 3) / 3),
-            'S+' : this.getMilliseconds()
+            'M+' : this.getMonth() + 1, // 月份
+            'd+' : this.getDate(), // 日
+            'h+' : this.getHours(), // 小时
+            'm+' : this.getMinutes(), // 分
+            's+' : this.getSeconds(), // 秒
+            'q+' : Math.floor((this.getMonth() + 3) / 3), // 季度
+            'S+' : this.getMilliseconds() // 毫秒
         };
         if (/(y+)/i.test(format)) {
             format = format.replace(RegExp.$1, (this.getFullYear() + '')
@@ -172,10 +178,10 @@ if (!String.prototype.cnLength) {
 
     // 示例
     // var str = 'hello';
-    // console.log(str.length);
-    // console.log(str.cnLength());
+    // console.log(str.length); // 5
+    // console.log(str.cnLength()); // 5
     // var str = 'hello你好';
-    // console.log(str.length);
-    // console.log(str.cnLength());
+    // console.log(str.length); // 7
+    // console.log(str.cnLength()); // 9
 }
 
