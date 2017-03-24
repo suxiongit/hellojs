@@ -213,8 +213,10 @@ if (!Array.prototype.indexOf) {
     // console.log(countries.indexOf('中国'));
 }
 
+
 /**
  * Date 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
  */
 
 if (!Date.prototype.format) {
@@ -257,7 +259,10 @@ if (!Date.prototype.format) {
 }
 
 
-// String 类型扩展
+/**
+ * String 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String
+ */
 
 if (!String.prototype.firstUpperCase) {
     /**
