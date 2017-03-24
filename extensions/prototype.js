@@ -80,6 +80,42 @@ if (!Array.prototype.forEach) {
     // });
 }
 
+if (!Array.prototype.remove) {
+    /**
+     * 通过索引删除某个数组元素
+     * @param index
+     * @returns {Array.<*>}
+     */
+    Array.prototype.remove = function(index) {
+        this.splice(index, 1);
+    }
+
+    // 示例
+    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
+    // countries.remove(countries.length - 1);
+    // console.log(countries);
+}
+
+if (!Array.prototype.removeByValue) {
+    /**
+     * 通过值删除某个数组元素
+     * @param value
+     */
+    Array.prototype.removeByValue = function(value) {
+        for (var i = 0, n = this.length; i < n; i ++) {
+            if (this[i] == value) {
+                this.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+    // 示例
+    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
+    // countries.removeByValue('日本');
+    // console.log(countries);
+}
+
 
 // Date 类型扩展
 
