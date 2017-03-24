@@ -62,9 +62,12 @@ function getRandomIntInclusive(min, max) {
  * @returns {null}
  */
 function getUrlParam(name) {
-    var reg = new RegExp('(^|&)'+ name +'=([^&]*)(&|$)');//构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg);//匹配目标参数
-    if (r!=null) return unescape(r[2]); return null; //返回参数值
+    // var reg = new RegExp('(^|&)'+ name +'=([^&]*)(&|$)');//构造一个含有目标参数的正则表达式对象
+    // var r = window.location.search.substr(1).match(reg);//匹配目标参数
+    // if (r != null) return unescape(r[2]); return null; //返回参数值
+
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
 /**
@@ -125,4 +128,21 @@ function genNonDuplicateID(length) {
 //     console.log(genNonDuplicateID());
 // }
 
+/**
+ * 根据日期计算年龄
+ * @param dateString
+ * @returns {number}
+ */
+function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
 
+// 示例
+console.log(getAge('1989,02,17'));
