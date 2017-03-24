@@ -1,16 +1,18 @@
 /**
  * Created by suxiong on 2017/3/1.
  * 对象原型扩展
- * 更多https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference
  */
 
-// Array 类型扩展
+/**
+ * Array 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
+ */
 
 if (!Array.prototype.contains) {
     /**
      * 数组中是否存在指定的值
      * @see Array.prototype.includes(searchElement, fromIndex)
-     * 参考https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
      * @param obj
      * @returns {boolean}
      */
@@ -22,7 +24,7 @@ if (!Array.prototype.contains) {
             }
         }
         return false;
-    }
+    };
 
     // 示例
     // var countries = ['美国', '俄罗斯', '英国', '法国', '中国'];
@@ -34,7 +36,7 @@ if (!Array.prototype.forEach) {
     /**
      * 数组循环遍历
      * （让IE兼容forEach方法）
-     * 参考https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/forEach
+     * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
      * @param callback
      */
     Array.prototype.forEach = function(callback/*, thisArg*/) {
@@ -63,7 +65,7 @@ if (!Array.prototype.forEach) {
             }
             k++;
         }
-    }
+    };
 
     // 示例
     // var countries = [];
@@ -84,15 +86,16 @@ if (!Array.prototype.remove) {
     /**
      * 通过索引删除某个数组元素
      * @param index
-     * @returns {Array.<*>}
      */
     Array.prototype.remove = function(index) {
         this.splice(index, 1);
-    }
+    };
 
     // 示例
     // var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
     // countries.remove(countries.length - 1);
+    // console.log(countries);
+    // countries.remove(-1);
     // console.log(countries);
 }
 
@@ -102,13 +105,18 @@ if (!Array.prototype.removeByValue) {
      * @param value
      */
     Array.prototype.removeByValue = function(value) {
-        for (var i = 0, n = this.length; i < n; i ++) {
-            if (this[i] == value) {
-                this.splice(i, 1);
-                break;
-            }
+        // for (var i = 0, n = this.length; i < n; i ++) {
+        //     if (this[i] == value) {
+        //         this.splice(i, 1);
+        //         break;
+        //     }
+        // }
+
+        var index = this.indexOf(value);
+        if (index > -1) {
+            this.splice(index, 1);
         }
-    }
+    };
 
     // 示例
     // var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
@@ -116,8 +124,98 @@ if (!Array.prototype.removeByValue) {
     // console.log(countries);
 }
 
+if (!Array.prototype.indexOf) {
+    /**
+     * 查找指定的元素在数组中的位置（索引）
+     * @param value
+     * @returns {number}
+     */
+    // Array.prototype.indexOf = function(value) {
+    //     for (var i = 0, n = this.length; i < n; i ++) {
+    //         if (this[i] == value) {
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // };
 
-// Date 类型扩展
+    /**
+     * 查找指定的元素在数组中的位置（索引）
+     * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+     * @param searchElement
+     * @param fromIndex
+     * @returns {*}
+     */
+    Array.prototype.indexOf = function(searchElement, fromIndex) {
+
+        var k;
+
+        // 1. Let O be the result of calling ToObject passing
+        //    the this value as the argument.
+        if (this == null) {
+            throw new TypeError('"this" is null or not defined');
+        }
+
+        var O = Object(this);
+
+        // 2. Let lenValue be the result of calling the Get
+        //    internal method of O with the argument "length".
+        // 3. Let len be ToUint32(lenValue).
+        var len = O.length >>> 0;
+
+        // 4. If len is 0, return -1.
+        if (len === 0) {
+            return -1;
+        }
+
+        // 5. If argument fromIndex was passed let n be
+        //    ToInteger(fromIndex); else let n be 0.
+        var n = +fromIndex || 0;
+
+        if (Math.abs(n) === Infinity) {
+            n = 0;
+        }
+
+        // 6. If n >= len, return -1.
+        if (n >= len) {
+            return -1;
+        }
+
+        // 7. If n >= 0, then Let k be n.
+        // 8. Else, n<0, Let k be len - abs(n).
+        //    If k is less than 0, then let k be 0.
+        k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+
+        // 9. Repeat, while k < len
+        while (k < len) {
+            // a. Let Pk be ToString(k).
+            //   This is implicit for LHS operands of the in operator
+            // b. Let kPresent be the result of calling the
+            //    HasProperty internal method of O with argument Pk.
+            //   This step can be combined with c
+            // c. If kPresent is true, then
+            //    i.  Let elementK be the result of calling the Get
+            //        internal method of O with the argument ToString(k).
+            //   ii.  Let same be the result of applying the
+            //        Strict Equality Comparison Algorithm to
+            //        searchElement and elementK.
+            //  iii.  If same is true, return k.
+            if (k in O && O[k] === searchElement) {
+                return k;
+            }
+            k++;
+        }
+        return -1;
+    };
+
+    // 示例
+    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国'];
+    // console.log(countries.indexOf('中国'));
+}
+
+/**
+ * Date 类型扩展
+ */
 
 if (!Date.prototype.format) {
     /**
@@ -151,7 +249,7 @@ if (!Date.prototype.format) {
             }
         }
         return format;
-    }
+    };
 
     // 示例
     // var newDate = new Date('2014-07-10 10:21:12');
@@ -187,7 +285,7 @@ if (!String.prototype.firstUpperCase) {
 
             // return this.toString()[0].toUpperCase() + this.toString().slice(1).toLowerCase();
         }
-    }
+    };
 
     // 示例
     // console.log('hello world'.firstUpperCase());
@@ -210,7 +308,7 @@ if (!String.prototype.cnLength) {
             L += T.length;
         }
         return L;
-    }
+    };
 
     // 示例
     // var str = 'hello';
