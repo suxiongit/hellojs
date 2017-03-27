@@ -1,7 +1,7 @@
 /**
- * Created by suxiong on 2017/3/18.
  * 正则表达式扩展
- * 更多https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+ * Created by suxiong on 2017/3/18.
  */
 
 if (!RegExp.pattern) {
@@ -30,11 +30,11 @@ if (!RegExp.pattern) {
     };
 
     // 示例
-    var date = '2017-03-09';
-    if (RegExp.pattern.date.test(date)) {
-        console.log('正确的日期格式', date);
-    } else {
-        console.log('错误的日期格式', date);
-    }
+    // var date = '2017-03-09';
+    // if (RegExp.pattern.date.test(date)) {
+    //     console.log('正确的日期格式', date);
+    // } else {
+    //     console.log('错误的日期格式', date);
+    // }
 }
 

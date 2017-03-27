@@ -1,6 +1,6 @@
 /**
+ * 常用方法
  * Created by suxiong on 2017/3/9.
- *
  */
 
 // Math.random() 随机数
@@ -178,5 +178,8 @@ function getBrowserInfo() {
 }
 
 // 示例
-var bi = getBrowserInfo();
-document.write('Browser:'+bi.b+'    Version:'+bi.v);//Browser:ie Version:10
+// var bi = getBrowserInfo();
+// document.write('Browser:'+bi.b+'    Version:'+bi.v);//Browser:ie Version:10
+
+
+

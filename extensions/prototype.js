@@ -1,7 +1,7 @@
 /**
  * 对象原型扩展
- * Created by suxiong on 2017/3/1.
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference
+ * Created by suxiong on 2017/3/1.
  */
 
 /**
