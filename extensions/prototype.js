@@ -1,6 +1,6 @@
 /**
- * Created by suxiong on 2017/3/1.
  * 对象原型扩展
+ * Created by suxiong on 2017/3/1.
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference
  */
 
@@ -256,8 +256,39 @@ if (!Date.prototype.format) {
     // 示例
     // var newDate = new Date('2014-07-10 10:21:12');
     // console.log(newDate.format('yyyy年MM月dd日 h时m分s秒'));
+    // var newDate2 = new Date();
+    // console.log(newDate2.format('yyyy年MM月dd日 h时m分s秒'));
 }
 
+if (!Date.prototype.isLeapYear) {
+    /**
+     * 判断闰年
+     * 1.普通年能被4整除且不能被100整除的为闰年。如2004年就是闰年，1900年不是闰年
+     * 2.世纪年能被400整除的是闰年。如2000年是闰年，1900年不是闰年
+     * 注意：Date.prototype.getYear()获取的年份是减去1900，例如2017年值为117，而1900年值0
+     * @param date
+     * @returns {boolean}
+     */
+    Date.prototype.isLeapYear = function(date) {
+        var y;
+
+        if (null != date) {
+            var d = new Date(date);
+            y = d.getFullYear();
+        } else {
+            y = this.getFullYear();
+        }
+
+        // return (0 === y % 4 && ((y % 100 !== 0) || (y % 400 === 0)));
+        return !(y % (y % 100 ? 4 : 400));
+    }
+
+    // 示例
+    // var newDate = new Date('2016');
+    // console.log(newDate + ' 是否闰年 ' + newDate.isLeapYear());
+    // var newDate2 = new Date();
+    // console.log(newDate2 + ' 是否闰年 ' + Date.prototype.isLeapYear(newDate2));
+}
 
 /**
  * String 类型扩展
@@ -323,4 +354,5 @@ if (!String.prototype.cnLength) {
     // console.log(str.length); // 7
     // console.log(str.cnLength()); // 9
 }
+
 
