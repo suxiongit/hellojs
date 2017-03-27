@@ -145,4 +145,38 @@ function getAge(dateString) {
 }
 
 // 示例
-console.log(getAge('1989,02,17'));
+// console.log(getAge('1989,02,17'));
+
+/**
+ * 获取浏览器类型及主版本
+ * @returns {{}}
+ */
+function getBrowserInfo() {
+    var Sys = {};
+    var ua = navigator.userAgent.toLowerCase();
+    if (window.ActiveXObject) {
+        Sys.b = 'ie';
+        Sys.v = parseInt(ua.match(/msie ([\d.]+)/)[1]);
+    }
+    else if (document.getBoxObjectFor) {
+        Sys.b = 'firefox';
+        Sys.v = parseInt(ua.match(/firefox\/([\d.]+)/)[1]);
+    }
+    else if (window.MessageEvent && !document.getBoxObjectFor) {
+        Sys.b = 'chrome';
+        Sys.v == parseInt(ua.match(/chrome\/([\d.]+)/)[1]);
+    }
+    else if (window.opera) {
+        Sys.b = 'opera';
+        Sys.v == parseInt(ua.match(/opera.([\d.]+)/)[1]);
+    }
+    else if (window.openDatabase) {
+        Sys.b = 'safari';
+        Sys.v == parseInt(ua.match(/version\/([\d.]+)/)[1]);
+    }
+    return Sys;
+}
+
+// 示例
+var bi = getBrowserInfo();
+document.write('Browser:'+bi.b+'    Version:'+bi.v);//Browser:ie Version:10
