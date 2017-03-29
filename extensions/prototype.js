@@ -336,14 +336,14 @@ if (!String.prototype.cnLength) {
      * @returns {Number}
      */
     String.prototype.cnLength = function() {
-        // return this.replace(/[^\x00-\xff]/g, '^^').length;
+        return this.replace(/[^\x00-\xff]/g, '^^').length;
 
-        var L = this.length;
-        var T = this.match(/[^\x00-\x80]/ig);
-        if (T) {
-            L += T.length;
-        }
-        return L;
+        // var L = this.length;
+        // var T = this.match(/[^\x00-\x80]/ig);
+        // if (T) {
+        //     L += T.length;
+        // }
+        // return L;
     };
 
     // 示例
@@ -353,6 +353,26 @@ if (!String.prototype.cnLength) {
     // var str = 'hello你好';
     // console.log(str.length); // 7
     // console.log(str.cnLength()); // 9
+}
+
+if (!String.prototype.replaceAll) {
+    /**
+     * 全部替换（现有replace方法只会对匹配到的第一个字串替换）
+     * g （global）执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
+     * m （multiLine）执行多行匹配。
+     * @param searchment 搜索串
+     * @param replacement 替换串
+     * @returns {string}
+     */
+    String.prototype.replaceAll = function(searchment, replacement) {
+        return this.replace(new RegExp(searchment, 'gm'), replacement);
+    }
+
+    // 示例
+    console.log('示例：String.prototype.replaceAll 全部替换');
+    var str = 'hello hello hello hello hello';
+    console.log('替换前=' + str);
+    console.log('替换后=' + str.replaceAll('hello', 'world'));
 }
 
 
