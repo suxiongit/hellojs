@@ -357,7 +357,8 @@ if (!String.prototype.cnLength) {
 
 if (!String.prototype.replaceAll) {
     /**
-     * 全部替换（现有replace方法只会对匹配到的第一个字串替换）
+     * 全部替换
+     * （现有replace方法只会对匹配到的第一个字串替换）
      * g （global）执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
      * m （multiLine）执行多行匹配。
      * @param searchment 搜索串
@@ -369,10 +370,26 @@ if (!String.prototype.replaceAll) {
     }
 
     // 示例
-    console.log('示例：String.prototype.replaceAll 全部替换');
-    var str = 'hello hello hello hello hello';
-    console.log('替换前=' + str);
-    console.log('替换后=' + str.replaceAll('hello', 'world'));
+    // console.log('示例：String.prototype.replaceAll 全部替换');
+    // var str = 'hello hello hello hello hello';
+    // console.log('替换前=' + str);
+    // console.log('替换后=' + str.replaceAll('hello', 'world'));
+}
+
+if (!String.prototype.trimCRLF) {
+    /**
+     * 去除回车换行符号
+     * @returns {*}
+     */
+    String.prototype.trimCRLF = function() {
+        return this.replaceAll('(\n|\r|(\r\n)|(\u0085)|(\u2028)|(\u2029))', '');
+    }
+
+    // 示例
+    console.log('示例：String.prototype.trimCRLF 去除回车换行符号');
+    var str = '\r\nhe\n';
+    console.log('去除前=' + str);
+    console.log('去除后=' + str.trimCRLF());
 }
 
 
