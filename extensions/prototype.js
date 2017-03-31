@@ -267,10 +267,10 @@ if (!Array.prototype.shuffle) {
     };
 
     // 示例
-    var items = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-    for (var i = 0; i < 10; i ++) {
-        console.log(items.shuffle());
-    }
+    // var items = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+    // for (var i = 0; i < 10; i ++) {
+    //     console.log(items.shuffle());
+    // }
 }
 
 /**
