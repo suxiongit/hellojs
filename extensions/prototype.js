@@ -1,7 +1,8 @@
 /**
  * 对象原型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference
- * Created by suxiong on 2017/3/1.
+ * @author suxiong
+ * @date 2017/3/1
  */
 
 /**
@@ -213,7 +214,6 @@ if (!Array.prototype.indexOf) {
     // console.log(countries.indexOf('中国'));
 }
 
-
 /**
  * Date 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
@@ -370,7 +370,6 @@ if (!String.prototype.replaceAll) {
     }
 
     // 示例
-    // console.log('示例：String.prototype.replaceAll 全部替换');
     // var str = 'hello hello hello hello hello';
     // console.log('替换前=' + str);
     // console.log('替换后=' + str.replaceAll('hello', 'world'));
@@ -386,10 +385,8 @@ if (!String.prototype.trimCRLF) {
     }
 
     // 示例
-    console.log('示例：String.prototype.trimCRLF 去除回车换行符号');
-    var str = '\r\nhe\n';
-    console.log('去除前=' + str);
-    console.log('去除后=' + str.trimCRLF());
+    // var str = '\r\nhe\n';
+    // console.log('去除前=' + str);
+    // console.log('去除后=' + str.trimCRLF());
 }
-
 

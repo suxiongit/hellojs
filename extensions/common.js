@@ -1,6 +1,7 @@
 /**
  * 常用方法
- * Created by suxiong on 2017/3/9.
+ * @author suxiong
+ * @date 2017/3/9
  */
 
 // Math.random() 随机数

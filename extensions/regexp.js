@@ -1,7 +1,8 @@
 /**
  * 正则表达式扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp
- * Created by suxiong on 2017/3/18.
+ * @author suxiong
+ * @date 2017/3/18
  */
 
 if (!RegExp.pattern) {

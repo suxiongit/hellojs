@@ -1,6 +1,7 @@
 /**
  * Base64编码
- * Created by suxiong on 2017/3/24.
+ * @author suxiong
+ * @date 2017/3/24
  */
 
 var Base64 = {
