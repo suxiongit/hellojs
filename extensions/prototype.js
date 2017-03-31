@@ -214,6 +214,65 @@ if (!Array.prototype.indexOf) {
     // console.log(countries.indexOf('中国'));
 }
 
+if (!Array.prototype.random) {
+    /**
+     * 数组随机排序
+     * @param length 返回数组长度，当不传值、0或者超出数组长度
+     * @returns {Array}
+     */
+    Array.prototype.random = function(length) {
+        if (null == this) {
+            throw new TypeError('this is null or not defined');
+        }
+
+        var len = this.length,
+            index,
+            temp,
+            arr = this.slice(0),
+            end = len;
+
+        for (var i = 0; i < len; i ++) {
+            // 产生从 i 到 len 之间的随机数
+            index = Math.floor(Math.random() * (len - i)) + i;
+            if (index != i) {
+                temp = arr[i];
+                arr[i] = arr[index];
+                arr[index] = temp;
+            }
+        }
+
+        if (length > 0 && length < len) {
+            end = Number(length);
+        }
+
+        return arr.slice(0, end);
+    };
+
+    // 示例
+    // var items = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+    // for (var i = 0; i < 10; i ++) {
+    //     console.log(items.random());
+    // }
+}
+
+if (!Array.prototype.shuffle) {
+    /**
+     * 数组随机排序
+     * @see Array.prototype.random(length)
+     * @param length
+     * @returns {Array}
+     */
+    Array.prototype.shuffle = function(length) {
+        return this.slice(0).random(length);
+    };
+
+    // 示例
+    var items = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+    for (var i = 0; i < 10; i ++) {
+        console.log(items.shuffle());
+    }
+}
+
 /**
  * Date 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
