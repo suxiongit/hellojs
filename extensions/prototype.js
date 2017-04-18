@@ -290,7 +290,7 @@ if (!Array.prototype.empty) {
 
 if (!Array.prototype.filterEmpty) {
     /**
-     * 数值过滤空值
+     * 数组过滤空值
      */
     Array.prototype.filterEmpty = function() {
         return this.filter(function(value) {
