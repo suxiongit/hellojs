@@ -276,17 +276,32 @@ if (!Array.prototype.shuffle) {
 if (!Array.prototype.empty) {
     /**
      * 清空数组
-     * @param index
      */
     Array.prototype.empty = function() {
         this.splice(0, this.length);
     };
 
     // 示例
-    var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
-    console.log(countries);
-    countries.empty();
-    console.log(countries);
+    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
+    // console.log(countries);
+    // countries.empty();
+    // console.log(countries);
+}
+
+if (!Array.prototype.filterEmpty) {
+    /**
+     * 数值过滤空值
+     */
+    Array.prototype.filterEmpty = function() {
+        return this.filter(function(value) {
+            return value.trim();
+        });
+    };
+
+    // 示例
+    // var countries = ['美国', '', '俄罗斯', ' ', '英国', '  ', '法国', , '中国'];
+    // console.log(countries);
+    // console.log(countries.filterEmpty());
 }
 
 /**
