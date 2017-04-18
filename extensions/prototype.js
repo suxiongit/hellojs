@@ -15,7 +15,7 @@ if (!Array.prototype.contains) {
      * 数组中是否存在指定的值
      * @see Array.prototype.includes(searchElement, fromIndex)
      * @param obj
-     * @returns {boolean}
+     * @return {boolean}
      */
     Array.prototype.contains = function(element) {
         var i = this.length;
@@ -129,7 +129,7 @@ if (!Array.prototype.indexOf) {
     /**
      * 查找指定的元素在数组中的位置（索引）
      * @param value
-     * @returns {number}
+     * @return {number}
      */
     // Array.prototype.indexOf = function(value) {
     //     for (var i = 0, n = this.length; i < n; i ++) {
@@ -145,7 +145,7 @@ if (!Array.prototype.indexOf) {
      * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
      * @param searchElement
      * @param fromIndex
-     * @returns {*}
+     * @return {*}
      */
     Array.prototype.indexOf = function(searchElement, fromIndex) {
 
@@ -218,7 +218,7 @@ if (!Array.prototype.random) {
     /**
      * 数组随机排序
      * @param length 返回数组长度，当不传值、0或者超出数组长度
-     * @returns {Array}
+     * @return {Array}
      */
     Array.prototype.random = function(length) {
         if (null == this) {
@@ -260,7 +260,7 @@ if (!Array.prototype.shuffle) {
      * 数组随机排序
      * @see Array.prototype.random(length)
      * @param length
-     * @returns {Array}
+     * @return {Array}
      */
     Array.prototype.shuffle = function(length) {
         return this.slice(0).random(length);
@@ -291,6 +291,7 @@ if (!Array.prototype.empty) {
 if (!Array.prototype.filterEmpty) {
     /**
      * 数组过滤空值
+     * @return {Array.<*>}
      */
     Array.prototype.filterEmpty = function() {
         return this.filter(function(value) {
@@ -302,6 +303,29 @@ if (!Array.prototype.filterEmpty) {
     // var countries = ['美国', '', '俄罗斯', ' ', '英国', '  ', '法国', , '中国'];
     // console.log(countries);
     // console.log(countries.filterEmpty());
+}
+
+if (!Array.prototype.unique) {
+    /**
+     * 数组去重
+     * @return {Array}
+     */
+    Array.prototype.unique = function() {
+        var hash = {}, arr = [];
+        for(var i = 0; i < this.length; i++) { // 遍历当前数组
+            if (!hash[this[i]]) { // 如果hash表中没有当前项
+                hash[this[i]] = true; // 存入hash表
+                arr.push(this[i]); // 把当前数组的当前项push到临时数组里面
+            }
+        }
+        return arr;
+    };
+
+    // 示例
+    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国'];
+    // countries = countries.concat(countries);
+    // console.log(countries);
+    // console.log(countries.unique());
 }
 
 /**
@@ -318,7 +342,7 @@ if (!Date.prototype.format) {
      * format('yyyy-MM-dd hh:mm:ss.S') ==> 2006-07-02 08:09:04.423
      * format('yyyy-M-d h:m:s.S')      ==> 2006-7-2 8:9:4.18
      * @param format
-     * @returns {*}
+     * @return {*}
      */
     Date.prototype.format = function(format) {
         var date = {
@@ -357,7 +381,7 @@ if (!Date.prototype.isLeapYear) {
      * 2.世纪年能被400整除的是闰年。如2000年是闰年，1900年不是闰年
      * 注意：Date.prototype.getYear()获取的年份是减去1900，例如2017年值为117，而1900年值0
      * @param date
-     * @returns {boolean}
+     * @return {boolean}
      */
     Date.prototype.isLeapYear = function(date) {
         var y;
@@ -390,7 +414,7 @@ if (!String.prototype.firstUpperCase) {
      * 字符串首字母转大写
      * （CSS实现text-transform: capitalize;）
      * @param perword
-     * @returns {string}
+     * @return {string}
      */
     String.prototype.firstUpperCase = function(perword) {
         if (perword) { // 输出：Hello World
@@ -423,7 +447,7 @@ if (!String.prototype.firstUpperCase) {
 if (!String.prototype.cnLength) {
     /**
      * 获取字符串的长度（全角算两个字符）
-     * @returns {Number}
+     * @return {Number}
      */
     String.prototype.cnLength = function() {
         return this.replace(/[^\x00-\xff]/g, '^^').length;
@@ -453,7 +477,7 @@ if (!String.prototype.replaceAll) {
      * m （multiLine）执行多行匹配。
      * @param searchment 搜索串
      * @param replacement 替换串
-     * @returns {string}
+     * @return {string}
      */
     String.prototype.replaceAll = function(searchment, replacement) {
         return this.replace(new RegExp(searchment, 'gm'), replacement);
@@ -468,7 +492,7 @@ if (!String.prototype.replaceAll) {
 if (!String.prototype.trimCRLF) {
     /**
      * 去除回车换行符号
-     * @returns {*}
+     * @return {*}
      */
     String.prototype.trimCRLF = function() {
         return this.replaceAll('(\n|\r|(\r\n)|(\u0085)|(\u2028)|(\u2029))', '');
