@@ -273,6 +273,22 @@ if (!Array.prototype.shuffle) {
     // }
 }
 
+if (!Array.prototype.empty) {
+    /**
+     * 清空数组
+     * @param index
+     */
+    Array.prototype.empty = function() {
+        this.splice(0, this.length);
+    };
+
+    // 示例
+    var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
+    console.log(countries);
+    countries.empty();
+    console.log(countries);
+}
+
 /**
  * Date 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
