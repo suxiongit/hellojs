@@ -492,7 +492,7 @@ if (!String.prototype.replaceAll) {
 if (!String.prototype.trimCRLF) {
     /**
      * 去除回车换行符号
-     * @return {*}
+     * @return {string}
      */
     String.prototype.trimCRLF = function() {
         return this.replaceAll('(\n|\r|(\r\n)|(\u0085)|(\u2028)|(\u2029))', '');
@@ -504,3 +504,22 @@ if (!String.prototype.trimCRLF) {
     // console.log('去除后=' + str.trimCRLF());
 }
 
+if (!String.prototype.toInt) {
+    /**
+     * 字符串转整型
+     * @return {number}
+     */
+    String.prototype.toInt = function() {
+        return isNaN(parseInt(this)) ? 0 : parseInt(this);
+    }
+
+    // 示例
+    // var num1 = '1', num2 = '2';
+    // console.log(num1 + num2); // 12
+    // console.log(parseInt(num1) + parseInt(num2)); // 3
+    // console.log(num1.toInt() + num2.toInt()); // 3
+    // var num3 = 'a', num4 = 'b';
+    // console.log(num3 + num4); // ab
+    // console.log(parseInt(num3) + parseInt(num4)); // NaN
+    // console.log(num4.toInt() + num4.toInt()); // 0
+}
