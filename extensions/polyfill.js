@@ -562,3 +562,18 @@ if (!String.prototype.reverse) {
     console.log(str + ' 反转为 ' + str.reverse());
 }
 
+if (!String.prototype.contains) {
+    /**
+     * 字符串是否包含指定内容
+     * @param element
+     * @return {boolean}
+     */
+    String.prototype.contains = function(element) {
+        return this.indexOf(element) > -1;
+    };
+
+    // 示例
+    // var str = 'Welcome to Beijing!';
+    // console.log(str + ' 是否包含Beijing ' + str.contains('Beijing'));
+}
+
