@@ -14,7 +14,7 @@ if (!Array.prototype.contains) {
     /**
      * 数组中是否存在指定的值
      * @see Array.prototype.includes(searchElement, fromIndex)
-     * @param obj
+     * @param element
      * @return {boolean}
      */
     Array.prototype.contains = function(element) {
@@ -395,7 +395,7 @@ if (!Date.prototype.isLeapYear) {
 
         // return (0 === y % 4 && ((y % 100 !== 0) || (y % 400 === 0)));
         return !(y % (y % 100 ? 4 : 400));
-    }
+    };
 
     // 示例
     // var newDate = new Date('2016');
@@ -481,7 +481,7 @@ if (!String.prototype.replaceAll) {
      */
     String.prototype.replaceAll = function(searchment, replacement) {
         return this.replace(new RegExp(searchment, 'gm'), replacement);
-    }
+    };
 
     // 示例
     // var str = 'hello hello hello hello hello';
@@ -496,7 +496,7 @@ if (!String.prototype.trimCRLF) {
      */
     String.prototype.trimCRLF = function() {
         return this.replaceAll('(\n|\r|(\r\n)|(\u0085)|(\u2028)|(\u2029))', '');
-    }
+    };
 
     // 示例
     // var str = '\r\nhe\n';
@@ -511,7 +511,7 @@ if (!String.prototype.toInt) {
      */
     String.prototype.toInt = function() {
         return isNaN(parseInt(this)) ? 0 : parseInt(this);
-    }
+    };
 
     // 示例
     // var num1 = '1', num2 = '2';
@@ -531,7 +531,7 @@ if (!String.prototype.toDouble) {
      */
     String.prototype.toDouble = function() {
         return isNaN(parseFloat(this)) ? 0.0 : parseFloat(this);
-    }
+    };
 
     // 示例
     // var num1 = '0.1', num2 = '0.2';
@@ -543,3 +543,22 @@ if (!String.prototype.toDouble) {
     // console.log(parseFloat(num3) + parseFloat(num4)); // NaN
     // console.log(num4.toDouble() + num4.toDouble()); // 0
 }
+
+if (!String.prototype.reverse) {
+    /**
+     * 反转字符串
+     * @return {string}
+     */
+    String.prototype.reverse = function() {
+        var chars = [];
+        for (var i = this.length - 1; i > -1; i--) {
+            chars.push(this[i]);
+        }
+        return chars.join('');
+    };
+
+    // 示例
+    var str = 'abcdefg';
+    console.log(str + ' 反转为 ' + str.reverse());
+}
+
