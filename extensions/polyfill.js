@@ -523,3 +523,23 @@ if (!String.prototype.toInt) {
     // console.log(parseInt(num3) + parseInt(num4)); // NaN
     // console.log(num4.toInt() + num4.toInt()); // 0
 }
+
+if (!String.prototype.toDouble) {
+    /**
+     * 字符串转浮点型
+     * @return {number}
+     */
+    String.prototype.toDouble = function() {
+        return isNaN(parseFloat(this)) ? 0.0 : parseFloat(this);
+    }
+
+    // 示例
+    // var num1 = '0.1', num2 = '0.2';
+    // console.log(num1 + num2); // 0.10.2
+    // console.log(parseFloat(num1) + parseFloat(num2)); // 0.30000000000000004
+    // console.log(num1.toDouble() + num2.toDouble()); // 0.30000000000000004
+    // var num3 = 'a', num4 = 'b';
+    // console.log(num3 + num4); // ab
+    // console.log(parseFloat(num3) + parseFloat(num4)); // NaN
+    // console.log(num4.toDouble() + num4.toDouble()); // 0
+}
