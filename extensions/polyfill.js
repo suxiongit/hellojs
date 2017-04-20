@@ -95,7 +95,7 @@ if (!Array.prototype.remove) {
         } else {
             if (Array.isArray(element)) {
                 for (var i = this.length - 1; i > -1; i --) {
-                    if (element.includes(this[i])) {
+                    if (element.contains(this[i])) {
                         this.splice(i, 1);
                         continue;
                     }
@@ -319,7 +319,7 @@ if (!Array.prototype.unique) {
      * @return {Array}
      */
     Array.prototype.unique = function() {
-        var hash = {}, arr = [];
+        var arr = [], hash = {};
         for(var i = 0; i < this.length; i++) { // 遍历当前数组
             if (!hash[this[i]]) { // 如果hash表中没有当前项
                 hash[this[i]] = true; // 存入hash表
@@ -334,6 +334,95 @@ if (!Array.prototype.unique) {
     // arr = arr.concat(arr);
     // console.log(arr);
     // console.log(arr.unique());
+}
+
+if (!Array.diff) {
+    /**
+     * 数组不同元素
+     * @return {Array}
+     */
+    Array.diff = function(arr1, arr2) {
+        if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+            throw new TypeError('Parameter is not an array');
+        }
+
+        // 实现一
+        // var arr = [];
+        // for (var i = 0, n = arr1.length; i < n; i ++) {
+        //     if (!arr2.contains(arr1[i])) {
+        //         arr.push(arr1[i]);
+        //     }
+        // }
+        // for (var i = 0, n = arr2.length; i < n; i ++) {
+        //     if (!arr1.contains(arr2[i])) {
+        //         arr.push(arr2[i]);
+        //     }
+        // }
+
+        // 实现二
+        var _arr1 = arr1.filter(function(value) {
+            return !arr2.contains(value);
+        });
+        var _arr2 = arr2.filter(function(value) {
+            return !arr1.contains(value);
+        });
+        var arr = _arr1.concat(_arr2);
+
+        return arr;
+    };
+
+    // 示例
+    // var arr1 = ['a', 'b', 'c', 'd', 'e'];
+    // var arr2 = ['a', 'b', 'c', 'd', 'f'];
+    // console.log(Array.diff(arr1, arr2));
+    //
+    // var arr1 = ['a', 'b', 'c', 'd', 'e'];
+    // var arr2 = ['a', 'b', 'c', 'd', 'f', 'f'];
+    // console.log(Array.diff(arr1, arr2));
+    //
+    // var arr1 = 'a';
+    // var arr2 = ['a', 'b', 'c', 'd', 'e', 'f'];
+    // console.log(Array.diff(arr1, arr2)); // TypeError: Parameter is not an array
+}
+
+if (!Array.same) {
+    /**
+     * 数组相同元素
+     * @return {Array}
+     */
+    Array.same = function(arr1, arr2) {
+        if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+            throw new TypeError('Parameter is not an array');
+        }
+
+        // 实现一
+        // var arr = [];
+        // for (var i = 0, n = arr1.length; i < n; i ++) {
+        //     if (arr2.contains(arr1[i])) {
+        //         arr.push(arr1[i]);
+        //     }
+        // }
+
+        // 实现二
+        var arr = arr1.filter(function(value) {
+            return arr2.contains(value);
+        });
+
+        return arr;
+    };
+
+    // 示例
+    // var arr1 = ['a', 'b', 'c', 'd', 'e'];
+    // var arr2 = ['a', 'b', 'c', 'd', 'f'];
+    // console.log(Array.same(arr1, arr2));
+    //
+    // var arr1 = ['a', 'b', 'c', 'd', 'e'];
+    // var arr2 = ['a', 'b', 'c', 'd', 'd', 'f'];
+    // console.log(Array.same(arr1, arr2));
+    //
+    // var arr1 = 'a';
+    // var arr2 = ['a', 'b', 'c', 'd', 'e', 'f'];
+    // console.log(Array.same(arr1, arr2)); // TypeError: Parameter is not an array
 }
 
 /**
@@ -426,15 +515,17 @@ if (!String.prototype.firstUpperCase) {
      */
     String.prototype.firstUpperCase = function(perword) {
         if (perword) { // 输出：Hello World
+            // 实现一
             return this.toLowerCase().replace(/\b[a-z]/g, function(s) {
                 return s.toUpperCase();
             });
 
+            // 实现二
             // return this.replace(/\b(\w)(\w*)/g, function($0, $1, $2) {
             //     return $1.toUpperCase() + $2.toLowerCase();
             // });
 
-            // ES6写法
+            // 实现三：ES6写法
             // return this.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());
         } else { // 输出：Hello world
             return this.toLowerCase().replace(/^\S/g, function(s) {
@@ -458,8 +549,10 @@ if (!String.prototype.cnLength) {
      * @return {Number}
      */
     String.prototype.cnLength = function() {
+        // 实现一
         return this.replace(/[^\x00-\xff]/g, '^^').length;
 
+        // 实现二
         // var L = this.length;
         // var T = this.match(/[^\x00-\x80]/ig);
         // if (T) {
