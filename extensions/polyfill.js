@@ -504,46 +504,6 @@ if (!String.prototype.trimCRLF) {
     // console.log('去除后=' + str.trimCRLF());
 }
 
-if (!String.prototype.toInt) {
-    /**
-     * 字符串转整型
-     * @return {number}
-     */
-    String.prototype.toInt = function() {
-        return isNaN(parseInt(this)) ? 0 : parseInt(this);
-    };
-
-    // 示例
-    // var num1 = '1', num2 = '2';
-    // console.log(num1 + num2); // 12
-    // console.log(parseInt(num1) + parseInt(num2)); // 3
-    // console.log(num1.toInt() + num2.toInt()); // 3
-    // var num3 = 'a', num4 = 'b';
-    // console.log(num3 + num4); // ab
-    // console.log(parseInt(num3) + parseInt(num4)); // NaN
-    // console.log(num4.toInt() + num4.toInt()); // 0
-}
-
-if (!String.prototype.toDouble) {
-    /**
-     * 字符串转浮点型
-     * @return {number}
-     */
-    String.prototype.toDouble = function() {
-        return isNaN(parseFloat(this)) ? 0.0 : parseFloat(this);
-    };
-
-    // 示例
-    // var num1 = '0.1', num2 = '0.2';
-    // console.log(num1 + num2); // 0.10.2
-    // console.log(parseFloat(num1) + parseFloat(num2)); // 0.30000000000000004
-    // console.log(num1.toDouble() + num2.toDouble()); // 0.30000000000000004
-    // var num3 = 'a', num4 = 'b';
-    // console.log(num3 + num4); // ab
-    // console.log(parseFloat(num3) + parseFloat(num4)); // NaN
-    // console.log(num4.toDouble() + num4.toDouble()); // 0
-}
-
 if (!String.prototype.reverse) {
     /**
      * 反转字符串
@@ -558,18 +518,18 @@ if (!String.prototype.reverse) {
     };
 
     // 示例
-    var str = 'abcdefg';
-    console.log(str + ' 反转为 ' + str.reverse());
+    // var str = 'abcdefg';
+    // console.log(str + ' 反转为 ' + str.reverse());
 }
 
 if (!String.prototype.contains) {
     /**
      * 字符串是否包含指定内容
-     * @param element
+     * @param chr
      * @return {boolean}
      */
-    String.prototype.contains = function(element) {
-        return this.indexOf(element) > -1;
+    String.prototype.contains = function(chr) {
+        return this.indexOf(chr) > -1;
     };
 
     // 示例
@@ -577,3 +537,41 @@ if (!String.prototype.contains) {
     // console.log(str + ' 是否包含Beijing ' + str.contains('Beijing'));
 }
 
+/**
+ * Number 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
+ */
+
+if (!Number.toInt) {
+    /**
+     * 字符串转整型
+     * @return {number}
+     */
+    Number.toInt = function(num) {
+        return isNaN(parseInt(num)) ? 0 : parseInt(num);
+    };
+
+    // 示例
+    // console.log(Number.toInt('1')); // 1
+    // console.log(Number.toInt('2')); // 2
+    // console.log(Number.toInt('1') + Number.toInt('2')); // 3
+    // console.log(Number.toInt('a')); // 0
+    // console.log(parseInt('a')); // NaN
+    // console.log(Number.parseInt('a')); // NaN
+}
+
+if (!Number.toDouble) {
+    /**
+     * 字符串转浮点型
+     * @return {number}
+     */
+    Number.toDouble = function(num) {
+        return isNaN(parseFloat(num)) ? 0.0 : parseFloat(num);
+    };
+
+    // 示例
+    // console.log(Number.toDouble('.1')); // 0.1
+    // console.log(Number.toDouble('.2')); // 0.2
+    // console.log(Number.toDouble('.1') + Number.toDouble('.2')); // 0.30000000000000004
+    // console.log(Number.toDouble('a')); // 0
+}
