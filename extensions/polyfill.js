@@ -85,43 +85,51 @@ if (!Array.prototype.forEach) {
 
 if (!Array.prototype.remove) {
     /**
-     * 通过索引删除某个数组元素
-     * @param index
+     * 删除数组元素
+     * @param element string|array 删除元素
+     * @param isIndex boolean|integer 是否索引
      */
-    Array.prototype.remove = function(index) {
-        this.splice(index, 1);
-    };
+    Array.prototype.remove = function(element, isIndex) {
+        if (isIndex) {
+            this.splice(element, 1);
+        } else {
+            if (Array.isArray(element)) {
+                for (var i = this.length - 1; i > -1; i --) {
+                    if (element.includes(this[i])) {
+                        this.splice(i, 1);
+                        continue;
+                    }
+                }
+            } else {
+                // 实现一
+                // for (var i = 0, n = this.length; i < n; i ++) {
+                //     if (this[i] == value) {
+                //         this.splice(i, 1);
+                //         break;
+                //     }
+                // }
 
-    // 示例
-    // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-    // arr.remove(arr.length - 1);
-    // console.log(arr);
-    // arr.remove(-1);
-    // console.log(arr);
-}
-
-if (!Array.prototype.removeByValue) {
-    /**
-     * 通过值删除某个数组元素
-     * @param value
-     */
-    Array.prototype.removeByValue = function(value) {
-        // for (var i = 0, n = this.length; i < n; i ++) {
-        //     if (this[i] == value) {
-        //         this.splice(i, 1);
-        //         break;
-        //     }
-        // }
-
-        var index = this.indexOf(value);
-        if (index > -1) {
-            this.splice(index, 1);
+                // 实现二
+                var index = this.indexOf(element);
+                if (index > -1) {
+                    this.splice(index, 1);
+                }
+            }
         }
     };
 
     // 示例
     // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-    // arr.removeByValue('f');
+    // arr.remove('f'); // 删除值
+    // console.log(arr);
+    //
+    // arr.remove(['d', 'e']); // 删除数组
+    // console.log(arr);
+    //
+    // arr.remove(arr.length - 1, true); // 通过索引删除
+    // console.log(arr);
+    //
+    // arr.remove(-1, true); // 通过索引删除
     // console.log(arr);
 }
 
