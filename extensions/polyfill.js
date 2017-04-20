@@ -676,3 +676,261 @@ if (!Number.toDouble) {
     // console.log(Number.toDouble('.1') + Number.toDouble('.2')); // 0.30000000000000004
     // console.log(Number.toDouble('a')); // 0
 }
+
+/**
+ * RegExp 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+ * g： global，全文搜索，默认搜索到第一个结果接停止
+ i： ignore case，忽略大小写，默认大小写敏感
+ m： multiple lines，多行搜索
+ */
+
+if (!RegExp.isBlank) {
+    /**
+     * 是否为空
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isBlank = function(value) {
+        return /^\s*$/.test(value);
+    };
+
+    // 示例
+    // var value = ''; // true
+    // console.log(value, RegExp.isBlank(value));
+    // var value = ' '; // true
+    // console.log(value, RegExp.isBlank(value));
+}
+
+if (!RegExp.isDate) {
+    /**
+     * 是否日期
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isDate = function(value) {
+        return /^\d{4}\-\d{1,2}-\d{1,2}$/i.test(value);
+    };
+
+    // 示例
+    // var value = '2016-05-19';
+    // console.log(value, RegExp.isDate(value));
+    // var value = '2016-05-19 00';
+    // console.log(value, RegExp.isDate(value));
+}
+
+if (!RegExp.isDomain) {
+    /**
+     * 是否域名
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isDomain = function(value) {
+        return /^[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?$/i.test(value);
+    };
+
+    // 示例
+    // var value = 'www.test-domain.com';
+    // console.log(value, RegExp.isDomain(value));
+    // var value = 'test-domain';
+    // console.log(value, RegExp.isDomain(value));
+}
+
+if (!RegExp.isEmail) {
+    /**
+     * 是否邮箱
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isEmail = function(value) {
+        return /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(value);
+    };
+
+    // 示例
+    // var value = 'test-email@domain.com';
+    // console.log(value, RegExp.isEmail(value));
+    // var value = 'test-email@domain';
+    // console.log(value, RegExp.isEmail(value));
+}
+
+if (!RegExp.isHtml) {
+    /**
+     * 是否HTML标记
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isHtml = function(value) {
+        return /^<(\S*?)[^>]*>.*?<\/\1>|<.*?\s?\/>$/i.test(value);
+    };
+
+    // 示例
+    // var value = '<span></span>'; // true
+    // console.log(value, RegExp.isHtml(value));
+    var value = '<div><span></span></div>';
+    console.log(value, RegExp.isHtml(value));
+    // var value = 'span'; // false
+    // console.log(value, RegExp.isHtml(value));
+    // var value = '<br />'; // true
+    // console.log(value, RegExp.isHtml(value));
+    // var value = '<br/>'; // true
+    // console.log(value, RegExp.isHtml(value));
+}
+
+if (!RegExp.isIdCard) {
+    /**
+     * 是否身份证（15位或18位）
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isIdCard = function(value) {
+        return /^\d{14}(\d{4}|(\d{3}[xX])|\d{1})$/i.test(value);
+    };
+
+    // 示例
+    // var value = '000000000000000000';
+    // console.log(value, RegExp.isIdCard(value));
+    // var value = '0000000000000000000';
+    // console.log(value, RegExp.isIdCard(value));
+}
+
+if (!RegExp.isIP) {
+    /**
+     * 是否IP地址
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isIP = function(value) {
+        return /^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$/i.test(value);
+    };
+
+    // 示例
+    // var value = '127.0.0.1';
+    // console.log(value, RegExp.isIP(value));
+    // var value = '127.0.0.1 0';
+    // console.log(value, RegExp.isIP(value));
+}
+
+if (!RegExp.isMobile) {
+    /**
+     * 是否手机号码（11位手机号码）
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isMobile = function(value) {
+        return /^(13|14|15|17|18)\d{9}$/i.test(value);
+    };
+
+    // 示例
+    // var value = '13800138000';
+    // console.log(value, RegExp.isMobile(value));
+    // var value = '013800138000';
+    // console.log(value, RegExp.isMobile(value));
+    // var value = '800138000';
+    // console.log(value, RegExp.isMobile(value));
+}
+
+if (!RegExp.isQQ) {
+    /**
+     * 是否QQ号码（5-11位数字，[1-9][0-9]{4,}）
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isQQ = function(value) {
+        return /^[1-9]\d{4,10}$/.test(value);
+    };
+
+    // 示例
+    // var value = '10001';
+    // console.log(value, RegExp.isQQ(value));
+    // var value = '01000';
+    // console.log(value, RegExp.isQQ(value));
+}
+
+if (!RegExp.isTel) {
+    /**
+     * 是否电话号码（匹配形式如 010-12345678 或 0571-12345678 或 0831-1234567）
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isTel = function(value) {
+        return /^\d{3}-\d{8}|\d{4}-\d{7,8}$/i.test(value);
+    };
+
+    // 示例
+    // var value = '010-12345678';
+    // console.log(value, RegExp.isTel(value));
+    // var value = '12345678';
+    // console.log(value, RegExp.isTel(value));
+}
+
+if (!RegExp.isUrl) {
+    /**
+     * 是否网址URL（以http|https开头）
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isUrl = function(value) {
+        return /^[a-zA-z]+:\/\/[^\s]*$/i.test(value);
+    };
+
+    // 示例
+    // var value = 'http://www.test-url.com';
+    // console.log(value, RegExp.isUrl(value));
+    // var value = 'https://www.test-url.com';
+    // console.log(value, RegExp.isUrl(value));
+    // var value = 'www.test-url.com';
+    // console.log(value, RegExp.isUrl(value));
+}
+
+if (!RegExp.isUsername) {
+    /**
+     * 是否用户名（字母开头，5-16位，允许字母数字下划线）
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isUsername = function(value) {
+        return /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/i.test(value);
+    };
+
+    // 示例
+    // var value = 'abc_123';
+    // console.log(value, RegExp.isUsername(value));
+    // var value = 'abc-123';
+    // console.log(value, RegExp.isUsername(value));
+}
+
+if (!RegExp.isVersion) {
+    /**
+     * 是否版本号（例如 3.8 或 3.8.2）
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isVersion = function(value) {
+        return /\d+(\.\d+)+/i.test(value);
+    };
+
+    // 示例
+    // var value = '3.8.2';
+    // console.log(value, RegExp.isVersion(value));
+    // var value = '382';
+    // console.log(value, RegExp.isVersion(value));
+}
+
+if (!RegExp.isZipCode) {
+    /**
+     * 是否邮政编码（6位数字，以1-9开头）
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isZipCode = function(value) {
+        return /^[1-9]\d{5}(?!\d)$/i.test(value);
+    };
+
+    // 示例
+    // var value = '518000';
+    // console.log(value, RegExp.isZipCode(value));
+    // var value = '5180001';
+    // console.log(value, RegExp.isZipCode(value));
+}
+
+
