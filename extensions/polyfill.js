@@ -28,9 +28,9 @@ if (!Array.prototype.contains) {
     };
 
     // 示例
-    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国'];
-    // console.log(countries.contains('中国')); // true
-    // console.log(countries.contains('日本')); // false
+    // var arr = ['a', 'b', 'c', 'd', 'e'];
+    // console.log(arr.contains('e')); // true
+    // console.log(arr.contains('f')); // false
 }
 
 if (!Array.prototype.forEach) {
@@ -69,16 +69,16 @@ if (!Array.prototype.forEach) {
     };
 
     // 示例
-    // var countries = [];
-    // countries.push('美国');
-    // countries.push('俄罗斯');
-    // countries.push('英国');
-    // countries.push('法国');
-    // countries.push('中国');
-    // countries.forEach(function(value) {
+    // var arr = [];
+    // arr.push('a');
+    // arr.push('b');
+    // arr.push('c');
+    // arr.push('d');
+    // arr.push('e');
+    // arr.forEach(function(value) {
     //     console.log(value);
     // });
-    // countries.forEach(function(value, index, array) {
+    // arr.forEach(function(value, index, array) {
     //     console.log(value + ' ' + index + ' ' + array);
     // });
 }
@@ -93,11 +93,11 @@ if (!Array.prototype.remove) {
     };
 
     // 示例
-    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
-    // countries.remove(countries.length - 1);
-    // console.log(countries);
-    // countries.remove(-1);
-    // console.log(countries);
+    // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+    // arr.remove(arr.length - 1);
+    // console.log(arr);
+    // arr.remove(-1);
+    // console.log(arr);
 }
 
 if (!Array.prototype.removeByValue) {
@@ -120,9 +120,9 @@ if (!Array.prototype.removeByValue) {
     };
 
     // 示例
-    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
-    // countries.removeByValue('日本');
-    // console.log(countries);
+    // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+    // arr.removeByValue('f');
+    // console.log(arr);
 }
 
 if (!Array.prototype.indexOf) {
@@ -210,8 +210,8 @@ if (!Array.prototype.indexOf) {
     };
 
     // 示例
-    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国'];
-    // console.log(countries.indexOf('中国'));
+    // var arr = ['a', 'b', 'c', 'd', 'e'];
+    // console.log(arr.indexOf('e'));
 }
 
 if (!Array.prototype.random) {
@@ -282,10 +282,10 @@ if (!Array.prototype.empty) {
     };
 
     // 示例
-    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国', '日本'];
-    // console.log(countries);
-    // countries.empty();
-    // console.log(countries);
+    // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+    // console.log(arr);
+    // arr.empty();
+    // console.log(arr);
 }
 
 if (!Array.prototype.filterEmpty) {
@@ -300,9 +300,9 @@ if (!Array.prototype.filterEmpty) {
     };
 
     // 示例
-    // var countries = ['美国', '', '俄罗斯', ' ', '英国', '  ', '法国', , '中国'];
-    // console.log(countries);
-    // console.log(countries.filterEmpty());
+    // var arr = ['a', '', 'b', ' ', 'c', '  ', 'd', , 'e'];
+    // console.log(arr);
+    // console.log(arr.filterEmpty());
 }
 
 if (!Array.prototype.unique) {
@@ -322,10 +322,10 @@ if (!Array.prototype.unique) {
     };
 
     // 示例
-    // var countries = ['美国', '俄罗斯', '英国', '法国', '中国'];
-    // countries = countries.concat(countries);
-    // console.log(countries);
-    // console.log(countries.unique());
+    // var arr = ['a', 'b', 'c', 'd', 'e'];
+    // arr = arr.concat(arr);
+    // console.log(arr);
+    // console.log(arr.unique());
 }
 
 /**
