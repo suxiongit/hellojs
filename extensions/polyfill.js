@@ -469,6 +469,46 @@ if (!Array.prototype.min) {
     // console.log(arr + ' 最小值 ' + arr.min()); // a
 }
 
+if (!Array.isEmpty) {
+    /**
+     * 数组是否为空
+     * @param arr
+     * @return {boolean}
+     */
+    Array.isEmpty = function(arr) {
+        if (!Array.isArray(arr) || arr.length <= 0) {
+            return true;
+        }
+        return false;
+    };
+
+    // 示例
+    // var arr = [];
+    // console.log(Array.isEmpty(arr));
+    // var arr = 1;
+    // console.log(Array.isEmpty(arr));
+}
+
+if (!Array.isNotEmpty) {
+    /**
+     * 数组是否不为空
+     * @param arr
+     * @return {boolean}
+     */
+    Array.isNotEmpty = function(arr) {
+        if (Array.isArray(arr) && arr.length > 0) {
+            return true;
+        }
+        return false;
+    };
+
+    // 示例
+    // var arr = [1];
+    // console.log(Array.isNotEmpty(arr));
+    // var arr = 1;
+    // console.log(Array.isNotEmpty(arr));
+}
+
 /**
  * Date 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
