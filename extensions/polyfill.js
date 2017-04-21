@@ -491,7 +491,7 @@ if (!Array.isEmpty) {
 
 if (!Array.isNotEmpty) {
     /**
-     * 数组是否不为空
+     * 数组是否非空
      * @param arr
      * @return {boolean}
      */
@@ -769,21 +769,21 @@ if (!Number.toDouble) {
  m： multiple lines，多行搜索
  */
 
-if (!RegExp.isBlank) {
+if (!RegExp.isEmpty) {
     /**
      * 是否为空
      * @param value
      * @return {boolean}
      */
-    RegExp.isBlank = function(value) {
+    RegExp.isEmpty = function(value) {
         return /^\s*$/.test(value);
     };
 
     // 示例
     // var value = ''; // true
-    // console.log(value, RegExp.isBlank(value));
+    // console.log(value, RegExp.isEmpty(value));
     // var value = ' '; // true
-    // console.log(value, RegExp.isBlank(value));
+    // console.log(value, RegExp.isEmpty(value));
 }
 
 if (!RegExp.isDate) {
