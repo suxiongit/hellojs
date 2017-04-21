@@ -425,6 +425,50 @@ if (!Array.same) {
     // console.log(Array.same(arr1, arr2)); // TypeError: Parameter is not an array
 }
 
+if (!Array.prototype.max) {
+    /**
+     * 数组最大值
+     * @return {number}
+     */
+    Array.prototype.max = function() {
+        var value = this[0];
+        for (var i = 1, n = this.length; i < n; i++) {
+            if (this[i] > value) {
+                value = this[i];
+            }
+        }
+        return value;
+    };
+
+    // 示例
+    // var arr = [1, 2, 3, 4, 5];
+    // console.log(arr + ' 最大值 ' + arr.max()); // 5
+    // var arr = ['a', 'b', 'c', 'd', 'e'];
+    // console.log(arr + ' 最大值 ' + arr.max()); // e
+}
+
+if (!Array.prototype.min) {
+    /**
+     * 数组最小值
+     * @return {number}
+     */
+    Array.prototype.min = function() {
+        var value = this[0];
+        for (var i = 1, n = this.length; i < n; i++) {
+            if (this[i] < value) {
+                value = this[i];
+            }
+        }
+        return value;
+    };
+
+    // 示例
+    // var arr = [1, 2, 3, 4, 5];
+    // console.log(arr + ' 最小值 ' + arr.min()); // 1
+    // var arr = ['a', 'b', 'c', 'd', 'e'];
+    // console.log(arr + ' 最小值 ' + arr.min()); // a
+}
+
 /**
  * Date 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
@@ -766,8 +810,8 @@ if (!RegExp.isHtml) {
     // 示例
     // var value = '<span></span>'; // true
     // console.log(value, RegExp.isHtml(value));
-    var value = '<div><span></span></div>';
-    console.log(value, RegExp.isHtml(value));
+    // var value = '<div><span></span></div>';
+    // console.log(value, RegExp.isHtml(value));
     // var value = 'span'; // false
     // console.log(value, RegExp.isHtml(value));
     // var value = '<br />'; // true
