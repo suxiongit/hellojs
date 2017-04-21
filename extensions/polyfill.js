@@ -722,6 +722,41 @@ if (!String.prototype.contains) {
     // console.log(str + ' 是否包含Beijing ' + str.contains('Beijing'));
 }
 
+if (!String.format) {
+    /**
+     * 格式化字符串
+     * @param format
+     * @return {string}
+     */
+    String.format = function(format) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        return format.replace(/\{(\d+)\}/g, function(match, i) {
+            return args[i] == 'undefined' ? match : args[i];
+        });
+    };
+
+    // 示例
+    // var str = 'I love {0}, but I don\'t love {1}';
+    // console.log(String.format(str, 'China', 'Japan'));
+}
+
+if (!String.prototype.format) {
+    /**
+     * 格式化字符串
+     * @return {string}
+     */
+    String.prototype.format = function() {
+        var args = Array.prototype.slice.call(arguments, 0);
+        return this.replace(/\{(\d+)\}/g, function(match, i) {
+            return args[i] == 'undefined' ? match : args[i];
+        });
+    };
+
+    // 示例
+    // var str = 'I love {0}, but I don\'t love {1}';
+    // console.log(str.format('China', 'Japan'));
+}
+
 /**
  * Number 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
