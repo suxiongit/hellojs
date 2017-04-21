@@ -657,21 +657,22 @@ if (!String.prototype.cnLength) {
 if (!String.prototype.replaceAll) {
     /**
      * 全部替换
-     * （现有replace方法只会对匹配到的第一个字串替换）
-     * g （global）执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
-     * m （multiLine）执行多行匹配。
-     * @param searchment 搜索串
-     * @param replacement 替换串
+     * @param reallyDo
+     * @param replaceWith
+     * @param ignoreCase
      * @return {string}
      */
-    String.prototype.replaceAll = function(searchment, replacement) {
-        return this.replace(new RegExp(searchment, 'gm'), replacement);
+    String.prototype.replaceAll = function(reallyDo, replaceWith, ignoreCase) {
+        if (!RegExp.prototype.isPrototypeOf(reallyDo)) {
+            return this.replace(new RegExp(reallyDo, (ignoreCase ? 'gi' : 'g')), replaceWith);
+        } else {
+            return this.replace(reallyDo, replaceWith);
+        }
     };
 
     // 示例
-    // var str = 'hello hello hello hello hello';
-    // console.log('替换前=' + str);
-    // console.log('替换后=' + str.replaceAll('hello', 'world'));
+    // var str = 'Hello China, Hello World';
+    // console.log(str.replaceAll('hello', 'Welcome to', true));
 }
 
 if (!String.prototype.trimCRLF) {
