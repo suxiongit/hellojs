@@ -758,6 +758,37 @@ if (!String.prototype.format) {
     // console.log(str.format('China', 'Japan'));
 }
 
+if (!String.prototype.number) {
+    /**
+     * 获取数字
+     * @param float 浮点数
+     * @return {string}
+     */
+    String.prototype.number = function() {
+        var regEx = arguments[0] ? /[^\d.]/g: /[^\d]/g;
+        return this.replace(regEx, '');
+    };
+
+    // 示例
+    // console.log('I was born in March 1996'.number());
+    // console.log('￥100,000.00'.number(1));
+}
+
+if (!String.prototype.ZH) {
+    /**
+     * 获取中文
+     * @return {string}
+     */
+    String.prototype.ZH = function() {
+        var regEx = /[^\u4e00-\u9fa5\uf900-\ufa2d]/g;
+        return this.replace(regEx, '');
+    };
+
+    // 示例
+    // var str = '版本1.0发布于1996年3月';
+    // console.log(str.ZH());
+}
+
 /**
  * Number 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
