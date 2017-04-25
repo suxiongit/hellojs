@@ -504,9 +504,9 @@ if (!Array.isNotEmpty) {
 
     // 示例
     // var arr = [1];
-    // console.log(Array.isNotEmpty(arr));
+    // console.log(Array.isNotEmpty(arr)); // true
     // var arr = 1;
-    // console.log(Array.isNotEmpty(arr));
+    // console.log(Array.isNotEmpty(arr)); // false
 }
 
 /**
@@ -550,9 +550,9 @@ if (!Date.prototype.format) {
 
     // 示例
     // var newDate = new Date('2014-07-10 10:21:12');
-    // console.log(newDate.format('yyyy年MM月dd日 h时m分s秒'));
+    // console.log(newDate.format('yyyy年MM月dd日 h时m分s秒')); // 2014年07月10日 10时21分12秒
     // var newDate2 = new Date();
-    // console.log(newDate2.format('yyyy年MM月dd日 h时m分s秒'));
+    // console.log(newDate2.format('yyyy年MM月dd日 h时m分s秒')); // 2017年04月25日 21时40分32秒
 }
 
 if (!Date.prototype.isLeapYear) {
@@ -580,9 +580,9 @@ if (!Date.prototype.isLeapYear) {
 
     // 示例
     // var newDate = new Date('2016');
-    // console.log(newDate + ' 是否闰年 ' + newDate.isLeapYear());
+    // console.log(newDate + ' 是否闰年 ' + newDate.isLeapYear()); // true
     // var newDate2 = new Date();
-    // console.log(newDate2 + ' 是否闰年 ' + Date.prototype.isLeapYear(newDate2));
+    // console.log(newDate2 + ' 是否闰年 ' + Date.prototype.isLeapYear(newDate2)); // false
 }
 
 /**
@@ -621,10 +621,10 @@ if (!String.prototype.firstUpperCase) {
     };
 
     // 示例
-    // console.log('hello world'.firstUpperCase());
-    // console.log('HELLO WORLD'.firstUpperCase());
-    // console.log('hello world'.firstUpperCase(1));
-    // console.log('HELLO WORLD'.firstUpperCase(1));
+    // console.log('hello world'.firstUpperCase()); // Hello world
+    // console.log('HELLO WORLD'.firstUpperCase()); // Hello world
+    // console.log('hello world'.firstUpperCase(1)); // Hello World
+    // console.log('HELLO WORLD'.firstUpperCase(1)); // Hello World
 }
 
 if (!String.prototype.cnLength) {
@@ -672,7 +672,7 @@ if (!String.prototype.replaceAll) {
 
     // 示例
     // var str = 'Hello China, Hello World';
-    // console.log(str.replaceAll('hello', 'Welcome to', true));
+    // console.log(str.replaceAll('hello', 'Welcome to', true)); // Welcome to China, Welcome to World
 }
 
 if (!String.prototype.trimCRLF) {
@@ -686,8 +686,8 @@ if (!String.prototype.trimCRLF) {
 
     // 示例
     // var str = '\r\nhe\n';
-    // console.log('去除前=' + str);
-    // console.log('去除后=' + str.trimCRLF());
+    // console.log('去除前=' + str); // \r\nhe\n
+    // console.log('去除后=' + str.trimCRLF()); // he
 }
 
 if (!String.prototype.reverse) {
@@ -705,7 +705,7 @@ if (!String.prototype.reverse) {
 
     // 示例
     // var str = 'abcdefg';
-    // console.log(str + ' 反转为 ' + str.reverse());
+    // console.log(str + ' 反转为 ' + str.reverse()); // gfedcba
 }
 
 if (!String.prototype.contains) {
@@ -720,7 +720,7 @@ if (!String.prototype.contains) {
 
     // 示例
     // var str = 'Welcome to Beijing!';
-    // console.log(str + ' 是否包含Beijing ' + str.contains('Beijing'));
+    // console.log(str.contains('Beijing')); // true
 }
 
 if (!String.format) {
@@ -738,7 +738,7 @@ if (!String.format) {
 
     // 示例
     // var str = 'I love {0}, but I don\'t love {1}';
-    // console.log(String.format(str, 'China', 'Japan'));
+    // console.log(String.format(str, 'China', 'Japan')); // I love China, but I don't love Japan
 }
 
 if (!String.prototype.format) {
@@ -755,7 +755,7 @@ if (!String.prototype.format) {
 
     // 示例
     // var str = 'I love {0}, but I don\'t love {1}';
-    // console.log(str.format('China', 'Japan'));
+    // console.log(str.format('China', 'Japan')); // I love China, but I don't love Japan
 }
 
 if (!String.prototype.number) {
@@ -770,8 +770,8 @@ if (!String.prototype.number) {
     };
 
     // 示例
-    // console.log('I was born in March 1996'.number());
-    // console.log('￥100,000.00'.number(1));
+    // console.log('I was born in March 1996'.number()); // 1996
+    // console.log('￥100,000.00'.number(1)); // 100000.00
 }
 
 if (!String.prototype.ZH) {
@@ -785,8 +785,8 @@ if (!String.prototype.ZH) {
     };
 
     // 示例
-    // var str = '版本1.0发布于1996年3月';
-    // console.log(str.ZH());
+    // var str = 'This is 中文';
+    // console.log(str.ZH()); // 中文
 }
 
 /**
@@ -847,10 +847,10 @@ if (!RegExp.isEmpty) {
     };
 
     // 示例
-    // var value = ''; // true
-    // console.log(value, RegExp.isEmpty(value));
-    // var value = ' '; // true
-    // console.log(value, RegExp.isEmpty(value));
+    // var value = '';
+    // console.log(value, RegExp.isEmpty(value)); // true
+    // var value = ' ';
+    // console.log(value, RegExp.isEmpty(value)); // true
 }
 
 if (!RegExp.isDate) {
@@ -865,9 +865,9 @@ if (!RegExp.isDate) {
 
     // 示例
     // var value = '2016-05-19';
-    // console.log(value, RegExp.isDate(value));
+    // console.log(value, RegExp.isDate(value)); // true
     // var value = '2016-05-19 00';
-    // console.log(value, RegExp.isDate(value));
+    // console.log(value, RegExp.isDate(value)); // false
 }
 
 if (!RegExp.isDomain) {
@@ -882,9 +882,9 @@ if (!RegExp.isDomain) {
 
     // 示例
     // var value = 'www.test-domain.com';
-    // console.log(value, RegExp.isDomain(value));
+    // console.log(value, RegExp.isDomain(value)); // true
     // var value = 'test-domain';
-    // console.log(value, RegExp.isDomain(value));
+    // console.log(value, RegExp.isDomain(value)); // false
 }
 
 if (!RegExp.isEmail) {
@@ -899,9 +899,9 @@ if (!RegExp.isEmail) {
 
     // 示例
     // var value = 'test-email@domain.com';
-    // console.log(value, RegExp.isEmail(value));
+    // console.log(value, RegExp.isEmail(value)); // true
     // var value = 'test-email@domain';
-    // console.log(value, RegExp.isEmail(value));
+    // console.log(value, RegExp.isEmail(value)); // false
 }
 
 if (!RegExp.isHtml) {
@@ -915,16 +915,16 @@ if (!RegExp.isHtml) {
     };
 
     // 示例
-    // var value = '<span></span>'; // true
-    // console.log(value, RegExp.isHtml(value));
+    // var value = '<span></span>';
+    // console.log(value, RegExp.isHtml(value)); // true
     // var value = '<div><span></span></div>';
-    // console.log(value, RegExp.isHtml(value));
-    // var value = 'span'; // false
-    // console.log(value, RegExp.isHtml(value));
-    // var value = '<br />'; // true
-    // console.log(value, RegExp.isHtml(value));
-    // var value = '<br/>'; // true
-    // console.log(value, RegExp.isHtml(value));
+    // console.log(value, RegExp.isHtml(value)); // true
+    // var value = 'span';
+    // console.log(value, RegExp.isHtml(value)); // false
+    // var value = '<br />';
+    // console.log(value, RegExp.isHtml(value)); // true
+    // var value = '<br/>';
+    // console.log(value, RegExp.isHtml(value)); // true
 }
 
 if (!RegExp.isIdCard) {
@@ -939,9 +939,9 @@ if (!RegExp.isIdCard) {
 
     // 示例
     // var value = '000000000000000000';
-    // console.log(value, RegExp.isIdCard(value));
-    // var value = '0000000000000000000';
-    // console.log(value, RegExp.isIdCard(value));
+    // console.log(value, RegExp.isIdCard(value)); // true
+    // var value = '0000000000000000000'; // 超出18位
+    // console.log(value, RegExp.isIdCard(value)); // false
 }
 
 if (!RegExp.isIP) {
@@ -956,9 +956,9 @@ if (!RegExp.isIP) {
 
     // 示例
     // var value = '127.0.0.1';
-    // console.log(value, RegExp.isIP(value));
+    // console.log(value, RegExp.isIP(value)); // true
     // var value = '127.0.0.1 0';
-    // console.log(value, RegExp.isIP(value));
+    // console.log(value, RegExp.isIP(value)); // false
 }
 
 if (!RegExp.isMobile) {
@@ -973,11 +973,11 @@ if (!RegExp.isMobile) {
 
     // 示例
     // var value = '13800138000';
-    // console.log(value, RegExp.isMobile(value));
+    // console.log(value, RegExp.isMobile(value)); // true
     // var value = '013800138000';
-    // console.log(value, RegExp.isMobile(value));
+    // console.log(value, RegExp.isMobile(value)); // false
     // var value = '800138000';
-    // console.log(value, RegExp.isMobile(value));
+    // console.log(value, RegExp.isMobile(value)); // false
 }
 
 if (!RegExp.isQQ) {
@@ -992,9 +992,9 @@ if (!RegExp.isQQ) {
 
     // 示例
     // var value = '10001';
-    // console.log(value, RegExp.isQQ(value));
+    // console.log(value, RegExp.isQQ(value)); // true
     // var value = '01000';
-    // console.log(value, RegExp.isQQ(value));
+    // console.log(value, RegExp.isQQ(value)); // false
 }
 
 if (!RegExp.isTel) {
@@ -1009,9 +1009,9 @@ if (!RegExp.isTel) {
 
     // 示例
     // var value = '010-12345678';
-    // console.log(value, RegExp.isTel(value));
+    // console.log(value, RegExp.isTel(value)); // true
     // var value = '12345678';
-    // console.log(value, RegExp.isTel(value));
+    // console.log(value, RegExp.isTel(value)); // false
 }
 
 if (!RegExp.isUrl) {
@@ -1026,11 +1026,11 @@ if (!RegExp.isUrl) {
 
     // 示例
     // var value = 'http://www.test-url.com';
-    // console.log(value, RegExp.isUrl(value));
+    // console.log(value, RegExp.isUrl(value)); // true
     // var value = 'https://www.test-url.com';
-    // console.log(value, RegExp.isUrl(value));
+    // console.log(value, RegExp.isUrl(value)); // true
     // var value = 'www.test-url.com';
-    // console.log(value, RegExp.isUrl(value));
+    // console.log(value, RegExp.isUrl(value)); // false
 }
 
 if (!RegExp.isUsername) {
@@ -1045,9 +1045,9 @@ if (!RegExp.isUsername) {
 
     // 示例
     // var value = 'abc_123';
-    // console.log(value, RegExp.isUsername(value));
+    // console.log(value, RegExp.isUsername(value)); // true
     // var value = 'abc-123';
-    // console.log(value, RegExp.isUsername(value));
+    // console.log(value, RegExp.isUsername(value)); // false
 }
 
 if (!RegExp.isVersion) {
@@ -1062,9 +1062,9 @@ if (!RegExp.isVersion) {
 
     // 示例
     // var value = '3.8.2';
-    // console.log(value, RegExp.isVersion(value));
+    // console.log(value, RegExp.isVersion(value)); // true
     // var value = '382';
-    // console.log(value, RegExp.isVersion(value));
+    // console.log(value, RegExp.isVersion(value)); // false
 }
 
 if (!RegExp.isZipCode) {
@@ -1079,9 +1079,8 @@ if (!RegExp.isZipCode) {
 
     // 示例
     // var value = '518000';
-    // console.log(value, RegExp.isZipCode(value));
-    // var value = '5180001';
-    // console.log(value, RegExp.isZipCode(value));
+    // console.log(value, RegExp.isZipCode(value)); // true
+    // var value = '5180001'; // 已超出6位
+    // console.log(value, RegExp.isZipCode(value)); // false
 }
-
 
