@@ -774,19 +774,19 @@ if (!String.prototype.number) {
     // console.log('￥100,000.00'.number(1)); // 100000.00
 }
 
-if (!String.prototype.ZH) {
+if (!String.prototype.chinese) {
     /**
      * 获取中文
      * @return {string}
      */
-    String.prototype.ZH = function() {
+    String.prototype.chinese = function() {
         var regEx = /[^\u4e00-\u9fa5\uf900-\ufa2d]/g;
         return this.replace(regEx, '');
     };
 
     // 示例
     // var str = 'This is 中文';
-    // console.log(str.ZH()); // 中文
+    // console.log(str.chinese()); // 中文
 }
 
 /**
