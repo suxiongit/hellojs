@@ -789,6 +789,36 @@ if (!String.prototype.chinese) {
     // console.log(str.chinese()); // 中文
 }
 
+if (!String.prototype.filename) {
+    /**
+     * 获取文件全名
+     * @return {string}
+     */
+    String.prototype.filename = function() {
+        var regEx = /^.*\/([^\/\?]*).*$/;
+        return this.replace(regEx, '$1');
+    };
+
+    // 示例
+    // var str = 'D:/bearsu/workspace/hellojs/extensions/polyfill.js';
+    // console.log(str.filename()); // polyfill.js
+}
+
+if (!String.prototype.extname) {
+    /**
+     * 获取文件扩展名
+     * @return {string}
+     */
+    String.prototype.extname = function() {
+        var regEx = /^.*\/[^\/]*(\.[^\.\?]*).*$/;
+        return this.replace(regEx, '$1');
+    };
+
+    // 示例
+    // var str = 'D:/bearsu/workspace/hellojs/extensions/polyfill.js';
+    // console.log(str.extname()); // .js
+}
+
 /**
  * Number 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
