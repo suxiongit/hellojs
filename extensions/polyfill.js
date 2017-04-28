@@ -38,11 +38,11 @@ if (!Array.prototype.contains) {
     };
 
     // 示例
-    var arr = [1, 2, 3, 4, 5];
-    console.log(arr.contains(1)); // true
-    console.log(arr.contains('1')); // true
-    console.log(arr.contains(1, 1)); // 严格模式 true
-    console.log(arr.contains('1', 1)); // 严格模式 false
+    // var arr = [1, 2, 3, 4, 5];
+    // console.log(arr.contains(1)); // true
+    // console.log(arr.contains('1')); // true
+    // console.log(arr.contains(1, true)); // 严格模式 true
+    // console.log(arr.contains('1', true)); // 严格模式 false
 }
 
 if (!Array.prototype.forEach) {
@@ -351,15 +351,19 @@ if (!Array.prototype.unique) {
 if (!Array.diff) {
     /**
      * 数组不同元素
-     * @return {Array}
+     * @param arr1
+     * @param arr2
+     * @param onlyFirst true返回第一个数组不同元素
+     * @return {Array.<T>}
      */
-    Array.diff = function(arr1, arr2) {
+    Array.diff = function(arr1, arr2, onlyFirst) {
         if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
             throw new TypeError('Parameter is not an array');
         }
 
+        var arr = [];
+
         // 实现一
-        // var arr = [];
         // for (var i = 0, n = arr1.length; i < n; i ++) {
         //     if (!arr2.contains(arr1[i])) {
         //         arr.push(arr1[i]);
@@ -372,13 +376,19 @@ if (!Array.diff) {
         // }
 
         // 实现二
-        var _arr1 = arr1.filter(function(value) {
-            return !arr2.contains(value);
-        });
-        var _arr2 = arr2.filter(function(value) {
-            return !arr1.contains(value);
-        });
-        var arr = _arr1.concat(_arr2);
+        if (onlyFirst) {
+            arr = arr1.filter(function(value) {
+                return !arr2.contains(value);
+            });
+        } else {
+            var _arr1 = arr1.filter(function(value) {
+                return !arr2.contains(value);
+            });
+            var _arr2 = arr2.filter(function(value) {
+                return !arr1.contains(value);
+            });
+            arr = _arr1.concat(_arr2);
+        }
 
         return arr;
     };
@@ -386,11 +396,13 @@ if (!Array.diff) {
     // 示例
     // var arr1 = ['a', 'b', 'c', 'd', 'e'];
     // var arr2 = ['a', 'b', 'c', 'd', 'f'];
-    // console.log(Array.diff(arr1, arr2));
+    // console.log(Array.diff(arr1, arr2)); // ['e', 'f']
+    // console.log(Array.diff(arr1, arr2, 1)); // ['e']
+    // console.log(Array.diff(arr2, arr1, 1)); // ['f']
     //
     // var arr1 = ['a', 'b', 'c', 'd', 'e'];
     // var arr2 = ['a', 'b', 'c', 'd', 'f', 'f'];
-    // console.log(Array.diff(arr1, arr2));
+    // console.log(Array.diff(arr1, arr2)); // ['e', 'f', 'f']
     //
     // var arr1 = 'a';
     // var arr2 = ['a', 'b', 'c', 'd', 'e', 'f'];
