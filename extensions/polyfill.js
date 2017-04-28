@@ -15,22 +15,34 @@ if (!Array.prototype.contains) {
      * 数组中是否存在指定的值
      * @see Array.prototype.includes(searchElement, fromIndex)
      * @param element
+     * @param strict 严格模式
      * @return {boolean}
      */
-    Array.prototype.contains = function(element) {
+    Array.prototype.contains = function(element, strict) {
         var i = this.length;
-        while (i --) {
-            if (this[i] === element) {
-                return true;
+        if (strict) {
+            while (i --) {
+                if (this[i] === element) {
+                    return true;
+                }
+            }
+        } else {
+            while (i --) {
+                if (this[i] == element) {
+                    return true;
+                }
             }
         }
+
         return false;
     };
 
     // 示例
-    // var arr = ['a', 'b', 'c', 'd', 'e'];
-    // console.log(arr.contains('e')); // true
-    // console.log(arr.contains('f')); // false
+    var arr = [1, 2, 3, 4, 5];
+    console.log(arr.contains(1)); // true
+    console.log(arr.contains('1')); // true
+    console.log(arr.contains(1, 1)); // 严格模式 true
+    console.log(arr.contains('1', 1)); // 严格模式 false
 }
 
 if (!Array.prototype.forEach) {
