@@ -509,6 +509,21 @@ if (!Array.isNotEmpty) {
     // console.log(Array.isNotEmpty(arr)); // false
 }
 
+if (!Array.prototype.copy) {
+    /**
+     * 复制数组
+     * @return {Array.<*>}
+     */
+    Array.prototype.copy = function() {
+        return this.slice();
+    };
+
+    // 示例
+    // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+    // var arr2 = arr.copy();
+    // console.log(arr2);
+}
+
 /**
  * Date 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
