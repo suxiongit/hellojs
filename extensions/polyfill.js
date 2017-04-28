@@ -383,7 +383,7 @@ if (!Array.diff) {
         //     }
         // }
 
-        实现二
+        // 实现二
         if (onlyFirst) {
             arr = arr1.filter(function(value) {
                 return !arr2.contains(value);
@@ -402,11 +402,11 @@ if (!Array.diff) {
     };
 
     // 示例
-    var arr1 = ['a', 'b', 'c', 'd', 'e'];
-    var arr2 = ['a', 'b', 'c', 'd', 'f'];
-    console.log(Array.diff(arr1, arr2)); // ['e', 'f']
-    console.log(Array.diff(arr1, arr2, 1)); // ['e']
-    console.log(Array.diff(arr2, arr1, 1)); // ['f']
+    // var arr1 = ['a', 'b', 'c', 'd', 'e'];
+    // var arr2 = ['a', 'b', 'c', 'd', 'f'];
+    // console.log(Array.diff(arr1, arr2)); // ['e', 'f']
+    // console.log(Array.diff(arr1, arr2, 1)); // ['e']
+    // console.log(Array.diff(arr2, arr1, 1)); // ['f']
     //
     // var arr1 = ['a', 'b', 'c', 'd', 'e'];
     // var arr2 = ['a', 'b', 'c', 'd', 'f', 'f'];
