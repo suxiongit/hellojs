@@ -364,18 +364,26 @@ if (!Array.diff) {
         var arr = [];
 
         // 实现一
-        // for (var i = 0, n = arr1.length; i < n; i ++) {
-        //     if (!arr2.contains(arr1[i])) {
-        //         arr.push(arr1[i]);
+        // if (onlyFirst) {
+        //     for (var i = 0, n = arr1.length; i < n; i ++) {
+        //         if (!arr2.contains(arr1[i])) {
+        //             arr.push(arr1[i]);
+        //         }
         //     }
-        // }
-        // for (var i = 0, n = arr2.length; i < n; i ++) {
-        //     if (!arr1.contains(arr2[i])) {
-        //         arr.push(arr2[i]);
+        // } else {
+        //     for (var i = 0, n = arr1.length; i < n; i ++) {
+        //         if (!arr2.contains(arr1[i])) {
+        //             arr.push(arr1[i]);
+        //         }
+        //     }
+        //     for (var i = 0, n = arr2.length; i < n; i ++) {
+        //         if (!arr1.contains(arr2[i])) {
+        //             arr.push(arr2[i]);
+        //         }
         //     }
         // }
 
-        // 实现二
+        实现二
         if (onlyFirst) {
             arr = arr1.filter(function(value) {
                 return !arr2.contains(value);
@@ -394,11 +402,11 @@ if (!Array.diff) {
     };
 
     // 示例
-    // var arr1 = ['a', 'b', 'c', 'd', 'e'];
-    // var arr2 = ['a', 'b', 'c', 'd', 'f'];
-    // console.log(Array.diff(arr1, arr2)); // ['e', 'f']
-    // console.log(Array.diff(arr1, arr2, 1)); // ['e']
-    // console.log(Array.diff(arr2, arr1, 1)); // ['f']
+    var arr1 = ['a', 'b', 'c', 'd', 'e'];
+    var arr2 = ['a', 'b', 'c', 'd', 'f'];
+    console.log(Array.diff(arr1, arr2)); // ['e', 'f']
+    console.log(Array.diff(arr1, arr2, 1)); // ['e']
+    console.log(Array.diff(arr2, arr1, 1)); // ['f']
     //
     // var arr1 = ['a', 'b', 'c', 'd', 'e'];
     // var arr2 = ['a', 'b', 'c', 'd', 'f', 'f'];
