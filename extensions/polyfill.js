@@ -681,7 +681,7 @@ if (!String.prototype.cnLength) {
      */
     String.prototype.cnLength = function() {
         // 实现一
-        return this.replace(/[^\x00-\xff]/g, '^^').length;
+        return this.replace(/[^\x00-\xff]/g, '**').length;
 
         // 实现二
         // var L = this.length;
@@ -817,8 +817,12 @@ if (!String.prototype.number) {
     };
 
     // 示例
-    // console.log('I was born in March 1996'.number()); // 1996
-    // console.log('￥100,000.00'.number(1)); // 100000.00
+    // var str = 'Version 1.0, released in 1996';
+    // console.log(str.number()); // 101996
+    // console.log(str.number(1)); // 1.01996
+    // console.log(str.match(/\d/g)); // [ '1', '0', '1', '9', '9', '6' ]
+    // console.log(str.match(/\d+/g)); // [ '1', '0', '1996' ]
+    // console.log(str.match(/\d+.\d+/g)); // [ '1.0', '1996' ]
 }
 
 if (!String.prototype.chinese) {
@@ -832,8 +836,27 @@ if (!String.prototype.chinese) {
     };
 
     // 示例
-    // var str = 'This is 中文';
-    // console.log(str.chinese()); // 中文
+    // var str = '你好，中国';
+    // console.log(str.chinese()); // 你好中国
+    // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]/g)); // [ '你', '好', '中', '国' ]
+    // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]+/g)); // [ '你好', '中国' ]
+}
+
+if (!String.prototype.english) {
+    /**
+     * 获取英文
+     * @return {string}
+     */
+    String.prototype.english = function() {
+        var regEx = /[^A-Za-z]/g;
+        return this.replace(regEx, '');
+    };
+
+    // 示例
+    // var str = 'This is English';
+    // console.log(str.english()); // ThisisEnglish
+    // console.log(str.match(/[A-Za-z]/g)); // [ 'T', 'h', 'i', 's', 'i', 's', 'E', 'n', 'g', 'l', 'i', 's', 'h' ]
+    // console.log(str.match(/[A-Za-z]+/g)); // [ 'This', 'is', 'English' ]
 }
 
 if (!String.prototype.filename) {
@@ -924,10 +947,8 @@ if (!RegExp.isEmpty) {
     };
 
     // 示例
-    // var value = '';
-    // console.log(value, RegExp.isEmpty(value)); // true
-    // var value = ' ';
-    // console.log(value, RegExp.isEmpty(value)); // true
+    // console.log(RegExp.isEmpty('')); // true
+    // console.log(RegExp.isEmpty(' ')); // true
 }
 
 if (!RegExp.isDate) {
@@ -1038,23 +1059,23 @@ if (!RegExp.isIP) {
     // console.log(value, RegExp.isIP(value)); // false
 }
 
-if (!RegExp.isMobile) {
+if (!RegExp.isPhone) {
     /**
      * 是否手机号码（11位手机号码）
      * @param value
      * @return {boolean}
      */
-    RegExp.isMobile = function(value) {
+    RegExp.isPhone = function(value) {
         return /^(13|14|15|17|18)\d{9}$/i.test(value);
     };
 
     // 示例
     // var value = '13800138000';
-    // console.log(value, RegExp.isMobile(value)); // true
+    // console.log(value, RegExp.isPhone(value)); // true
     // var value = '013800138000';
-    // console.log(value, RegExp.isMobile(value)); // false
+    // console.log(value, RegExp.isPhone(value)); // false
     // var value = '800138000';
-    // console.log(value, RegExp.isMobile(value)); // false
+    // console.log(value, RegExp.isPhone(value)); // false
 }
 
 if (!RegExp.isQQ) {
