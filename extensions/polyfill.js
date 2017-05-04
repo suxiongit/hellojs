@@ -149,7 +149,7 @@ if (!Array.prototype.indexOf) {
     /**
      * 查找指定的元素在数组中的位置（索引）
      * @param value
-     * @return {number}
+     * @return {Number}
      */
     // Array.prototype.indexOf = function(value) {
     //     for (var i = 0, n = this.length; i < n; i ++) {
@@ -165,7 +165,7 @@ if (!Array.prototype.indexOf) {
      * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
      * @param searchElement
      * @param fromIndex
-     * @return {*}
+     * @return {Number}
      */
     Array.prototype.indexOf = function(searchElement, fromIndex) {
 
@@ -460,7 +460,7 @@ if (!Array.same) {
 if (!Array.prototype.max) {
     /**
      * 数组最大值
-     * @return {number}
+     * @return {Number}
      */
     Array.prototype.max = function() {
         var value = this[0];
@@ -482,7 +482,7 @@ if (!Array.prototype.max) {
 if (!Array.prototype.min) {
     /**
      * 数组最小值
-     * @return {number}
+     * @return {Number}
      */
     Array.prototype.min = function() {
         var value = this[0];
@@ -570,7 +570,7 @@ if (!Date.prototype.format) {
      * format('yyyy-MM-dd hh:mm:ss.S') ==> 2006-07-02 08:09:04.423
      * format('yyyy-M-d h:m:s.S')      ==> 2006-7-2 8:9:4.18
      * @param format
-     * @return {*}
+     * @return {string}
      */
     Date.prototype.format = function(format) {
         var date = {
@@ -897,7 +897,8 @@ if (!String.prototype.extname) {
 if (!Number.toInt) {
     /**
      * 字符串转整型
-     * @return {number}
+     * @param num
+     * @return {Number}
      */
     Number.toInt = function(num) {
         return isNaN(parseInt(num)) ? 0 : parseInt(num);
@@ -915,7 +916,7 @@ if (!Number.toInt) {
 if (!Number.toDouble) {
     /**
      * 字符串转浮点型
-     * @return {number}
+     * @return {Number}
      */
     Number.toDouble = function(num) {
         return isNaN(parseFloat(num)) ? 0.0 : parseFloat(num);
@@ -1240,7 +1241,7 @@ if (!Math.randomArbitrary) {
      * 获取min到max之间的随机数（带小数点）
      * @param min
      * @param max
-     * @return {number}
+     * @return {Number}
      */
     Math.randomArbitrary = function(min, max) {
         return Math.random() * (max - min) + min;
@@ -1261,7 +1262,7 @@ if (!Math.randomInt) {
      * 获取min到max之间的随机整数
      * @param min
      * @param max
-     * @return {number}
+     * @return {Number}
      */
     Math.randomInt = function(min, max) {
         min = Math.ceil(min);
@@ -1280,7 +1281,7 @@ if (!Math.randomIntInclusive) {
      * 获取min到max之间的随机整数（包含max）
      * @param min
      * @param max
-     * @return {number}
+     * @return {Number}
      */
     Math.randomIntInclusive = function(min, max) {
         min = Math.ceil(min);
@@ -1294,4 +1295,24 @@ if (!Math.randomIntInclusive) {
     // }
 }
 
+/**
+ * Object 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object
+ */
+
+if (!Object.clone) {
+    /**
+     * 克隆对象
+     * @param obj
+     * @return {Object}
+     */
+    Object.clone = function(obj) {
+        return Object.assign({}, obj);
+    };
+
+    // 示例
+    // var obj = { a: 1 };
+    // var copy = Object.clone(obj);
+    // console.log(copy); // { a: 1 }
+}
 
