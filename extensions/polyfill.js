@@ -1227,3 +1227,71 @@ if (!RegExp.isMoney) {
     // console.log(RegExp.isMoney('10,000', 1)); // true
     // console.log(RegExp.isMoney('10,000.00', 1)); // true
 }
+
+/**
+ * Math 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math
+ */
+
+// Math.random() 获取0-1之间的随机数（带小数点）
+
+if (!Math.randomArbitrary) {
+    /**
+     * 获取min到max之间的随机数（带小数点）
+     * @param min
+     * @param max
+     * @return {number}
+     */
+    Math.randomArbitrary = function(min, max) {
+        return Math.random() * (max - min) + min;
+    };
+
+    // 示例
+    // for (var i = 0; i < 10; i ++) {
+    //     console.log(Math.randomArbitrary(0, 1)); // 0.5650337204284932
+    // }
+    //
+    // for (var i = 0; i < 10; i ++) {
+    //     console.log(Math.randomArbitrary(1, 2)); // 1.2152592913032378
+    // }
+}
+
+if (!Math.randomInt) {
+    /**
+     * 获取min到max之间的随机整数
+     * @param min
+     * @param max
+     * @return {number}
+     */
+    Math.randomInt = function(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    };
+
+    // 示例
+    // for (var i = 0; i < 10; i ++) {
+    //     console.log(Math.randomInt(1, 10)); // 5
+    // }
+}
+
+if (!Math.randomIntInclusive) {
+    /**
+     * 获取min到max之间的随机整数（包含max）
+     * @param min
+     * @param max
+     * @return {number}
+     */
+    Math.randomIntInclusive = function(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+    // 示例
+    // for (var i = 0; i < 10; i ++) {
+    //     console.log(Math.randomIntInclusive(1, 10)); // 10
+    // }
+}
+
+
