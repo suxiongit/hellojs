@@ -1211,3 +1211,27 @@ if (!RegExp.isStrongPassword) {
     // console.log(RegExp.isStrongPassword('abc123')); // false
     // console.log(RegExp.isStrongPassword('Abcd1234')); // true
 }
+
+if (!RegExp.isMoney) {
+    /**
+     * 是否货币（允许负数、若有小数点则精确小数点后两位）
+     * @param value
+     * @param thousand 千分位分隔符（“,”英文逗号）
+     * @return {boolean}
+     */
+    RegExp.isMoney = function(value, thousand) {
+        if (thousand) {
+            return /(^[-]?[1-9]((\d{0,2}$)|(\d{0,2}(\,\d{3})*$|((\d{0,2})(\,\d{3})*(\.\d{1,2}$)))))|(^[0](\.\d{1,2})?$)|(^[-][0]\.\d{1,2}$)/i.test(value);
+        } else {
+            return /((^[-]?([1-9]\d*))|^0)(\.\d{1,2})?$|(^[-]0\.\d{1,2}$)/i.test(value);
+        }
+    };
+
+    // 示例
+    // console.log(RegExp.isMoney('10000')); // true
+    // console.log(RegExp.isMoney('10000.00')); // true
+    // console.log(RegExp.isMoney('10,000')); // false
+    // console.log(RegExp.isMoney('10,000.00')); // false
+    // console.log(RegExp.isMoney('10,000', 1)); // true
+    // console.log(RegExp.isMoney('10,000.00', 1)); // true
+}
