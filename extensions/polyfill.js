@@ -1182,34 +1182,26 @@ if (!RegExp.isZipCode) {
     // console.log(value, RegExp.isZipCode(value)); // false
 }
 
-if (!RegExp.isWeakPassword) {
+if (!RegExp.isPassword) {
     /**
      * 是否密码（以字母开头，长度在6~18之间，只能包含字母、数字和下划线）
      * @param value
+     * @param strong 强密码（必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间）
      * @return {boolean}
      */
-    RegExp.isWeakPassword = function(value) {
-        return /^[a-zA-Z]\w{5,17}$/i.test(value);
+    RegExp.isPassword = function(value, strong) {
+        if (strong) {
+            return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/i.test(value);
+        } else {
+            return /^[a-zA-Z]\w{5,17}$/i.test(value);
+        }
     };
 
     // 示例
-    // console.log(RegExp.isWeakPassword('abc123')); // true
-    // console.log(RegExp.isWeakPassword('Abcd1234')); // true
-}
-
-if (!RegExp.isStrongPassword) {
-    /**
-     * 是否强密码（必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间）
-     * @param value
-     * @return {boolean}
-     */
-    RegExp.isStrongPassword = function(value) {
-        return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/i.test(value);
-    };
-
-    // 示例
-    // console.log(RegExp.isStrongPassword('abc123')); // false
-    // console.log(RegExp.isStrongPassword('Abcd1234')); // true
+    // console.log(RegExp.isPassword('abc123')); // true
+    // console.log(RegExp.isPassword('Abcd1234')); // true
+    // console.log(RegExp.isPassword('abc123', 1)); // false
+    // console.log(RegExp.isPassword('Abcd1234', 1)); // true
 }
 
 if (!RegExp.isMoney) {
