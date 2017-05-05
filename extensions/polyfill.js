@@ -1313,6 +1313,28 @@ if (!Object.clone) {
     // 示例
     // var obj = { a: 1 };
     // var copy = Object.clone(obj);
+    // obj.a = 2;
     // console.log(copy); // { a: 1 }
 }
 
+if (!Object.isEmpty) {
+    /**
+     * 是否为空
+     * @param obj
+     * @return {boolean}
+     */
+    Object.isEmpty = function(obj) {
+        for (var o in obj) {
+            return false;
+        }
+        return true;
+    };
+
+    // 示例
+    // console.log(Object.isEmpty()); // true
+    // console.log(Object.isEmpty({})); // true
+    // console.log(Object.isEmpty(null)); // true
+    // console.log(Object.isEmpty(0)); // true
+    // console.log(Object.isEmpty(1)); // true
+    // console.log(Object.isEmpty({'a': 1})); // false
+}
