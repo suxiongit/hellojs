@@ -521,26 +521,6 @@ if (!Array.isEmpty) {
     // console.log(Array.isEmpty(arr));
 }
 
-if (!Array.isNotEmpty) {
-    /**
-     * 数组是否非空
-     * @param arr
-     * @return {boolean}
-     */
-    Array.isNotEmpty = function(arr) {
-        if (Array.isArray(arr) && arr.length > 0) {
-            return true;
-        }
-        return false;
-    };
-
-    // 示例
-    // var arr = [1];
-    // console.log(Array.isNotEmpty(arr)); // true
-    // var arr = 1;
-    // console.log(Array.isNotEmpty(arr)); // false
-}
-
 if (!Array.prototype.copy) {
     /**
      * 复制数组
