@@ -515,10 +515,9 @@ if (!Array.isEmpty) {
     };
 
     // 示例
-    // var arr = [];
-    // console.log(Array.isEmpty(arr));
-    // var arr = 1;
-    // console.log(Array.isEmpty(arr));
+    // console.log(Array.isEmpty([])); // true
+    // console.log(Array.isEmpty(1)); // true
+    // console.log(Array.isEmpty([1])); // false
 }
 
 if (!Array.prototype.copy) {
@@ -610,6 +609,27 @@ if (!Date.prototype.isLeapYear) {
     // console.log(newDate + ' 是否闰年 ' + newDate.isLeapYear()); // true
     // var newDate2 = new Date();
     // console.log(newDate2 + ' 是否闰年 ' + Date.prototype.isLeapYear(newDate2)); // false
+}
+
+if (!Date.getAge) {
+    /**
+     * 计算年龄
+     * @param date
+     * @return {number}
+     */
+    Date.getAge = function(date) {
+        var today = new Date();
+        var birthDate = new Date(date);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    };
+
+    // 示例
+    console.log(Date.getAge('1996-3-1')); // 21
 }
 
 /**
@@ -1304,7 +1324,7 @@ if (!Object.isEmpty) {
      * @return {boolean}
      */
     Object.isEmpty = function(obj) {
-        for (var o in obj) {
+        for (var name in obj) {
             return false;
         }
         return true;
