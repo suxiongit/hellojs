@@ -110,5 +110,32 @@ function getBrowserInfo() {
 // var bi = getBrowserInfo();
 // document.write('Browser:'+bi.b+'    Version:'+bi.v);//Browser:ie Version:10
 
+/**
+ * 设置cookie值
+ * @param name
+ * @param value
+ * @param msec (1h * 60min * 60s * 1000ms)
+ */
+function setCookie(name, value, msec) {
+    var d = new Date();
+    var offset = 8;
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    var nd = utc + (3600000 * offset);
+    var exp = new Date(nd);
+    exp.setTime(exp.getTime() + msec);
+    document.cookie = name + '=' + escape(value) + ';path=/;expires=' + exp.toGMTString() + ';domain=360doc.com;';
+}
+
+/**
+ * 获取cookie值
+ * @param name
+ * @return {null}
+ */
+function getCookie(name) {
+    var arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
+    if (arr != null) return unescape(arr[2]);
+    return null
+};
+
 
 
