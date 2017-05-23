@@ -6,6 +6,93 @@
  */
 
 /**
+ * Object 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object
+ */
+
+if (!Object.clone) {
+    /**
+     * 克隆对象
+     * @param obj
+     * @return {Object}
+     */
+    Object.clone = function(obj) {
+        return Object.assign({}, obj);
+    };
+
+    // 示例
+    // var obj = { a: 1 };
+    // var copy = Object.clone(obj);
+    // obj.a = 2;
+    // console.log(copy); // { a: 1 }
+}
+
+if (!Object.isEmpty) {
+    /**
+     * 是否为空
+     * @param obj
+     * @return {boolean}
+     */
+    Object.isEmpty = function(obj) {
+        for (var name in obj) {
+            return false;
+        }
+        return true;
+    };
+
+    // 示例
+    // console.log(Object.isEmpty()); // true
+    // console.log(Object.isEmpty({})); // true
+    // console.log(Object.isEmpty(null)); // true
+    // console.log(Object.isEmpty(0)); // true
+    // console.log(Object.isEmpty(1)); // true
+    // console.log(Object.isEmpty({'a': 1})); // false
+}
+
+if (!Object.isType) {
+    /**
+     * 判断对象类型
+     * @param obj
+     * @param type 对象类型
+     * @param illegal
+     * @return {boolean}
+     */
+    Object.isType = function(obj, type, illegal) {
+        // type = String(type).firstUpperCase();
+        var legal = [
+            'Undefined',
+            'Null',
+            'Boolean',
+            'String',
+            'Number',
+            'Array',
+            'Object',
+            'Function',
+            'Date',
+        ];
+        if (!illegal && !legal.contains(type)) {
+            throw new TypeError('Parameter "type" value is illegal'); // 参数“type”值是不合法的
+        }
+        return Object.prototype.toString.call(obj) === '[object ' + type + ']';
+    };
+
+    // 示例
+    // console.log(Object.isType(undefined, 'Undefined')); // Undefined: true
+    // console.log(Object.isType(null, 'Null')); // Null: true
+    // console.log(Object.isType(true, 'Boolean')); // Boolean: true
+    // console.log(Object.isType("foobar", 'String')); // String: true
+    // console.log(Object.isType(123, 'Number')); // Number：true
+    // console.log(Object.isType([1, 2, 3], 'Array')); // Array: true
+    // console.log(Object.isType({foo: 123}, 'Object')); // Object: true
+    // console.log(Object.isType(Object.isEmpty, 'Function')); // Function: true
+    // console.log(Object.isType(new Date(), 'Date')); // Date: true
+
+    // illegal
+    // console.log(Object.isType(1, 'test')); // TypeError: Parameter "type" value is illegal
+    // console.log(Object.isType(1, 'test', 1)); // false
+}
+
+/**
  * Array 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
  */
@@ -13,7 +100,7 @@
 if (!Array.prototype.contains) {
     /**
      * 数组中是否存在指定的值
-     * @see Array.prototype.includes(searchElement, fromIndex)
+     * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
      * @param element
      * @param strict 严格模式
      * @return {boolean}
@@ -55,7 +142,7 @@ if (!Array.prototype.forEach) {
     Array.prototype.forEach = function(callback/*, thisArg*/) {
         var T, k;
         if (this == null) {
-            throw new TypeError('this is null or not defined');
+            throw new TypeError('"this" is null or not defined');
         }
 
         var O = Object(this);
@@ -242,7 +329,7 @@ if (!Array.prototype.random) {
      */
     Array.prototype.random = function(length) {
         if (null == this) {
-            throw new TypeError('this is null or not defined');
+            throw new TypeError('"this" is null or not defined');
         }
 
         var len = this.length,
@@ -278,7 +365,7 @@ if (!Array.prototype.random) {
 if (!Array.prototype.shuffle) {
     /**
      * 数组随机排序
-     * @see Array.prototype.random(length)
+     * @alias Array.prototype.random(length)
      * @param length
      * @return {Array}
      */
@@ -315,12 +402,15 @@ if (!Array.prototype.filterEmpty) {
      */
     Array.prototype.filterEmpty = function() {
         return this.filter(function(value) {
-            return value.trim();
+            if (Object.isType(value, 'String')) {
+                value = value.trim();
+            }
+            return value;
         });
     };
 
     // 示例
-    // var arr = ['a', '', 'b', ' ', 'c', '  ', 'd', , 'e'];
+    // var arr = ['a', '', 'b', ' ', 'c', '  ', 'd', , 'e', 0];
     // console.log(arr);
     // console.log(arr.filterEmpty());
 }
@@ -358,7 +448,7 @@ if (!Array.diff) {
      */
     Array.diff = function(arr1, arr2, onlyFirst) {
         if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
-            throw new TypeError('Parameter is not an array');
+            throw new TypeError('Parameter "arr1" or "arr2" is not an array'); // 参数“arr1”和“arr2”不是一个数组
         }
 
         var arr = [];
@@ -424,7 +514,7 @@ if (!Array.same) {
      */
     Array.same = function(arr1, arr2) {
         if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
-            throw new TypeError('Parameter is not an array');
+            throw new TypeError('Parameter "arr1" or "arr2" is not an array'); // 参数“arr1”和“arr2”不是一个数组
         }
 
         // 实现一
@@ -629,7 +719,7 @@ if (!Date.getAge) {
     };
 
     // 示例
-    console.log(Date.getAge('1996-3-1')); // 21
+    // console.log(Date.getAge('1996-3-1')); // 21
 }
 
 /**
@@ -1296,45 +1386,6 @@ if (!Math.randomIntInclusive) {
 }
 
 /**
- * Object 类型扩展
- * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object
+ * Function 类型扩展
+ * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function
  */
-
-if (!Object.clone) {
-    /**
-     * 克隆对象
-     * @param obj
-     * @return {Object}
-     */
-    Object.clone = function(obj) {
-        return Object.assign({}, obj);
-    };
-
-    // 示例
-    // var obj = { a: 1 };
-    // var copy = Object.clone(obj);
-    // obj.a = 2;
-    // console.log(copy); // { a: 1 }
-}
-
-if (!Object.isEmpty) {
-    /**
-     * 是否为空
-     * @param obj
-     * @return {boolean}
-     */
-    Object.isEmpty = function(obj) {
-        for (var name in obj) {
-            return false;
-        }
-        return true;
-    };
-
-    // 示例
-    // console.log(Object.isEmpty()); // true
-    // console.log(Object.isEmpty({})); // true
-    // console.log(Object.isEmpty(null)); // true
-    // console.log(Object.isEmpty(0)); // true
-    // console.log(Object.isEmpty(1)); // true
-    // console.log(Object.isEmpty({'a': 1})); // false
-}
