@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="26f8427e-a3c5-4b3f-913e-b7fb9e978605" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extensions/base64.js" afterPath="$PROJECT_DIR$/extensions/base64.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extensions/common.js" afterPath="$PROJECT_DIR$/extensions/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extensions/polyfill.js" afterPath="$PROJECT_DIR$/extensions/polyfill.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extensions/prototype.js" afterPath="$PROJECT_DIR$/extensions/prototype.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extensions/regexp.js" afterPath="$PROJECT_DIR$/extensions/regexp.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,46 +22,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="prototype.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extensions/prototype.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="214" column="1" lean-forward="false" selection-start-line="214" selection-start-column="1" selection-end-line="214" selection-end-column="1" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#131#248#0" expanded="false" />
-                <element signature="e#281#826#0" expanded="false" />
-                <element signature="e#858#2229#0" expanded="false" />
-                <element signature="e#2260#2615#0" expanded="false" />
-                <element signature="e#2653#3219#0" expanded="false" />
-                <element signature="e#3251#5958#0" expanded="false" />
-                <element signature="e#5960#6075#0" expanded="false" />
-                <element signature="e#6105#7508#0" expanded="false" />
-                <element signature="e#7542#8357#0" expanded="false" />
-                <element signature="e#8518#9633#0" expanded="false" />
-                <element signature="e#9667#10234#0" expanded="false" />
-                <element signature="e#10270#10800#0" expanded="false" />
-                <element signature="e#10834#11140#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="regexp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extensions/regexp.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="polyfill.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="polyfill.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="-182">
+              <caret line="111" column="15" lean-forward="false" selection-start-line="111" selection-start-column="15" selection-end-line="111" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -73,18 +35,18 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extensions/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state relative-caret-position="975">
+              <caret line="69" column="9" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base64.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/extensions/base64.js">
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extensions/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="255">
+              <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -101,36 +63,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>thisArg</find>
-      <find>forEach</find>
-      <find>forEach2</find>
-      <find>regex</find>
-      <find>sRegex</find>
-      <find>//</find>
-      <find>htmltag</find>
-      <find>http</find>
-      <find>https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf</find>
-      <find>https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference</find>
-      <find>WithPrefix</find>
-      <find>Object</find>
-      <find>obj</find>
-      <find>p_bearsu</find>
-      <find>this.getYear()</find>
-      <find>Y = parseInt(Y);</find>
-      <find>Y</find>
-      <find>d</find>
-      <find>isLeapYear</find>
-      <find>console.log(this);</find>
-      <find>console.log(y);</find>
-      <find>console.log('go1');</find>
-      <find>getYear</find>
+      <find>false2</find>
+      <find>Array.isNotEmpty</find>
+      <find>Object.isEmpty</find>
+      <find>date</find>
+      <find>this.replace(/[^\x00-\xff]/g, &quot;**&quot;).length</find>
+      <find>wlength</find>
+      <find>replace(/[^\x00-\xff]/g, '**').length</find>
+      <find>len</find>
+      <find>console.log</find>
       <find>&quot;</find>
-      <find>s2</find>
-      <find>@link</find>
-      <find>L</find>
-      <find>null == this</find>
-      <find>this</find>
+      <find>filterEmpty</find>
+      <find>原型已存在</find>
       <find>@see</find>
+      <find>link</find>
+      <find>see</find>
+      <find>@link</find>
+      <find>obj</find>
+      <find>是否为</find>
+      <find>是否一个</find>
+      <find>一个</find>
+      <find>throw new TypeError('this is null or not defined');</find>
+      <find>throw new</find>
+      <find>Parameter &quot;type&quot; value is not legalParameter &quot;type&quot; value is not legal</find>
+      <find>throw</find>
+      <find>参数“type”值是不合法的</find>
+      <find>throw new TypeError('Parameter</find>
+      <find>contains</find>
+      <find>firstUpperCase</find>
+      <find>Object.isType</find>
+      <find>isType</find>
     </findStrings>
     <replaceStrings>
       <replace>element</replace>
@@ -142,9 +104,17 @@
       <replace>Y</replace>
       <replace>y</replace>
       <replace>getFullYear</replace>
-      <replace>'</replace>
       <replace>replac</replace>
       <replace>len</replace>
+      <replace>@return</replace>
+      <replace>arr</replace>
+      <replace>$/i</replace>
+      <replace>isHtml</replace>
+      <replace>RegExp.isEmpty</replace>
+      <replace>isPhone</replace>
+      <replace>isHtmlTag</replace>
+      <replace>{Number}</replace>
+      <replace>'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -161,12 +131,25 @@
         <option value="$PROJECT_DIR$/extensions/regexp0.js" />
         <option value="$PROJECT_DIR$/extensions/test.js" />
         <option value="$PROJECT_DIR$/test2.js" />
-        <option value="$PROJECT_DIR$/test.js" />
-        <option value="$PROJECT_DIR$/extensions/prototype.js" />
-        <option value="$PROJECT_DIR$/extensions/regexp.js" />
-        <option value="$PROJECT_DIR$/extensions/polyfill.js" />
-        <option value="$PROJECT_DIR$/extensions/common.js" />
         <option value="$PROJECT_DIR$/extensions/base64.js" />
+        <option value="$PROJECT_DIR$/TestDB.js" />
+        <option value="$PROJECT_DIR$/TestDao.js" />
+        <option value="$PROJECT_DIR$/TestService.js" />
+        <option value="$PROJECT_DIR$/demo/CommonDao.js" />
+        <option value="$PROJECT_DIR$/demo/TestService.js" />
+        <option value="$PROJECT_DIR$/demo/TestDao.js" />
+        <option value="$PROJECT_DIR$/demo/BaseDao.js" />
+        <option value="$PROJECT_DIR$/demo/Test.js" />
+        <option value="$PROJECT_DIR$/extensions/prototype.js" />
+        <option value="$PROJECT_DIR$/extensions/polyfill/String.prototype.js" />
+        <option value="$PROJECT_DIR$/extensions/polyfill/String.js" />
+        <option value="$PROJECT_DIR$/extensions/polyfill/Array.js" />
+        <option value="$PROJECT_DIR$/extensions/polyfill/Array.prototype.js" />
+        <option value="$PROJECT_DIR$/extensions/regexp.js" />
+        <option value="$PROJECT_DIR$/extensions/common.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/test.js" />
+        <option value="$PROJECT_DIR$/extensions/polyfill.js" />
       </list>
     </option>
   </component>
@@ -181,6 +164,28 @@
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>ECMAScript 6 migration aidsJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>ES6ConvertVarToLetConst</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -239,11 +244,14 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bearsu\workspace\hellojs\extensions" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bearsu\workspace\hellojs\extensions" />
+      <recent name="D:\bearsu\workspace\hellojs\demo" />
       <recent name="D:\bearsu\workspace\hellojs\lib" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\bearsu\workspace\hellojs\extensions\polyfill" />
+      <recent name="D:\bearsu\workspace\hellojs\extensions" />
     </key>
   </component>
   <component name="RunManager">
@@ -310,6 +318,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",HIDE_INHERITED_FROM_OBJECT,HIDE_INHERITED" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="26f8427e-a3c5-4b3f-913e-b7fb9e978605" name="Default" comment="" />
@@ -328,52 +339,71 @@
       <workItem from="1490583110154" duration="13151000" />
       <workItem from="1490609360121" duration="754000" />
       <workItem from="1490787897139" duration="3234000" />
-      <workItem from="1490873428745" duration="10598000" />
+      <workItem from="1490873428745" duration="11514000" />
+      <workItem from="1491015378776" duration="9000" />
+      <workItem from="1491015398010" duration="1814000" />
+      <workItem from="1491187564484" duration="17000" />
+      <workItem from="1491208832652" duration="1882000" />
+      <workItem from="1491794917718" duration="1517000" />
+      <workItem from="1491805550932" duration="2107000" />
+      <workItem from="1491816614692" duration="976000" />
+      <workItem from="1492077025042" duration="2048000" />
+      <workItem from="1492159476615" duration="688000" />
+      <workItem from="1492178805865" duration="31000" />
+      <workItem from="1492430383004" duration="974000" />
+      <workItem from="1492498122924" duration="9431000" />
+      <workItem from="1492591985739" duration="5593000" />
+      <workItem from="1492598534519" duration="13697000" />
+      <workItem from="1492690141221" duration="5929000" />
+      <workItem from="1492755452090" duration="1664000" />
+      <workItem from="1492763043791" duration="6570000" />
+      <workItem from="1493090771901" duration="56000" />
+      <workItem from="1493102675005" duration="111000" />
+      <workItem from="1493118162594" duration="3247000" />
+      <workItem from="1493126873759" duration="265000" />
+      <workItem from="1493127174480" duration="836000" />
+      <workItem from="1493190405725" duration="1605000" />
+      <workItem from="1493278096365" duration="6996000" />
+      <workItem from="1493394156582" duration="4042000" />
+      <workItem from="1493695499421" duration="909000" />
+      <workItem from="1493783591391" duration="14641000" />
+      <workItem from="1493903398500" duration="1524000" />
+      <workItem from="1493986566571" duration="2671000" />
+      <workItem from="1494214273030" duration="2117000" />
+      <workItem from="1494296509619" duration="4255000" />
+      <workItem from="1494510675050" duration="4075000" />
+      <workItem from="1494841459168" duration="80000" />
+      <workItem from="1495524500371" duration="11462000" />
+      <workItem from="1495594986505" duration="4192000" />
+      <workItem from="1495607301378" duration="670000" />
+      <workItem from="1495621282652" duration="641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73784000" />
+    <option name="totallyTimeSpent" value="194042000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24815595" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22286618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2494577" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3590909" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24499473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28794643" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36818182" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3590909" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2483731" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2494577" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -383,54 +413,120 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/extensions/prototype.js">
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#131#248#0" expanded="false" />
-            <element signature="e#281#826#0" expanded="false" />
-            <element signature="e#858#2229#0" expanded="false" />
-            <element signature="e#2260#2615#0" expanded="false" />
-            <element signature="e#2653#3219#0" expanded="false" />
-            <element signature="e#3251#5958#0" expanded="false" />
-            <element signature="e#5960#6075#0" expanded="false" />
-            <element signature="e#6105#7508#0" expanded="false" />
-            <element signature="e#7542#8357#0" expanded="false" />
-            <element signature="e#8518#9633#0" expanded="false" />
-            <element signature="e#9667#10234#0" expanded="false" />
-            <element signature="e#10270#10800#0" expanded="false" />
-            <element signature="e#10834#11140#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/prototype.js">
+    <entry file="file://$PROJECT_DIR$/extensions/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#131#248#0" expanded="false" />
-            <element signature="e#281#826#0" expanded="false" />
-            <element signature="e#858#2229#0" expanded="false" />
-            <element signature="e#2260#2615#0" expanded="false" />
-            <element signature="e#2653#3219#0" expanded="false" />
-            <element signature="e#3251#5958#0" expanded="false" />
-            <element signature="e#5960#6075#0" expanded="false" />
-            <element signature="e#6105#7508#0" expanded="false" />
-            <element signature="e#7542#8357#0" expanded="false" />
-            <element signature="e#8518#9633#0" expanded="false" />
-            <element signature="e#9667#10234#0" expanded="false" />
-            <element signature="e#10270#10800#0" expanded="false" />
-            <element signature="e#10834#11140#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="257" column="30" lean-forward="false" selection-start-line="257" selection-start-column="30" selection-end-line="257" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="257" column="30" lean-forward="false" selection-start-line="257" selection-start-column="30" selection-end-line="257" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -441,43 +537,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/regexp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/regexp.js" />
     <entry file="file://$PROJECT_DIR$/extensions/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2730">
           <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/prototype.js">
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
           <caret line="342" column="32" lean-forward="true" selection-start-line="342" selection-start-column="32" selection-end-line="342" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#131#248#0" expanded="false" />
-            <element signature="e#281#826#0" expanded="false" />
-            <element signature="e#858#2229#0" expanded="false" />
-            <element signature="e#2260#2615#0" expanded="false" />
-            <element signature="e#2653#3219#0" expanded="false" />
-            <element signature="e#3251#5958#0" expanded="false" />
-            <element signature="e#5960#6075#0" expanded="false" />
-            <element signature="e#6105#7508#0" expanded="false" />
-            <element signature="e#7542#8357#0" expanded="false" />
-            <element signature="e#8518#9633#0" expanded="false" />
-            <element signature="e#9667#10234#0" expanded="false" />
-            <element signature="e#10270#10800#0" expanded="false" />
-            <element signature="e#10834#11140#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -485,55 +556,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/prototype.js">
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#131#248#0" expanded="false" />
-            <element signature="e#281#826#0" expanded="false" />
-            <element signature="e#858#2229#0" expanded="false" />
-            <element signature="e#2260#2615#0" expanded="false" />
-            <element signature="e#2653#3219#0" expanded="false" />
-            <element signature="e#3251#5958#0" expanded="false" />
-            <element signature="e#5960#6075#0" expanded="false" />
-            <element signature="e#6105#7508#0" expanded="false" />
-            <element signature="e#7542#8357#0" expanded="false" />
-            <element signature="e#8518#9633#0" expanded="false" />
-            <element signature="e#9667#10234#0" expanded="false" />
-            <element signature="e#10270#10800#0" expanded="false" />
-            <element signature="e#10834#11140#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/prototype.js">
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#131#248#0" expanded="false" />
-            <element signature="e#281#826#0" expanded="false" />
-            <element signature="e#858#2229#0" expanded="false" />
-            <element signature="e#2260#2615#0" expanded="false" />
-            <element signature="e#2653#3219#0" expanded="false" />
-            <element signature="e#3251#5958#0" expanded="false" />
-            <element signature="e#5960#6075#0" expanded="false" />
-            <element signature="e#6105#7508#0" expanded="false" />
-            <element signature="e#7542#8357#0" expanded="false" />
-            <element signature="e#8518#9633#0" expanded="false" />
-            <element signature="e#9667#10234#0" expanded="false" />
-            <element signature="e#10270#10800#0" expanded="false" />
-            <element signature="e#10834#11140#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -541,40 +577,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="83" column="16" lean-forward="true" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extensions/regexp0.js" />
-    <entry file="file://$PROJECT_DIR$/extensions/prototype.js">
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#131#248#0" expanded="false" />
-            <element signature="e#281#826#0" expanded="false" />
-            <element signature="e#858#2229#0" expanded="false" />
-            <element signature="e#2260#2615#0" expanded="false" />
-            <element signature="e#2653#3219#0" expanded="false" />
-            <element signature="e#3251#5958#0" expanded="false" />
-            <element signature="e#5960#6075#0" expanded="false" />
-            <element signature="e#6105#7508#0" expanded="false" />
-            <element signature="e#7542#8357#0" expanded="false" />
-            <element signature="e#8518#9633#0" expanded="false" />
-            <element signature="e#9667#10234#0" expanded="false" />
-            <element signature="e#10270#10800#0" expanded="false" />
-            <element signature="e#10834#11140#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -594,81 +604,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/regexp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/prototype.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="214" column="1" lean-forward="false" selection-start-line="214" selection-start-column="1" selection-end-line="214" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#131#248#0" expanded="false" />
-            <element signature="e#281#826#0" expanded="false" />
-            <element signature="e#858#2229#0" expanded="false" />
-            <element signature="e#2260#2615#0" expanded="false" />
-            <element signature="e#2653#3219#0" expanded="false" />
-            <element signature="e#3251#5958#0" expanded="false" />
-            <element signature="e#5960#6075#0" expanded="false" />
-            <element signature="e#6105#7508#0" expanded="false" />
-            <element signature="e#7542#8357#0" expanded="false" />
-            <element signature="e#8518#9633#0" expanded="false" />
-            <element signature="e#9667#10234#0" expanded="false" />
-            <element signature="e#10270#10800#0" expanded="false" />
-            <element signature="e#10834#11140#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/test.js" />
+    <entry file="file://$PROJECT_DIR$/test2.js" />
+    <entry file="file://$PROJECT_DIR$/demo/BaseDao.js" />
+    <entry file="file://$PROJECT_DIR$/demo/Test.js" />
+    <entry file="file://$PROJECT_DIR$/demo/TestService.js" />
+    <entry file="file://$PROJECT_DIR$/demo/TestDao.js" />
     <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill/String.function.js" />
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill/Array.function.js" />
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill/Array.prototype.js" />
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill/String.prototype.js" />
+    <entry file="file://$PROJECT_DIR$/extensions/regexp.js" />
+    <entry file="file://$PROJECT_DIR$/extensions/base64.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="110" column="4" lean-forward="false" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/E4X.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extensions/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="975">
+          <caret line="69" column="9" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extensions/base64.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="289">
+          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="479" column="0" lean-forward="false" selection-start-line="479" selection-start-column="0" selection-end-line="479" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182">
+          <caret line="111" column="15" lean-forward="false" selection-start-line="111" selection-start-column="15" selection-end-line="111" selection-end-column="15" />
           <folding />
         </state>
       </provider>
