@@ -1319,6 +1319,22 @@ if (!RegExp.isMoney) {
     // console.log(RegExp.isMoney('10,000.00', 1)); // true
 }
 
+if (!RegExp.isNumber) {
+    /**
+     * 是否数字
+     * @param value
+     * @return {boolean}
+     */
+    RegExp.isNumber = function(value) {
+        return /^[0-9]*$/i.test(value);
+    };
+
+    // 示例
+    // console.log(RegExp.isNumber(123)); // true
+    // console.log(RegExp.isNumber('123')); // true
+    // console.log(RegExp.isNumber('abc')); // false
+}
+
 /**
  * Math 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math
