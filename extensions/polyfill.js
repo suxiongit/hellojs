@@ -1323,16 +1323,83 @@ if (!RegExp.isNumber) {
     /**
      * 是否数字
      * @param value
+     * @param type
+     * @param min
+     * @param max
      * @return {boolean}
      */
-    RegExp.isNumber = function(value) {
-        return /^[0-9]*$/i.test(value);
+    RegExp.isNumber = function(value, type, min, max) {
+        var regEx;
+        switch (type) {
+            case 2: // n位的数字：^\d{n}$
+                regEx = new RegExp('^\\d{'+min+'}$', 'm');
+                break;
+            case 3: // 至少n位的数字：^\d{n,}$
+                regEx = new RegExp('^\\d{'+min+',}$', 'm');
+                break;
+            case 4: // m-n位的数字：^\d{m,n}$
+                regEx = new RegExp('^\\d{'+min+','+max+'}$', 'm');
+                break;
+            case 5: // 零和非零开头的数字：^(0|[1-9][0-9]*)$
+                regEx = new RegExp('^(0|[1-9][0-9]*)$', 'm');
+                break;
+            case 6: // 非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$
+                regEx = new RegExp('^([1-9][0-9]*)+(.[0-9]{1,2})?$', 'm');
+                break;
+            case 7: // 带1-2位小数的正数或负数：^(\-)?\d+(\.\d{1,2})?$
+                regEx = new RegExp('^(\\-)?\\d+(\\.\\d{1,2})?$', 'm');
+                break;
+            case 8: // 正数、负数、和小数：^(\-|\+)?\d+(\.\d+)?$
+                regEx = new RegExp('^(\\-|\\+)?\\d+(\\.\\d+)?$', 'm');
+                break;
+            case 9: // 有两位小数的正实数：^[0-9]+(.[0-9]{2})?$
+                regEx = new RegExp('^[0-9]+(.[0-9]{2})?$', 'm');
+                break;
+            case 10: // 有1~3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$
+                regEx = new RegExp('^[0-9]+(.[0-9]{1,3})?$', 'm');
+                break;
+            case 11: // 非零的正整数：^[1-9]\d*$ 或 ^([1-9][0-9]*){1,3}$ 或 ^\+?[1-9][0-9]*$
+                regEx = new RegExp('^[1-9]\\d*$', 'm');
+                break;
+            case 12: // 非零的负整数：^\-[1-9][]0-9"*$ 或 ^-[1-9]\d*$
+                regEx = new RegExp('^-[1-9]\\d*$', 'm');
+                break;
+            case 13: // 非负整数：^\d+$ 或 ^[1-9]\d*|0$
+                regEx = new RegExp('^\\d+$', 'm');
+                break;
+            case 14: // 非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$
+                regEx = new RegExp('^-[1-9]\\d*|0$', 'm');
+                break;
+            case 15: // 非负浮点数：^\d+(\.\d+)?$ 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0$
+                regEx = new RegExp('^\\d+(\\.\\d+)?$', 'm');
+                break;
+            case 16: // 非正浮点数：^((-\d+(\.\d+)?)|(0+(\.0+)?))$ 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0$
+                regEx = new RegExp('^((-\\d+(\\.\\d+)?)|(0+(\\.0+)?))$', 'm');
+                break;
+            case 17: // 正浮点数：^[1-9]\d*\.\d*|0\.\d*[1-9]\d*$ 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$
+                regEx = new RegExp('^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$', 'm');
+                break;
+            case 18: // 负浮点数：^-([1-9]\d*\.\d*|0\.\d*[1-9]\d*)$ 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$
+                regEx = new RegExp('^-([1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*)$', 'm');
+                break;
+            case 19: // 浮点数：^(-?\d+)(\.\d+)?$ 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$
+                regEx = new RegExp('^-?([1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*|0?\\.0+|0)$', 'm');
+                break;
+            default: // 数字：^[0-9]*$
+                regEx = new RegExp('^[0-9]*$', 'm');
+        }
+        return regEx.test(value);
     };
 
     // 示例
     // console.log(RegExp.isNumber(123)); // true
     // console.log(RegExp.isNumber('123')); // true
     // console.log(RegExp.isNumber('abc')); // false
+
+    // console.log(RegExp.isNumber(12, 2, 2)); // true
+    // console.log(RegExp.isNumber(123, 3, 3)); // true
+    // console.log(RegExp.isNumber(1234, 4, 1, 4)); // true
+    // console.log(RegExp.isNumber(1.23, 19)); // true
 }
 
 /**
