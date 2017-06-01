@@ -1401,37 +1401,24 @@ if (!Math.randomInt) {
      * 获取min到max之间的随机整数
      * @param min
      * @param max
-     * @return {Number}
+     * @param inclusive 包含max
+     * @return {*}
      */
-    Math.randomInt = function(min, max) {
+    Math.randomInt = function(min, max, inclusive) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min;
+        var seed = inclusive ? (max - min + 1): (max - min);
+        return Math.floor(Math.random() * seed) + min;
     };
 
     // 示例
     // for (var i = 0; i < 10; i ++) {
-    //     console.log(Math.randomInt(1, 10)); // 5
+    //     console.log(Math.randomInt(1, 10)); // 1-9
     // }
-}
 
-if (!Math.randomIntInclusive) {
-    /**
-     * 获取min到max之间的随机整数（包含max）
-     * @param min
-     * @param max
-     * @return {Number}
-     */
-    Math.randomIntInclusive = function(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-
-    // 示例
-    // for (var i = 0; i < 10; i ++) {
-    //     console.log(Math.randomIntInclusive(1, 10)); // 10
-    // }
+    for (var i = 0; i < 10; i ++) {
+        console.log(Math.randomInt(1, 10, 1)); // 1-10
+    }
 }
 
 /**
