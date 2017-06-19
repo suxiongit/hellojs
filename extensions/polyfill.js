@@ -349,6 +349,21 @@ if (!String.prototype.extname) {
     // console.log(str.extname()); // .js
 }
 
+if (!String.prototype.toInt) {
+    /**
+     * 字符串转整型
+     * @return {string}
+     */
+    String.prototype.toInt = function() {
+        return isNaN(parseInt(this)) ? this.toString() : parseInt(this);
+    };
+
+    // 示例
+    // console.log(typeof '123'.toInt()); // number: 123
+    // console.log(typeof 'abc'.toInt()); // string: abc
+}
+
+
 /**
  * Number 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
