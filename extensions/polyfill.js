@@ -917,9 +917,27 @@ if (!Array.prototype.copy) {
     };
 
     // 示例
-    // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+    // var arr = ['a', 'b', 'c', 'd'];
     // var arr2 = arr.copy();
-    // console.log(arr2);
+    // console.log(arr2); // [ 'a', 'b', 'c', 'd' ]
+}
+
+if (!Array.prototype.numberSort) {
+    /**
+     * 数字数组排序
+     * @param descOrder 排序（0 升序、1 降序）
+     * @return {Array.<*>}
+     */
+    Array.prototype.numberSort = function(descOrder) {
+        return this.sort(function(a, b) {
+            return descOrder ? b - a : a - b;
+        });
+    };
+
+    // 示例
+    // console.log([1, 10, 21, 2].sort()); // [ 1, 10, 2, 21 ]
+    // console.log([1, 10, 21, 2].numberSort()); // [ 1, 2, 10, 21 ]
+    // console.log([1, 10, 21, 2].numberSort(1)); // [ 21, 10, 2, 1 ]
 }
 
 /**
@@ -1416,9 +1434,9 @@ if (!Math.randomInt) {
     //     console.log(Math.randomInt(1, 10)); // 1-9
     // }
 
-    for (var i = 0; i < 10; i ++) {
-        console.log(Math.randomInt(1, 10, 1)); // 1-10
-    }
+    // for (var i = 0; i < 10; i ++) {
+    //     console.log(Math.randomInt(1, 10, 1)); // 1-10
+    // }
 }
 
 /**
