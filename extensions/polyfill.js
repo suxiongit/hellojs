@@ -966,9 +966,22 @@ if (!Date.prototype.format) {
             'q+' : Math.floor((this.getMonth() + 3) / 3), // 季度
             'S+' : this.getMilliseconds() // 毫秒
         };
+        var week = {
+            "0": "\u65e5",
+            "1": "\u4e00",
+            "2": "\u4e8c",
+            "3": "\u4e09",
+            "4": "\u56db",
+            "5": "\u4e94",
+            "6": "\u516d"
+        };
         if (/(y+)/i.test(format)) {
             format = format.replace(RegExp.$1, (this.getFullYear() + '')
                 .substr(4 - RegExp.$1.length));
+        }
+        if (/(E+)/.test(format)) {
+            format = format.replace(RegExp.$1, ((RegExp.$1.length > 1)
+                ? (RegExp.$1.length > 2 ? "\u661f\u671f" : "\u5468") : "") + week[this.getDay() + ""]);
         }
         for (var k in date) {
             if (new RegExp('(' + k + ')').test(format)) {
@@ -981,9 +994,9 @@ if (!Date.prototype.format) {
 
     // 示例
     // var newDate = new Date('2014-07-10 10:21:12');
-    // console.log(newDate.format('yyyy年MM月dd日 h时m分s秒')); // 2014年07月10日 10时21分12秒
+    // console.log(newDate.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2014年07月10日 10时21分12秒
     // var newDate2 = new Date();
-    // console.log(newDate2.format('yyyy年MM月dd日 h时m分s秒')); // 2017年04月25日 21时40分32秒
+    // console.log(newDate2.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2017年04月25日 21时40分32秒
 }
 
 if (!Date.prototype.isLeapYear) {
@@ -1035,6 +1048,44 @@ if (!Date.getAge) {
 
     // 示例
     // console.log(Date.getAge('1996-3-1')); // 21
+}
+
+if (!Date.prototype.diff) {
+    /**
+     * 计算时间差
+     * @param interval
+     * @param objDate 目标时间
+     * @return {number|undefined}
+     */
+    Date.prototype.diff = function(interval, objDate) {
+        // 若参数不足或 objDate 不是日期类型則回传 undefined
+        if (arguments.length < 2 || objDate.constructor != Date) { return undefined; }
+        switch (interval) {
+            //计算秒差
+            case 's': return parseInt((objDate - this) / 1000);
+            //计算分差
+            case 'n': return parseInt((objDate - this) / 60000);
+            //计算時差
+            case 'h': return parseInt((objDate - this) / 3600000);
+            //计算日差
+            case 'd': return parseInt((objDate - this) / 86400000);
+            //计算周差
+            case 'w': return parseInt((objDate - this) / (86400000 * 7));
+            //计算月差
+            case 'm': return (objDate.getMonth() + 1) + ((objDate.getFullYear() - this.getFullYear()) * 12) - (this.getMonth() + 1);
+            //计算年差
+            case 'y': return objDate.getFullYear() - this.getFullYear();
+            //输入有误
+            default: return undefined;
+        }
+    };
+
+    // 示例
+    // var date1 = new Date('2011-08-10 09:00:00');
+    // console.log(date1.format('yyyy-MM-dd hh:mm:ss')); // 2011-08-10 09:00:00
+    // var date2 = new Date('2011-08-10 18:00:00');
+    // console.log(date2.format('yyyy-MM-dd hh:mm:ss')); // 2011-08-10 18:00:00
+    // console.log('相差多少小时', date1.diff('h', date2)); // 9
 }
 
 /**
