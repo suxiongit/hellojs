@@ -389,6 +389,37 @@ if (!Number.toDouble) {
     // console.log(Number.toDouble('a')); // 0
 }
 
+if (!Number.prototype.withZero) {
+    /**
+     * 数字补零
+     * @param length 指定长度
+     * @return {string}
+     */
+    Number.prototype.withZero = function(length) {
+        var str = this.toString();
+        while (str.length < length) {
+            str = '0' + str;
+        }
+        return str;
+    };
+
+    // 示例
+    // console.log(Number(7).withZero(3)); // 007
+}
+
+if (!Number.prototype.chrW) {
+    /**
+     * Unicode还原
+     * @return {string}
+     */
+    Number.prototype.chrW = function() {
+        return String.fromCharCode(this);
+    };
+
+    // 示例
+    // console.log(Number(65).chrW()); // A
+}
+
 /**
  * Array 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
@@ -1087,6 +1118,25 @@ if (!Date.prototype.diff) {
     // console.log(date2.format('yyyy-MM-dd hh:mm:ss')); // 2011-08-10 18:00:00
     // console.log('相差多少小时', date1.diff('h', date2)); // 9
 }
+
+// if (!Date.prototype.toCN) {
+//     Date.prototype.toCN = function() {
+//         var oDateText = '';
+//         oDateText += this.getFullYear().LenWithZero(4) + new Number(24180).ChrW();
+//         oDateText += this.getMonth().LenWithZero(2) + new Number(26376).ChrW();
+//         oDateText += this.getDate().LenWithZero(2) + new Number(26085).ChrW();
+//         oDateText += this.getHours().LenWithZero(2) + new Number(26102).ChrW();
+//         oDateText += this.getMinutes().LenWithZero(2) + new Number(20998).ChrW();
+//         oDateText += this.getSeconds().LenWithZero(2) + new Number(31186).ChrW();
+//         oDateText += new Number(32).ChrW() + new Number(32).ChrW() + new Number(26143).ChrW() + new Number(26399).ChrW() + new String('26085199682010819977222352011620845').substr(this.getDay() * 5, 5).ToInt().ChrW();
+//         return oDateText;
+//     };
+//
+//     // 示例
+//     var nowDate = new Date();
+//     console.log('默认格式', nowDate);
+//     console.log('中文格式', nowDate.toCN()); //
+// }
 
 /**
  * RegExp 类型扩展
