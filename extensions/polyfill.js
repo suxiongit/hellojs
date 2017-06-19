@@ -363,6 +363,19 @@ if (!String.prototype.toInt) {
     // console.log(typeof 'abc'.toInt()); // string: abc
 }
 
+if (!String.prototype.resetBlank) {
+    /**
+     * 合并多个空白为一个空白
+     * @return {string}
+     */
+    String.prototype.resetBlank = function() {
+        var regEx = /\s+/g;
+        return this.replace(regEx, ' ');
+    };
+
+    // 示例
+    // console.log('hello      world'.resetBlank()); // hello world
+}
 
 /**
  * Number 类型扩展
@@ -1153,9 +1166,9 @@ if (!Date.prototype.toCNDate) {
     };
 
     // 示例
-    var nowDate = new Date();
-    console.log('默认格式', nowDate); // 默认格式 2017-06-19T09:43:57.174Z
-    console.log('中文格式', nowDate.toCNDate()); // 中文格式 2017年05月19日17时43分57秒  星期一
+    // var nowDate = new Date();
+    // console.log('默认格式', nowDate); // 默认格式 2017-06-19T09:43:57.174Z
+    // console.log('中文格式', nowDate.toCNDate()); // 中文格式 2017年05月19日17时43分57秒  星期一
 }
 
 /**
