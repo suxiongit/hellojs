@@ -1134,25 +1134,29 @@ if (!Date.prototype.diff) {
     // console.log('相差多少小时', date1.diff('h', date2)); // 9
 }
 
-// if (!Date.prototype.toCN) {
-//     Date.prototype.toCN = function() {
-//         var dateText = '';
-//         dateText += this.getFullYear().withZero(4) + new Number(24180).chrW();
-//         dateText += this.getMonth().withZero(2) + new Number(26376).chrW();
-//         dateText += this.getDate().withZero(2) + new Number(26085).chrW();
-//         dateText += this.getHours().withZero(2) + new Number(26102).chrW();
-//         dateText += this.getMinutes().withZero(2) + new Number(20998).chrW();
-//         dateText += this.getSeconds().withZero(2) + new Number(31186).chrW();
-//         dateText += new Number(32).chrW() + new Number(32).chrW() + new Number(26143).chrW() + new Number(26399).chrW()
-//             + new String('26085199682010819977222352011620845').substr(this.getDay() * 5, 5).toInt().chrW();
-//         return dateText;
-//     };
-//
-//     // 示例
-//     var nowDate = new Date();
-//     console.log('默认格式', nowDate);
-//     console.log('中文格式', nowDate.toCN()); //
-// }
+if (!Date.prototype.toCNDate) {
+    /**
+     * 获取当前时间的中文形式
+     * @return {string}
+     */
+    Date.prototype.toCNDate = function() {
+        var dateText = '';
+        dateText += this.getFullYear().withZero(4) + new Number(24180).chrW();
+        dateText += this.getMonth().withZero(2) + new Number(26376).chrW();
+        dateText += this.getDate().withZero(2) + new Number(26085).chrW();
+        dateText += this.getHours().withZero(2) + new Number(26102).chrW();
+        dateText += this.getMinutes().withZero(2) + new Number(20998).chrW();
+        dateText += this.getSeconds().withZero(2) + new Number(31186).chrW();
+        dateText += new Number(32).chrW() + new Number(32).chrW() + new Number(26143).chrW() + new Number(26399).chrW()
+            + new String('26085199682010819977222352011620845').substr(this.getDay() * 5, 5).toInt().chrW();
+        return dateText;
+    };
+
+    // 示例
+    var nowDate = new Date();
+    console.log('默认格式', nowDate); // 默认格式 2017-06-19T09:43:57.174Z
+    console.log('中文格式', nowDate.toCNDate()); // 中文格式 2017年05月19日17时43分57秒  星期一
+}
 
 /**
  * RegExp 类型扩展
