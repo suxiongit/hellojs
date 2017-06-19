@@ -267,7 +267,7 @@ if (!String.prototype.format) {
 
 if (!String.prototype.number) {
     /**
-     * 获取数字
+     * 获取数字部分
      * @param float 浮点数
      * @return {string}
      */
@@ -285,36 +285,36 @@ if (!String.prototype.number) {
     // console.log(str.match(/\d+.\d+/g)); // [ '1.0', '1996' ]
 }
 
-if (!String.prototype.chinese) {
+if (!String.prototype.CN) {
     /**
-     * 获取中文
+     * 获取中文部分
      * @return {string}
      */
-    String.prototype.chinese = function() {
+    String.prototype.CN = function() {
         var regEx = /[^\u4e00-\u9fa5\uf900-\ufa2d]/g;
         return this.replace(regEx, '');
     };
 
     // 示例
     // var str = '你好，中国';
-    // console.log(str.chinese()); // 你好中国
+    // console.log(str.CN()); // 你好中国
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]/g)); // [ '你', '好', '中', '国' ]
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]+/g)); // [ '你好', '中国' ]
 }
 
-if (!String.prototype.english) {
+if (!String.prototype.EN) {
     /**
-     * 获取英文
+     * 获取英文部分
      * @return {string}
      */
-    String.prototype.english = function() {
+    String.prototype.EN = function() {
         var regEx = /[^A-Za-z]/g;
         return this.replace(regEx, '');
     };
 
     // 示例
     // var str = 'This is English';
-    // console.log(str.english()); // ThisisEnglish
+    // console.log(str.EN()); // ThisisEnglish
     // console.log(str.match(/[A-Za-z]/g)); // [ 'T', 'h', 'i', 's', 'i', 's', 'E', 'n', 'g', 'l', 'i', 's', 'h' ]
     // console.log(str.match(/[A-Za-z]+/g)); // [ 'This', 'is', 'English' ]
 }
@@ -1121,15 +1121,16 @@ if (!Date.prototype.diff) {
 
 // if (!Date.prototype.toCN) {
 //     Date.prototype.toCN = function() {
-//         var oDateText = '';
-//         oDateText += this.getFullYear().LenWithZero(4) + new Number(24180).ChrW();
-//         oDateText += this.getMonth().LenWithZero(2) + new Number(26376).ChrW();
-//         oDateText += this.getDate().LenWithZero(2) + new Number(26085).ChrW();
-//         oDateText += this.getHours().LenWithZero(2) + new Number(26102).ChrW();
-//         oDateText += this.getMinutes().LenWithZero(2) + new Number(20998).ChrW();
-//         oDateText += this.getSeconds().LenWithZero(2) + new Number(31186).ChrW();
-//         oDateText += new Number(32).ChrW() + new Number(32).ChrW() + new Number(26143).ChrW() + new Number(26399).ChrW() + new String('26085199682010819977222352011620845').substr(this.getDay() * 5, 5).ToInt().ChrW();
-//         return oDateText;
+//         var dateText = '';
+//         dateText += this.getFullYear().withZero(4) + new Number(24180).chrW();
+//         dateText += this.getMonth().withZero(2) + new Number(26376).chrW();
+//         dateText += this.getDate().withZero(2) + new Number(26085).chrW();
+//         dateText += this.getHours().withZero(2) + new Number(26102).chrW();
+//         dateText += this.getMinutes().withZero(2) + new Number(20998).chrW();
+//         dateText += this.getSeconds().withZero(2) + new Number(31186).chrW();
+//         dateText += new Number(32).chrW() + new Number(32).chrW() + new Number(26143).chrW() + new Number(26399).chrW()
+//             + new String('26085199682010819977222352011620845').substr(this.getDay() * 5, 5).toInt().chrW();
+//         return dateText;
 //     };
 //
 //     // 示例
