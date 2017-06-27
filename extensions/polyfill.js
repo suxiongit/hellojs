@@ -973,6 +973,9 @@ if (!Array.prototype.copy) {
      */
     Array.prototype.copy = function() {
         return this.slice();
+
+        // ES6写法
+        // return [...this];
     };
 
     // 示例
