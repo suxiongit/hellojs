@@ -23,6 +23,10 @@ function uuid(prefix) {
 // 示例
 // console.log(uuid());
 // console.log(uuid('uuid-'));
+// for (var i = 0; i < 10; i ++) {
+//     console.log(uuid());
+// }
+
 
 /**
  * 生成唯一ID
