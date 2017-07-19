@@ -285,36 +285,36 @@ if (!String.prototype.number) {
     // console.log(str.match(/\d+.\d+/g)); // [ '1.0', '1996' ]
 }
 
-if (!String.prototype.CN) {
+if (!String.prototype.chinese) {
     /**
      * 获取中文部分
      * @return {string}
      */
-    String.prototype.CN = function() {
+    String.prototype.chinese = function() {
         var regEx = /[^\u4e00-\u9fa5\uf900-\ufa2d]/g;
         return this.replace(regEx, '');
     };
 
     // 示例
     // var str = '你好，中国';
-    // console.log(str.CN()); // 你好中国
+    // console.log(str.chinese()); // 你好中国
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]/g)); // [ '你', '好', '中', '国' ]
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]+/g)); // [ '你好', '中国' ]
 }
 
-if (!String.prototype.EN) {
+if (!String.prototype.english) {
     /**
      * 获取英文部分
      * @return {string}
      */
-    String.prototype.EN = function() {
+    String.prototype.english = function() {
         var regEx = /[^A-Za-z]/g;
         return this.replace(regEx, '');
     };
 
     // 示例
     // var str = 'This is English';
-    // console.log(str.EN()); // ThisisEnglish
+    // console.log(str.english()); // ThisisEnglish
     // console.log(str.match(/[A-Za-z]/g)); // [ 'T', 'h', 'i', 's', 'i', 's', 'E', 'n', 'g', 'l', 'i', 's', 'h' ]
     // console.log(str.match(/[A-Za-z]+/g)); // [ 'This', 'is', 'English' ]
 }
@@ -788,10 +788,10 @@ if (!Array.prototype.unique) {
     };
 
     // 示例
-    // var arr = ['a', 'b', 'c', 'd', 'e'];
-    // arr = arr.concat(arr);
-    // console.log(arr);
-    // console.log(arr.unique());
+    // var arr = ['1', 1, 2];
+    // var arr2 = arr.unique();
+    // console.log(arr); // [ '1', 1, 2 ]
+    // console.log(arr2); // [ '1', 2 ]
 }
 
 if (!Array.diff) {
