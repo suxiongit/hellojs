@@ -164,22 +164,24 @@ if (!String.prototype.cnLength) {
 if (!String.prototype.replaceAll) {
     /**
      * 全部替换
-     * @param reallyDo
-     * @param replaceWith
+     * @param findStr
+     * @param replaceStr
      * @param ignoreCase
      * @return {string}
      */
-    String.prototype.replaceAll = function(reallyDo, replaceWith, ignoreCase) {
-        if (!RegExp.prototype.isPrototypeOf(reallyDo)) {
-            return this.replace(new RegExp(reallyDo, (ignoreCase ? 'gi' : 'g')), replaceWith);
+    String.prototype.replaceAll = function(findStr, replaceStr, ignoreCase) {
+        if (!RegExp.prototype.isPrototypeOf(findStr)) {
+            return this.replace(new RegExp(findStr, (ignoreCase ? 'gi' : 'g')), replaceStr);
         } else {
-            return this.replace(reallyDo, replaceWith);
+            return this.replace(findStr, replaceStr);
         }
     };
 
     // 示例
-    // var str = 'Hello China, Hello World';
+    var str = 'Hello China, Hello World';
+    // console.log(str.replace('Hello', 'Welcome to')); // Welcome to China, Hello World
     // console.log(str.replaceAll('hello', 'Welcome to', true)); // Welcome to China, Welcome to World
+    // console.log(str.replace(/hello/gi, 'Welcome to')); // Welcome to China, Welcome to World
 }
 
 if (!String.prototype.trimCRLF) {
