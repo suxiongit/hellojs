@@ -7,17 +7,23 @@
 
 执行以下命令生成package.js文件：
 
-> $ npm init
+```
+$ npm init
+```
 
 ### gulp
 
 全局安装 gulp：
 
-> $ npm install --global gulp
+```
+$ npm install --global gulp
+```
 
 项目开发依赖安装：
 
-> $ npm install --save-dev gulp
+```
+$ npm install --save-dev gulp
+```
 
 安装 gulp 插件：
 
@@ -33,3 +39,8 @@ $ npm install --save-dev jshint-stylish # js检查信息样式
 
 ## 初始化项目
 
+安装依赖包
+
+```
+$ npm install
+```
