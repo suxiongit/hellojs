@@ -75,6 +75,9 @@ if (!Number.prototype.splitPow) {
      * @return {Array} 返回数位2的次方数组
      */
     Number.prototype.splitPow = function() {
+		if (this <= 0) {
+			return [];
+		}
 	    var numbers = this.toString(2);
 	    numbers = numbers.split('');
 	    for (var i = 0, n = numbers.length; i < n; i ++) {
@@ -85,4 +88,5 @@ if (!Number.prototype.splitPow) {
 
     // 示例
     // console.log(Number(15).splitPow()); // [ 8, 4, 2, 1 ]
+	// console.log(Number(0).splitPow()); // []
 }
