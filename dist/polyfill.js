@@ -1147,9 +1147,7 @@ if (!Number.prototype.splitPow) {
      * @return {Array} 返回数位2的次方数组
      */
     Number.prototype.splitPow = function() {
-		if (this <= 0) {
-			return [];
-		}
+		if (this <= 0) return [];
 	    var numbers = this.toString(2);
 	    numbers = numbers.split('');
 	    for (var i = 0, n = numbers.length; i < n; i ++) {
