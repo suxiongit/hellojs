@@ -1,7 +1,5 @@
 /**
- * Base64编码
- * @author suxiong
- * @date 2017/3/24
+ * Base64 编码对象
  */
 
 var Base64 = {
@@ -140,8 +138,5 @@ var Base64 = {
 };
 
 // 示例
-//encode
-console.log(Base64.encode("Test")); //VGVzdA==
-
-//decode
-console.log(Base64.decode("VGVzdA==")); // Test
+// console.log(Base64.encode("Test")); //VGVzdA==
+// console.log(Base64.decode("VGVzdA==")); // Test

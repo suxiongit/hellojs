@@ -551,6 +551,302 @@ if (!Array.prototype.numberSort) {
     // console.log([1, 10, 21, 2].numberSort()); // [ 1, 2, 10, 21 ]
     // console.log([1, 10, 21, 2].numberSort(1)); // [ 21, 10, 2, 1 ]
 }
+
+/**
+ * Base64 编码对象
+ */
+
+var Base64 = {
+
+    // private property
+    _keyStr : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+    // public method for encoding
+    encode : function (input) {
+        var output = "";
+        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = Base64._utf8_encode(input);
+
+        while (i < input.length) {
+
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+                enc4 = 64;
+            }
+
+            output = output +
+                this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+                this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+        }
+
+        return output;
+    },
+
+    // public method for decoding
+    decode : function (input) {
+        var output = "";
+        var chr1, chr2, chr3;
+        var enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+        while (i < input.length) {
+
+            enc1 = this._keyStr.indexOf(input.charAt(i++));
+            enc2 = this._keyStr.indexOf(input.charAt(i++));
+            enc3 = this._keyStr.indexOf(input.charAt(i++));
+            enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+            chr1 = (enc1 << 2) | (enc2 >> 4);
+            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+            chr3 = ((enc3 & 3) << 6) | enc4;
+
+            output = output + String.fromCharCode(chr1);
+
+            if (enc3 != 64) {
+                output = output + String.fromCharCode(chr2);
+            }
+            if (enc4 != 64) {
+                output = output + String.fromCharCode(chr3);
+            }
+
+        }
+
+        output = Base64._utf8_decode(output);
+
+        return output;
+
+    },
+
+    // private method for UTF-8 encoding
+    _utf8_encode : function (string) {
+        string = string.replace(/\r\n/g,"\n");
+        var utftext = "";
+
+        for (var n = 0; n < string.length; n++) {
+
+            var c = string.charCodeAt(n);
+
+            if (c < 128) {
+                utftext += String.fromCharCode(c);
+            }
+            else if((c > 127) && (c < 2048)) {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+            else {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+
+        }
+
+        return utftext;
+    },
+
+    // private method for UTF-8 decoding
+    _utf8_decode : function (utftext) {
+        var string = "";
+        var i = 0;
+        var c = c1 = c2 = 0;
+
+        while ( i < utftext.length ) {
+
+            c = utftext.charCodeAt(i);
+
+            if (c < 128) {
+                string += String.fromCharCode(c);
+                i++;
+            }
+            else if((c > 191) && (c < 224)) {
+                c2 = utftext.charCodeAt(i+1);
+                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                i += 2;
+            }
+            else {
+                c2 = utftext.charCodeAt(i+1);
+                c3 = utftext.charCodeAt(i+2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                i += 3;
+            }
+
+        }
+
+        return string;
+    }
+};
+
+// 示例
+// console.log(Base64.encode("Test")); //VGVzdA==
+// console.log(Base64.decode("VGVzdA==")); // Test
+
+/**
+ * Browser 对象实现
+ */
+
+var Browser = {
+
+	/**
+	 * 判断是否PC访问
+	 * @return {Boolean}
+	 */
+	isPC: function() {
+	    var userAgentInfo = navigator.userAgent;
+	    var agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
+	    var flag = true;
+	    for (var v = 0; v < agents.length; v++) {
+	        if (userAgentInfo.indexOf(agents[v]) > 0) {
+	            flag = false;
+	            break;
+	        }
+	    }
+	    return flag;
+	},
+
+	/**
+	 * 获取Url参数值
+	 * @param  {String} name 参数名称
+	 * @return {String}      返回参数值
+	 */
+	getUrlParam: function(name) {
+	    // var reg = new RegExp('(^|&)'+ name +'=([^&]*)(&|$)');//构造一个含有目标参数的正则表达式对象
+	    // var r = window.location.search.substr(1).match(reg);//匹配目标参数
+	    // if (r != null) return unescape(r[2]); return null; //返回参数值
+
+	    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+	    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+	},
+
+	/**
+	 * 获取浏览器类型及主版本
+	 * @return {Object} 返回包含浏览器和版本的对象
+	 */
+	getBrowserInfo: function() {
+	    var Sys = {};
+	    var ua = navigator.userAgent.toLowerCase();
+	    if (window.ActiveXObject) {
+	        Sys.b = 'ie';
+	        Sys.v = parseInt(ua.match(/msie ([\d.]+)/)[1]);
+	    }
+	    else if (document.getBoxObjectFor) {
+	        Sys.b = 'firefox';
+	        Sys.v = parseInt(ua.match(/firefox\/([\d.]+)/)[1]);
+	    }
+	    else if (window.MessageEvent && !document.getBoxObjectFor) {
+	        Sys.b = 'chrome';
+	        Sys.v == parseInt(ua.match(/chrome\/([\d.]+)/)[1]);
+	    }
+	    else if (window.opera) {
+	        Sys.b = 'opera';
+	        Sys.v == parseInt(ua.match(/opera.([\d.]+)/)[1]);
+	    }
+	    else if (window.openDatabase) {
+	        Sys.b = 'safari';
+	        Sys.v == parseInt(ua.match(/version\/([\d.]+)/)[1]);
+	    }
+	    return Sys;
+	},
+
+	/**
+	 * 设置cookie值
+	 * @param  {String} name   缓存名称
+	 * @param  {String} value  缓存值
+	 * @param  {Number} msec   缓存时间（毫秒，例如：一小时=1h * 60min * 60s * 1000ms）
+	 * @param  {String} domain 缓存域名
+	 */
+	setCookie: function(name, value, msec, domain) {
+	    var d = new Date();
+	    var offset = 8;
+	    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+	    var nd = utc + (3600000 * offset);
+	    var exp = new Date(nd);
+	    exp.setTime(exp.getTime() + msec);
+	    document.cookie = name + '=' + escape(value) + ';path=/;expires=' + exp.toGMTString() + ';domain=' + domain + ';';
+	},
+
+	/**
+	 * 获取cookie值
+	 * @param  {String} name 缓存名称
+	 * @return {String}      缓存值
+	 */
+	getCookie: function(name) {
+	    var arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
+	    if (arr != null) return unescape(arr[2]);
+	    return null
+	},
+
+	/**
+	 * 加入收藏夹
+	 * @param  {String} url   链接
+	 * @param  {String} title 标题
+	 * @return {Boolean}       返回收藏结果
+	 */
+	addFavorite: function(url, title) {
+	    try {
+	        window.external.addFavorite(url, title);
+	    } catch (e) {
+	        try {
+	            window.sidebar.addPanel(title, url, "");
+	        } catch (e) {
+	            alert("加入收藏失败，请使用Ctrl+D进行添加");
+				return false;
+	        }
+	    }
+		return true;
+	},
+
+	/**
+	 * 设为首页
+	 * @param  {String} homeurl 链接
+	 * @return {Boolean}
+	 */
+	setHomepage: function(homeurl) {
+	    if (document.all) {
+	        document.body.style.behavior = 'url(#default#homepage)';
+	        document.body.setHomePage(homeurl);
+			return true;
+	    } else if (window.sidebar) {
+	        if (window.netscape) {
+	            try {
+	                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+	            } catch (e) {
+	                alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
+					return false;
+	            }
+	        }
+	        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+	        prefs.setCharPref('browser.startup.homepage', homeurl);
+			return true;
+	    }
+	},
+};
+
+// 示例 isPC
+// if (isPC()) {
+//     console.log('PC');
+// } else {
+//     console.log('移动设备');
+// }
+
+// 示例 getBrowserInfo
+// var bi = getBrowserInfo();
+// document.write('Browser:'+bi.b+'    Version:'+bi.v);//Browser:ie Version:10
+
 /**
  * Date 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
@@ -723,11 +1019,6 @@ if (!Date.prototype.toCNDate) {
     // console.log('中文格式', nowDate.toCNDate()); // 中文格式 2017年05月19日17时43分57秒  星期一
 }
 /**
- * Function 类型扩展
- * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function
- */
-
-/**
  * Math 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
@@ -849,6 +1140,25 @@ if (!Number.prototype.chrW) {
     // 示例
     // console.log(Number(65).chrW()); // A
 }
+
+if (!Number.prototype.splitPow) {
+    /**
+     * 拆分2的次方（幂）
+     * @return {Array} 返回数位2的次方数组
+     */
+    Number.prototype.splitPow = function() {
+	    var numbers = this.toString(2);
+	    numbers = numbers.split('');
+	    for (var i = 0, n = numbers.length; i < n; i ++) {
+			numbers[i] = Math.pow(2, n - i - 1);
+	    }
+	    return numbers;
+	};
+
+    // 示例
+    // console.log(Number(15).splitPow()); // [ 8, 4, 2, 1 ]
+}
+
 /**
  * Object 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object
@@ -1283,6 +1593,52 @@ if (!RegExp.isRangeNumber) {
     // console.log(RegExp.isRangeNumber(123, 1, 3)); // true
     // console.log(RegExp.isRangeNumber(1234, 1, 3)); // false
 }
+/**
+ * Server 对象实现
+ */
+
+var Server = {
+
+	/**
+	 * 生成UUID
+	 * @param  {String} prefix 增加前缀
+	 * @return {String}        返回prefix+uuid
+	 */
+	uuid: function(prefix) {
+	    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+	        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+	        return v.toString(16);
+	    });
+	    if (prefix) {
+	        uuid = prefix + uuid;
+	    }
+	    return uuid;
+	},
+
+	/**
+	 * 生成唯一ID
+	 * @param  {Number} length 指定生成长度
+	 * @return {String}        返回指定长度的唯一标识
+	 */
+	genNonDuplicateID: function(length) {
+	    return Number(Math.random().toString().substr(3, length) + Date.now()).toString(36);
+	},
+
+};
+
+
+// 示例 uuid
+// console.log(Server.uuid());
+// console.log(Server.uuid('uuid-'));
+// for (var i = 0; i < 10; i ++) {
+//     console.log(Server.uuid());
+// }
+
+// 示例 genNonDuplicateID
+// for (var i = 0; i < 10; i ++) {
+//     console.log(Server.genNonDuplicateID());
+// }
+
 /**
  * String 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String

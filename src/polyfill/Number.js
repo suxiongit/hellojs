@@ -68,3 +68,21 @@ if (!Number.prototype.chrW) {
     // 示例
     // console.log(Number(65).chrW()); // A
 }
+
+if (!Number.prototype.splitPow) {
+    /**
+     * 拆分2的次方（幂）
+     * @return {Array} 返回数位2的次方数组
+     */
+    Number.prototype.splitPow = function() {
+	    var numbers = this.toString(2);
+	    numbers = numbers.split('');
+	    for (var i = 0, n = numbers.length; i < n; i ++) {
+			numbers[i] = Math.pow(2, n - i - 1);
+	    }
+	    return numbers;
+	};
+
+    // 示例
+    // console.log(Number(15).splitPow()); // [ 8, 4, 2, 1 ]
+}
