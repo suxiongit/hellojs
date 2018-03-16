@@ -538,7 +538,7 @@ if (!Array.prototype.numberSort) {
     /**
      * 数字数组排序
      * @param descOrder 排序（0 升序、1 降序）
-     * @return {Array.<*>}
+     * @return {Array<Number>}
      */
     Array.prototype.numberSort = function(descOrder) {
         return this.sort(function(a, b) {
@@ -550,6 +550,21 @@ if (!Array.prototype.numberSort) {
     // console.log([1, 10, 21, 2].sort()); // [ 1, 10, 2, 21 ]
     // console.log([1, 10, 21, 2].numberSort()); // [ 1, 2, 10, 21 ]
     // console.log([1, 10, 21, 2].numberSort(1)); // [ 21, 10, 2, 1 ]
+}
+
+if (!Array.prototype.numberSum) {
+    /**
+     * 数字数组求和
+     * @return {Array<Number>}
+     */
+    Array.prototype.numberSum = function() {
+        // return eval(this.join('+')); // 如果是空数组，结果为undefined
+        return this.reduce((count, v) => count + v, 0); // 支持空数组结果为0
+    };
+
+    // 示例
+    // console.log([1, 2, 3, 4, 5].numberSum()); // 15
+    // console.log([].numberSum()); // 0
 }
 
 /**
@@ -1147,18 +1162,20 @@ if (!Number.prototype.splitPow) {
      * @return {Array} 返回数位2的次方数组
      */
     Number.prototype.splitPow = function() {
-		if (this <= 0) return [];
-	    var numbers = this.toString(2);
-	    numbers = numbers.split('');
-	    for (var i = 0, n = numbers.length; i < n; i ++) {
-			numbers[i] = Math.pow(2, n - i - 1);
-	    }
-	    return numbers;
+        if (this <= 0) return [];
+        var bin = this.toString(2), pow = [];
+        bin = bin.split('');
+        for (var i = 0, j = 0, n = bin.length; i < n; i ++) {
+            if (bin[i] <= 0) continue;
+            pow[j] = Math.pow(2, n - i - 1);
+            j ++;
+        }
+        return pow;
 	};
 
     // 示例
     // console.log(Number(15).splitPow()); // [ 8, 4, 2, 1 ]
-	// console.log(Number(0).splitPow()); // []
+    // console.log(Number(0).splitPow()); // []
 }
 
 /**

@@ -538,7 +538,7 @@ if (!Array.prototype.numberSort) {
     /**
      * 数字数组排序
      * @param descOrder 排序（0 升序、1 降序）
-     * @return {Array.<*>}
+     * @return {Array<Number>}
      */
     Array.prototype.numberSort = function(descOrder) {
         return this.sort(function(a, b) {
@@ -550,4 +550,19 @@ if (!Array.prototype.numberSort) {
     // console.log([1, 10, 21, 2].sort()); // [ 1, 10, 2, 21 ]
     // console.log([1, 10, 21, 2].numberSort()); // [ 1, 2, 10, 21 ]
     // console.log([1, 10, 21, 2].numberSort(1)); // [ 21, 10, 2, 1 ]
+}
+
+if (!Array.prototype.numberSum) {
+    /**
+     * 数字数组求和
+     * @return {Array<Number>}
+     */
+    Array.prototype.numberSum = function() {
+        // return eval(this.join('+')); // 如果是空数组，结果为undefined
+        return this.reduce((count, v) => count + v, 0); // 支持空数组结果为0
+    };
+
+    // 示例
+    // console.log([1, 2, 3, 4, 5].numberSum()); // 15
+    // console.log([].numberSum()); // 0
 }

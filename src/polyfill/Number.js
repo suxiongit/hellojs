@@ -75,16 +75,18 @@ if (!Number.prototype.splitPow) {
      * @return {Array} 返回数位2的次方数组
      */
     Number.prototype.splitPow = function() {
-		if (this <= 0) return [];
-	    var numbers = this.toString(2);
-	    numbers = numbers.split('');
-	    for (var i = 0, n = numbers.length; i < n; i ++) {
-			numbers[i] = Math.pow(2, n - i - 1);
-	    }
-	    return numbers;
+        if (this <= 0) return [];
+        var bin = this.toString(2), pow = [];
+        bin = bin.split('');
+        for (var i = 0, j = 0, n = bin.length; i < n; i ++) {
+            if (bin[i] <= 0) continue;
+            pow[j] = Math.pow(2, n - i - 1);
+            j ++;
+        }
+        return pow;
 	};
 
     // 示例
     // console.log(Number(15).splitPow()); // [ 8, 4, 2, 1 ]
-	// console.log(Number(0).splitPow()); // []
+    // console.log(Number(0).splitPow()); // []
 }

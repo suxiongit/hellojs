@@ -4,6 +4,7 @@ var concat = require('gulp-concat');    // 合并文件
 var uglify = require('gulp-uglify');    // js压缩
 var rename = require('gulp-rename');    // 文件重命名
 var notify = require('gulp-notify');    // 提示
+var babel = require('gulp-babel');
 
 gulp.task('default', function() {
     // 将你的默认的任务代码放在这
@@ -20,6 +21,7 @@ gulp.task('polyfill', function() {
         .pipe(gulp.dest('dist/'))   // 输出 polyfill.js
 
         .pipe(rename({suffix:'.min'}))  // 重命名
+		.pipe(babel({presets:['@babel/env']})) // 将es6转成es5
         .pipe(uglify()) // 压缩
         .pipe(gulp.dest('dist/'))  // 输出 polyfill.min.js
 
@@ -27,4 +29,3 @@ gulp.task('polyfill', function() {
 });
 
 // gulp.task('default', ['polyfill']);  等价于 default task 里 gulp.start('polyfill')
-

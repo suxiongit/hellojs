@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/suxiongit/hellojs#readme",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
     "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0-beta.2",
     "gulp-concat": "^2.6.1",
     "gulp-jshint": "^2.1.0",
     "gulp-notify": "^3.2.0",
