@@ -21,7 +21,7 @@ gulp.task('polyfill', function() {
         .pipe(gulp.dest('dist/'))   // 输出 polyfill.js
 
         .pipe(rename({suffix:'.min'}))  // 重命名
-		.pipe(babel({presets:['@babel/env']})) // 将es6转成es5
+        // .pipe(babel({presets:['@babel/env']})) // 将es6转成es5
         .pipe(uglify()) // 压缩
         .pipe(gulp.dest('dist/'))  // 输出 polyfill.min.js
 

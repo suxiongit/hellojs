@@ -1,0 +1,41 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Array	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.prototype.contains) {$/;"	class
+Array.contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	method
+Array.copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	method
+Array.diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.diff) {$/;"	function
+Array.empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	method
+Array.filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	method
+Array.forEach	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.forEach = function(callback\/*, thisArg*\/) {$/;"	method
+Array.indexOf	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.indexOf = function(searchElement, fromIndex) {$/;"	method
+Array.isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.isEmpty) {$/;"	function
+Array.max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	method
+Array.min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	method
+Array.numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	method
+Array.numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	method
+Array.random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	method
+Array.remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	method
+Array.same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.same) {$/;"	function
+Array.shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	method
+Array.unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	method
+contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	function
+copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	function
+diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.diff = function(arr1, arr2, onlyFirst) {$/;"	function
+empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	function
+filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	function
+forEach	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.forEach = function(callback\/*, thisArg*\/) {$/;"	function
+indexOf	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.indexOf = function(searchElement, fromIndex) {$/;"	function
+isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.isEmpty = function(arr) {$/;"	function
+max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	function
+min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	function
+numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	function
+numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	function
+random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	function
+remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	function
+same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.same = function(arr1, arr2) {$/;"	function
+shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	function
+unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	function

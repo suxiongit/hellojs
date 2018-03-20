@@ -559,7 +559,7 @@ if (!Array.prototype.numberSum) {
      */
     Array.prototype.numberSum = function() {
         // return eval(this.join('+')); // 如果是空数组，结果为undefined
-        return this.reduce((count, v) => count + v, 0); // 支持空数组结果为0
+        return this.reduce(function(count, v) { return count + v }, 0); // 支持空数组结果为0
     };
 
     // 示例
