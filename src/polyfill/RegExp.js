@@ -129,23 +129,23 @@ if (!RegExp.isIP) {
     // console.log(value, RegExp.isIP(value)); // false
 }
 
-if (!RegExp.isPhone) {
+if (!RegExp.isMobilePhone) {
     /**
      * 是否手机号码（11位手机号码）
      * @param value
      * @return {boolean}
      */
-    RegExp.isPhone = function(value) {
+    RegExp.isMobilePhone = function(value) {
         return /^(13|14|15|17|18)\d{9}$/i.test(value);
     };
 
     // 示例
     // var value = '13800138000';
-    // console.log(value, RegExp.isPhone(value)); // true
+    // console.log(value, RegExp.isMobilePhone(value)); // true
     // var value = '013800138000';
-    // console.log(value, RegExp.isPhone(value)); // false
+    // console.log(value, RegExp.isMobilePhone(value)); // false
     // var value = '800138000';
-    // console.log(value, RegExp.isPhone(value)); // false
+    // console.log(value, RegExp.isMobilePhone(value)); // false
 }
 
 if (!RegExp.isQQ) {
@@ -165,19 +165,19 @@ if (!RegExp.isQQ) {
     // console.log(value, RegExp.isQQ(value)); // false
 }
 
-if (!RegExp.isTel) {
+if (!RegExp.isTelephone) {
     /**
      * 是否电话号码（匹配形式如 010-12345678 或 0571-12345678 或 0831-1234567）
      * @param value
      * @return {boolean}
      */
-    RegExp.isTel = function(value) {
+    RegExp.isTelephone = function(value) {
         return /^\d{3,4}-\d{7,8}$/i.test(value);
     };
 
     // 示例
-    // console.log(RegExp.isTel('010-12345678')); // true
-    // console.log(RegExp.isTel('12345678')); // false
+    // console.log(RegExp.isTelephone('010-12345678')); // true
+    // console.log(RegExp.isTelephone('12345678')); // false
 }
 
 if (!RegExp.isUrl) {
