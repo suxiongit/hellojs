@@ -100,7 +100,7 @@ if (!Object.prototype.remove) {
     };
 
     // 示例 Object.prototype.remove
-    var obj = {'name': 'zs', 'age': 17, 'car': 'suzuki'};
-    obj.remove(['age', 'car']);
-    console.log(obj); // { name: 'zs' }
+    // var obj = {'name': 'zs', 'age': 17, 'car': 'suzuki'};
+    // obj.remove(['age', 'car']);
+    // console.log(obj); // { name: 'zs' }
 }
