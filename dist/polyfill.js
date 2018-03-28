@@ -1112,6 +1112,27 @@ if (!Object.isType) {
     // console.log(Object.isType(1, 'test')); // TypeError: Parameter "type" value is illegal
     // console.log(Object.isType(1, 'test', 1)); // false
 }
+
+if (!Object.prototype.remove) {
+    /**
+     * 删除对象属性
+     * @param  {Array} keys 要删除的属性
+     * @return {Array}      返回删除属性之后的对象
+     */
+    Object.prototype.remove = function(keys) {
+        if (!keys) return;
+        var that = this;
+        keys.forEach(function(key) {
+            delete(that[key]);
+        });
+    };
+
+    // 示例 Object.prototype.remove
+    var obj = {'name': 'zs', 'age': 17, 'car': 'suzuki'};
+    obj.remove(['age', 'car']);
+    console.log(obj); // { name: 'zs' }
+}
+
 /**
  * RegExp 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp
