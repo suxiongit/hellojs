@@ -6,14 +6,14 @@
 if (!Object.clone) {
     /**
      * 克隆对象
-     * @param obj
-     * @return {Object}
+     * @param {object} obj
+     * @return {object}
      */
     Object.clone = function(obj) {
         return Object.assign({}, obj);
     };
 
-    // 示例
+    // 示例 Object.clone
     // var obj = { a: 1 };
     // var copy = Object.clone(obj);
     // obj.a = 2;
@@ -23,7 +23,7 @@ if (!Object.clone) {
 if (!Object.isEmpty) {
     /**
      * 是否为空
-     * @param obj
+     * @param {object} obj
      * @return {boolean}
      */
     Object.isEmpty = function(obj) {
@@ -33,7 +33,7 @@ if (!Object.isEmpty) {
         return true;
     };
 
-    // 示例
+    // 示例 Object.isEmpty
     // console.log(Object.isEmpty()); // true
     // console.log(Object.isEmpty({})); // true
     // console.log(Object.isEmpty(null)); // true
@@ -45,9 +45,9 @@ if (!Object.isEmpty) {
 if (!Object.isType) {
     /**
      * 判断对象类型
-     * @param obj
-     * @param type 对象类型
-     * @param illegal
+     * @param {object} obj
+     * @param {string} type 对象类型（Undefined、Null、Boolean、String、Number、Array、Object、Function、Date）
+     * @param {boolean} [illegal] 默认false 参数type不合法抛出错误，true 忽略参数type不合法错误
      * @return {boolean}
      */
     Object.isType = function(obj, type, illegal) {
@@ -69,7 +69,7 @@ if (!Object.isType) {
         return Object.prototype.toString.call(obj) === '[object ' + type + ']';
     };
 
-    // 示例
+    // 示例 Object.isType
     // console.log(Object.isType(undefined, 'Undefined')); // Undefined: true
     // console.log(Object.isType(null, 'Null')); // Null: true
     // console.log(Object.isType(true, 'Boolean')); // Boolean: true
@@ -88,8 +88,8 @@ if (!Object.isType) {
 if (!Object.prototype.remove) {
     /**
      * 删除对象属性
-     * @param  {Array} keys 要删除的属性
-     * @return {Array}      返回删除属性之后的对象
+     * @param {array} keys 要删除的属性
+     * @return {array} 返回删除属性之后的对象
      */
     Object.prototype.remove = function(keys) {
         if (!keys) return;

@@ -8,15 +8,15 @@
 if (!Math.randomArbitrary) {
     /**
      * 获取min到max之间的随机数（带小数点）
-     * @param min
-     * @param max
-     * @return {Number}
+     * @param {number} min
+     * @param {number} max
+     * @return {number}
      */
     Math.randomArbitrary = function(min, max) {
         return Math.random() * (max - min) + min;
     };
 
-    // 示例
+    // 示例 Math.randomArbitrary
     // for (var i = 0; i < 10; i ++) {
     //     console.log(Math.randomArbitrary(0, 1)); // 0.5650337204284932
     // }
@@ -29,10 +29,10 @@ if (!Math.randomArbitrary) {
 if (!Math.randomInt) {
     /**
      * 获取min到max之间的随机整数
-     * @param min
-     * @param max
-     * @param inclusive 包含max
-     * @return {*}
+     * @param {number} min
+     * @param {number} max
+     * @param {boolean} [inclusive] 包含max
+     * @return {number}
      */
     Math.randomInt = function(min, max, inclusive) {
         min = Math.ceil(min);
@@ -41,7 +41,7 @@ if (!Math.randomInt) {
         return Math.floor(Math.random() * seed) + min;
     };
 
-    // 示例
+    // 示例 Math.randomInt
     // for (var i = 0; i < 10; i ++) {
     //     console.log(Math.randomInt(1, 10)); // 1-9
     // }

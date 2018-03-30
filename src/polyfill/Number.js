@@ -6,14 +6,14 @@
 if (!Number.toInt) {
     /**
      * 字符串转整型
-     * @param num
-     * @return {Number}
+     * @param {string} numStr
+     * @return {number}
      */
-    Number.toInt = function(num) {
-        return isNaN(parseInt(num)) ? 0 : parseInt(num);
+    Number.toInt = function(numStr) {
+        return isNaN(parseInt(numStr)) ? 0 : parseInt(numStr);
     };
 
-    // 示例
+    // 示例 Number.toInt
     // console.log(Number.toInt('1')); // 1
     // console.log(Number.toInt('2')); // 2
     // console.log(Number.toInt('1') + Number.toInt('2')); // 3
@@ -25,13 +25,14 @@ if (!Number.toInt) {
 if (!Number.toDouble) {
     /**
      * 字符串转浮点型
-     * @return {Number}
+     * @param {string} numStr
+     * @return {number}
      */
-    Number.toDouble = function(num) {
-        return isNaN(parseFloat(num)) ? 0.0 : parseFloat(num);
+    Number.toDouble = function(numStr) {
+        return isNaN(parseFloat(numStr)) ? 0.0 : parseFloat(numStr);
     };
 
-    // 示例
+    // 示例 Number.toDouble
     // console.log(Number.toDouble('.1')); // 0.1
     // console.log(Number.toDouble('.2')); // 0.2
     // console.log(Number.toDouble('.1') + Number.toDouble('.2')); // 0.30000000000000004
@@ -41,7 +42,7 @@ if (!Number.toDouble) {
 if (!Number.prototype.withZero) {
     /**
      * 数字补零
-     * @param length 指定长度
+     * @param {number} length 指定长度
      * @return {string}
      */
     Number.prototype.withZero = function(length) {
@@ -52,7 +53,7 @@ if (!Number.prototype.withZero) {
         return str;
     };
 
-    // 示例
+    // 示例 Number.prototype.withZero
     // console.log(Number(7).withZero(3)); // 007
 }
 
@@ -65,14 +66,14 @@ if (!Number.prototype.chrW) {
         return String.fromCharCode(this);
     };
 
-    // 示例
+    // 示例 Number.prototype.chrW
     // console.log(Number(65).chrW()); // A
 }
 
 if (!Number.prototype.splitPow) {
     /**
      * 拆分2的次方（幂）
-     * @return {Array} 返回数位2的次方数组
+     * @return {array} 返回数位2的次方数组
      */
     Number.prototype.splitPow = function() {
         if (this <= 0) return [];
@@ -86,7 +87,7 @@ if (!Number.prototype.splitPow) {
         return pow;
 	};
 
-    // 示例
+    // 示例 Number.prototype.splitPow
     // console.log(Number(15).splitPow()); // [ 8, 4, 2, 1 ]
     // console.log(Number(0).splitPow()); // []
 }

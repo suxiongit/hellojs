@@ -7,11 +7,11 @@ if (!String.prototype.firstUpperCase) {
     /**
      * 字符串首字母转大写
      * （CSS实现text-transform: capitalize;）
-     * @param perword
+     * @param {boolean} [isPerword] 每个单词首字母大写
      * @return {string}
      */
-    String.prototype.firstUpperCase = function(perword) {
-        if (perword) { // 输出：Hello World
+    String.prototype.firstUpperCase = function(isPerword) {
+        if (isPerword) { // 输出：Hello World
             // 实现一
             return this.toLowerCase().replace(/\b[a-z]/g, function(s) {
                 return s.toUpperCase();
@@ -33,7 +33,7 @@ if (!String.prototype.firstUpperCase) {
         }
     };
 
-    // 示例
+    // 示例 String.prototype.firstUpperCase
     // console.log('hello world'.firstUpperCase()); // Hello world
     // console.log('HELLO WORLD'.firstUpperCase()); // Hello world
     // console.log('hello world'.firstUpperCase(1)); // Hello World
@@ -43,7 +43,7 @@ if (!String.prototype.firstUpperCase) {
 if (!String.prototype.cnLength) {
     /**
      * 获取字符串的长度（全角算两个字符）
-     * @return {Number}
+     * @return {number}
      */
     String.prototype.cnLength = function() {
         // 实现一
@@ -58,7 +58,7 @@ if (!String.prototype.cnLength) {
         // return L;
     };
 
-    // 示例
+    // 示例 String.prototype.cnLength
     // var str = 'hello';
     // console.log(str.length); // 5
     // console.log(str.cnLength()); // 5
@@ -70,9 +70,9 @@ if (!String.prototype.cnLength) {
 if (!String.prototype.replaceAll) {
     /**
      * 全部替换
-     * @param findStr
-     * @param replaceStr
-     * @param ignoreCase
+     * @param {string} findStr 查找的字符串
+     * @param {string} replaceStr 替换的字符串
+     * @param {boolean} [ignoreCase] 大小写忽略
      * @return {string}
      */
     String.prototype.replaceAll = function(findStr, replaceStr, ignoreCase) {
@@ -83,7 +83,7 @@ if (!String.prototype.replaceAll) {
         }
     };
 
-    // 示例
+    // 示例 String.prototype.replaceAll
     // var str = 'Hello China, Hello World';
     // console.log(str.replace('Hello', 'Welcome to')); // Welcome to China, Hello World
     // console.log(str.replaceAll('hello', 'Welcome to', true)); // Welcome to China, Welcome to World
@@ -99,7 +99,7 @@ if (!String.prototype.trimCRLF) {
         return this.replaceAll('(\n|\r|(\r\n)|(\u0085)|(\u2028)|(\u2029))', '');
     };
 
-    // 示例
+    // 示例 String.prototype.trimCRLF
     // var str = '\r\nhe\n';
     // console.log('去除前=' + str); // \r\nhe\n
     // console.log('去除后=' + str.trimCRLF()); // he
@@ -118,7 +118,7 @@ if (!String.prototype.reverse) {
         return chars.join('');
     };
 
-    // 示例
+    // 示例 String.prototype.reverse
     // var str = 'abcdefg';
     // console.log(str + ' 反转为 ' + str.reverse()); // gfedcba
 }
@@ -126,14 +126,14 @@ if (!String.prototype.reverse) {
 if (!String.prototype.contains) {
     /**
      * 字符串是否包含指定内容
-     * @param chr
+     * @param {string} chr
      * @return {boolean}
      */
     String.prototype.contains = function(chr) {
         return this.indexOf(chr) > -1;
     };
 
-    // 示例
+    // 示例 String.prototype.contains
     // var str = 'Welcome to Beijing!';
     // console.log(str.contains('Beijing')); // true
 }
@@ -141,17 +141,17 @@ if (!String.prototype.contains) {
 if (!String.format) {
     /**
      * 格式化字符串
-     * @param format
+     * @param {string} str
      * @return {string}
      */
-    String.format = function(format) {
+    String.format = function(str) {
         var args = Array.prototype.slice.call(arguments, 1);
-        return format.replace(/\{(\d+)\}/g, function(match, i) {
+        return str.replace(/\{(\d+)\}/g, function(match, i) {
             return (typeof args[i] == 'undefined') ? match : args[i];
         });
     };
 
-    // 示例
+    // 示例 String.format
     // var str = 'I love {0}, but I don\'t love {1}';
     // console.log(String.format(str, 'China', 'Japan')); // I love China, but I don't love Japan
 }
@@ -168,7 +168,7 @@ if (!String.prototype.format) {
         });
     };
 
-    // 示例
+    // 示例 String.prototype.format
     // var str = 'I love {0}, but I don\'t love {1}';
     // console.log(str.format('China', 'Japan')); // I love China, but I don't love Japan
 }
@@ -176,15 +176,15 @@ if (!String.prototype.format) {
 if (!String.prototype.number) {
     /**
      * 获取数字部分
-     * @param float 浮点数
+     * @param {boolean} [isFloat] 浮点数
      * @return {string}
      */
-    String.prototype.number = function() {
-        var regEx = arguments[0] ? /[^\d.]/g: /[^\d]/g;
+    String.prototype.number = function(isFloat) {
+        var regEx = isFloat ? /[^\d.]/g: /[^\d]/g;
         return this.replace(regEx, '');
     };
 
-    // 示例
+    // 示例 String.prototype.number
     // var str = 'Version 1.0, released in 1996';
     // console.log(str.number()); // 101996
     // console.log(str.number(1)); // 1.01996
@@ -203,7 +203,7 @@ if (!String.prototype.chinese) {
         return this.replace(regEx, '');
     };
 
-    // 示例
+    // 示例 String.prototype.chinese
     // var str = '你好，中国';
     // console.log(str.chinese()); // 你好中国
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]/g)); // [ '你', '好', '中', '国' ]
@@ -220,7 +220,7 @@ if (!String.prototype.english) {
         return this.replace(regEx, '');
     };
 
-    // 示例
+    // 示例 String.prototype.english
     // var str = 'This is English';
     // console.log(str.english()); // ThisisEnglish
     // console.log(str.match(/[A-Za-z]/g)); // [ 'T', 'h', 'i', 's', 'i', 's', 'E', 'n', 'g', 'l', 'i', 's', 'h' ]
@@ -237,7 +237,7 @@ if (!String.prototype.filename) {
         return this.replace(regEx, '$1');
     };
 
-    // 示例
+    // 示例 String.prototype.filename
     // var str = 'D:/bearsu/workspace/hellojs/extensions/polyfill.js';
     // console.log(str.filename()); // polyfill.js
 }
@@ -252,7 +252,7 @@ if (!String.prototype.extname) {
         return this.replace(regEx, '$1');
     };
 
-    // 示例
+    // 示例 String.prototype.extname
     // var str = 'D:/bearsu/workspace/hellojs/extensions/polyfill.js';
     // console.log(str.extname()); // .js
 }
@@ -266,7 +266,7 @@ if (!String.prototype.toInt) {
         return isNaN(parseInt(this)) ? this.toString() : parseInt(this);
     };
 
-    // 示例
+    // 示例 String.prototype.toInt
     // console.log(typeof '123'.toInt()); // number: 123
     // console.log(typeof 'abc'.toInt()); // string: abc
 }
@@ -281,6 +281,6 @@ if (!String.prototype.resetBlank) {
         return this.replace(regEx, ' ');
     };
 
-    // 示例
+    // 示例 String.prototype.resetBlank
     // console.log('hello      world'.resetBlank()); // hello world
 }

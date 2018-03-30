@@ -7,8 +7,8 @@ if (!Array.prototype.contains) {
     /**
      * 数组中是否存在指定的值
      * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
-     * @param element
-     * @param strict 严格模式
+     * @param {string|number} element 需要查找的元素值
+     * @param {boolean} [strict] 严格模式下，会进行类型对比
      * @return {boolean}
      */
     Array.prototype.contains = function(element, strict) {
@@ -30,7 +30,7 @@ if (!Array.prototype.contains) {
         return false;
     };
 
-    // 示例
+    // 示例 Array.prototype.contains
     // var arr = [1, 2, 3, 4, 5];
     // console.log(arr.contains(1)); // true
     // console.log(arr.contains('1')); // true
@@ -40,10 +40,9 @@ if (!Array.prototype.contains) {
 
 if (!Array.prototype.forEach) {
     /**
-     * 数组循环遍历
-     * （让IE兼容forEach方法）
+     * 数组循环遍历（让IE兼容forEach方法）
      * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-     * @param callback
+     * @param {function} callback 回调函数
      */
     Array.prototype.forEach = function(callback/*, thisArg*/) {
         var T, k;
@@ -73,7 +72,7 @@ if (!Array.prototype.forEach) {
         }
     };
 
-    // 示例
+    // 示例 Array.prototype.forEach
     // var arr = [];
     // arr.push('a');
     // arr.push('b');
@@ -91,8 +90,8 @@ if (!Array.prototype.forEach) {
 if (!Array.prototype.remove) {
     /**
      * 删除数组元素
-     * @param element string|array 删除元素
-     * @param isIndex boolean|integer 是否索引
+     * @param {string|array} element 要删除的元素
+     * @param {boolean} [isIndex] 是否索引
      */
     Array.prototype.remove = function(element, isIndex) {
         if (isIndex) {
@@ -123,7 +122,7 @@ if (!Array.prototype.remove) {
         }
     };
 
-    // 示例
+    // 示例 Array.prototype.remove
     // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
     // arr.remove('f'); // 删除值
     // console.log(arr);
@@ -141,8 +140,8 @@ if (!Array.prototype.remove) {
 if (!Array.prototype.indexOf) {
     /**
      * 查找指定的元素在数组中的位置（索引）
-     * @param value
-     * @return {Number}
+     * @param {string} value 要查找的元素
+     * @return {number} 返回元素在数组中的索引位置
      */
     // Array.prototype.indexOf = function(value) {
     //     for (var i = 0, n = this.length; i < n; i ++) {
@@ -156,9 +155,9 @@ if (!Array.prototype.indexOf) {
     /**
      * 查找指定的元素在数组中的位置（索引）
      * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
-     * @param searchElement
-     * @param fromIndex
-     * @return {Number}
+     * @param {string} searchElement 要查找的元素
+     * @param {number} [fromIndex] 开始查找的位置
+     * @return {number} 返回元素在数组中的索引位置
      */
     Array.prototype.indexOf = function(searchElement, fromIndex) {
 
@@ -222,7 +221,7 @@ if (!Array.prototype.indexOf) {
         return -1;
     };
 
-    // 示例
+    // 示例 Array.prototype.indexOf
     // var arr = ['a', 'b', 'c', 'd', 'e'];
     // console.log(arr.indexOf('e'));
 }
@@ -230,8 +229,8 @@ if (!Array.prototype.indexOf) {
 if (!Array.prototype.random) {
     /**
      * 数组随机排序
-     * @param length 返回数组长度，当不传值、0或者超出数组长度
-     * @return {Array}
+     * @param {number} length 指定返回数组的长度，当不传值、0或者超出数组长度
+     * @return {array} 返回已随机排序的数组
      */
     Array.prototype.random = function(length) {
         if (null == this) {
@@ -261,7 +260,7 @@ if (!Array.prototype.random) {
         return arr.slice(0, end);
     };
 
-    // 示例
+    // 示例 Array.prototype.random
     // var items = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     // for (var i = 0; i < 10; i ++) {
     //     console.log(items.random());
@@ -272,14 +271,14 @@ if (!Array.prototype.shuffle) {
     /**
      * 数组随机排序
      * @alias Array.prototype.random(length)
-     * @param length
-     * @return {Array}
+     * @param {number} length 指定返回数组的长度，当不传值、0或者超出数组长度
+     * @return {array} 返回已随机排序的数组
      */
     Array.prototype.shuffle = function(length) {
         return this.slice(0).random(length);
     };
 
-    // 示例
+    // 示例 Array.prototype.shuffle
     // var items = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     // for (var i = 0; i < 10; i ++) {
     //     console.log(items.shuffle());
@@ -294,7 +293,7 @@ if (!Array.prototype.empty) {
         this.splice(0, this.length);
     };
 
-    // 示例
+    // 示例 Array.prototype.empty
     // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
     // console.log(arr);
     // arr.empty();
@@ -304,7 +303,7 @@ if (!Array.prototype.empty) {
 if (!Array.prototype.filterEmpty) {
     /**
      * 数组过滤空值
-     * @return {Array.<*>}
+     * @return {array}
      */
     Array.prototype.filterEmpty = function() {
         return this.filter(function(value) {
@@ -315,7 +314,7 @@ if (!Array.prototype.filterEmpty) {
         });
     };
 
-    // 示例
+    // 示例 Array.prototype.filterEmpty
     // var arr = ['a', '', 'b', ' ', 'c', '  ', 'd', , 'e', 0];
     // console.log(arr);
     // console.log(arr.filterEmpty());
@@ -324,7 +323,7 @@ if (!Array.prototype.filterEmpty) {
 if (!Array.prototype.unique) {
     /**
      * 数组去重
-     * @return {Array}
+     * @return {array}
      */
     Array.prototype.unique = function() {
         var arr = [], hash = {};
@@ -337,7 +336,7 @@ if (!Array.prototype.unique) {
         return arr;
     };
 
-    // 示例
+    // 示例 Array.prototype.unique
     // var arr = ['1', 1, 2];
     // var arr2 = arr.unique();
     // console.log(arr); // [ '1', 1, 2 ]
@@ -347,12 +346,12 @@ if (!Array.prototype.unique) {
 if (!Array.diff) {
     /**
      * 数组不同元素
-     * @param arr1
-     * @param arr2
-     * @param onlyFirst true返回第一个数组不同元素
-     * @return {Array.<T>}
+     * @param {array} arr1
+     * @param {array} arr2
+     * @param {boolean} leftDiff true返回第一个数组不同元素
+     * @return {array}
      */
-    Array.diff = function(arr1, arr2, onlyFirst) {
+    Array.diff = function(arr1, arr2, leftDiff) {
         if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
             throw new TypeError('Parameter "arr1" or "arr2" is not an array'); // 参数“arr1”和“arr2”不是一个数组
         }
@@ -360,7 +359,7 @@ if (!Array.diff) {
         var arr = [];
 
         // 实现一
-        // if (onlyFirst) {
+        // if (leftDiff) {
         //     for (var i = 0, n = arr1.length; i < n; i ++) {
         //         if (!arr2.contains(arr1[i])) {
         //             arr.push(arr1[i]);
@@ -380,7 +379,7 @@ if (!Array.diff) {
         // }
 
         // 实现二
-        if (onlyFirst) {
+        if (leftDiff) {
             arr = arr1.filter(function(value) {
                 return !arr2.contains(value);
             });
@@ -397,7 +396,7 @@ if (!Array.diff) {
         return arr;
     };
 
-    // 示例
+    // 示例 Array.diff
     // var arr1 = ['a', 'b', 'c', 'd', 'e'];
     // var arr2 = ['a', 'b', 'c', 'd', 'f'];
     // console.log(Array.diff(arr1, arr2)); // ['e', 'f']
@@ -416,7 +415,9 @@ if (!Array.diff) {
 if (!Array.same) {
     /**
      * 数组相同元素
-     * @return {Array}
+     * @param {array} arr1
+     * @param {array} arr2
+     * @return {array}
      */
     Array.same = function(arr1, arr2) {
         if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
@@ -439,7 +440,7 @@ if (!Array.same) {
         return arr;
     };
 
-    // 示例
+    // 示例 Array.same
     // var arr1 = ['a', 'b', 'c', 'd', 'e'];
     // var arr2 = ['a', 'b', 'c', 'd', 'f'];
     // console.log(Array.same(arr1, arr2));
@@ -456,7 +457,7 @@ if (!Array.same) {
 if (!Array.prototype.max) {
     /**
      * 数组最大值
-     * @return {Number}
+     * @return {number}
      */
     Array.prototype.max = function() {
         var value = this[0];
@@ -468,7 +469,7 @@ if (!Array.prototype.max) {
         return value;
     };
 
-    // 示例
+    // 示例 Array.prototype.max
     // var arr = [1, 2, 3, 4, 5];
     // console.log(arr + ' 最大值 ' + arr.max()); // 5
     // var arr = ['a', 'b', 'c', 'd', 'e'];
@@ -478,7 +479,7 @@ if (!Array.prototype.max) {
 if (!Array.prototype.min) {
     /**
      * 数组最小值
-     * @return {Number}
+     * @return {number}
      */
     Array.prototype.min = function() {
         var value = this[0];
@@ -490,7 +491,7 @@ if (!Array.prototype.min) {
         return value;
     };
 
-    // 示例
+    // 示例 Array.prototype.min
     // var arr = [1, 2, 3, 4, 5];
     // console.log(arr + ' 最小值 ' + arr.min()); // 1
     // var arr = ['a', 'b', 'c', 'd', 'e'];
@@ -500,7 +501,7 @@ if (!Array.prototype.min) {
 if (!Array.isEmpty) {
     /**
      * 数组是否为空
-     * @param arr
+     * @param {array} arr
      * @return {boolean}
      */
     Array.isEmpty = function(arr) {
@@ -510,7 +511,7 @@ if (!Array.isEmpty) {
         return false;
     };
 
-    // 示例
+    // 示例 Array.isEmpty
     // console.log(Array.isEmpty([])); // true
     // console.log(Array.isEmpty(1)); // true
     // console.log(Array.isEmpty([1])); // false
@@ -519,7 +520,7 @@ if (!Array.isEmpty) {
 if (!Array.prototype.copy) {
     /**
      * 复制数组
-     * @return {Array.<*>}
+     * @return {array}
      */
     Array.prototype.copy = function() {
         return this.slice();
@@ -528,7 +529,7 @@ if (!Array.prototype.copy) {
         // return [...this];
     };
 
-    // 示例
+    // 示例 Array.prototype.copy
     // var arr = ['a', 'b', 'c', 'd'];
     // var arr2 = arr.copy();
     // console.log(arr2); // [ 'a', 'b', 'c', 'd' ]
@@ -537,8 +538,8 @@ if (!Array.prototype.copy) {
 if (!Array.prototype.numberSort) {
     /**
      * 数字数组排序
-     * @param descOrder 排序（0 升序、1 降序）
-     * @return {Array<Number>}
+     * @param {number} [descOrder] 排序（0 升序、1 降序）
+     * @return {array<number>}
      */
     Array.prototype.numberSort = function(descOrder) {
         return this.sort(function(a, b) {
@@ -546,7 +547,7 @@ if (!Array.prototype.numberSort) {
         });
     };
 
-    // 示例
+    // 示例 Array.prototype.numberSort
     // console.log([1, 10, 21, 2].sort()); // [ 1, 10, 2, 21 ]
     // console.log([1, 10, 21, 2].numberSort()); // [ 1, 2, 10, 21 ]
     // console.log([1, 10, 21, 2].numberSort(1)); // [ 21, 10, 2, 1 ]
@@ -555,14 +556,14 @@ if (!Array.prototype.numberSort) {
 if (!Array.prototype.numberSum) {
     /**
      * 数字数组求和
-     * @return {Array<Number>}
+     * @return {array<number>}
      */
     Array.prototype.numberSum = function() {
         // return eval(this.join('+')); // 如果是空数组，结果为undefined
         return this.reduce(function(count, v) { return count + v }, 0); // 支持空数组结果为0
     };
 
-    // 示例
+    // 示例 Array.prototype.numberSum
     // console.log([1, 2, 3, 4, 5].numberSum()); // 15
     // console.log([].numberSum()); // 0
 }

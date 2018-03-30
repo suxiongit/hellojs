@@ -11,7 +11,7 @@ if (!Date.prototype.format) {
      * 示例：
      * format('yyyy-MM-dd hh:mm:ss.S') ==> 2006-07-02 08:09:04.423
      * format('yyyy-M-d h:m:s.S')      ==> 2006-7-2 8:9:4.18
-     * @param format
+     * @param {string} format
      * @return {string}
      */
     Date.prototype.format = function(format) {
@@ -50,7 +50,7 @@ if (!Date.prototype.format) {
         return format;
     };
 
-    // 示例
+    // 示例 Date.prototype.format
     // var newDate = new Date('2014-07-10 10:21:12');
     // console.log(newDate.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2014年07月10日 10时21分12秒
     // var newDate2 = new Date();
@@ -63,7 +63,7 @@ if (!Date.prototype.isLeapYear) {
      * 1.普通年能被4整除且不能被100整除的为闰年。如2004年就是闰年，1900年不是闰年
      * 2.世纪年能被400整除的是闰年。如2000年是闰年，1900年不是闰年
      * 注意：Date.prototype.getYear()获取的年份是减去1900，例如2017年值为117，而1900年值0
-     * @param date
+     * @param {string} date
      * @return {boolean}
      */
     Date.prototype.isLeapYear = function(date) {
@@ -80,7 +80,7 @@ if (!Date.prototype.isLeapYear) {
         return !(y % (y % 100 ? 4 : 400));
     };
 
-    // 示例
+    // 示例 Date.prototype.isLeapYear
     // var newDate = new Date('2016');
     // console.log(newDate + ' 是否闰年 ' + newDate.isLeapYear()); // true
     // var newDate2 = new Date();
@@ -90,12 +90,12 @@ if (!Date.prototype.isLeapYear) {
 if (!Date.getAge) {
     /**
      * 计算年龄
-     * @param date
+     * @param {string} dateStr
      * @return {number}
      */
-    Date.getAge = function(date) {
+    Date.getAge = function(dateStr) {
         var today = new Date();
-        var birthDate = new Date(date);
+        var birthDate = new Date(dateStr);
         var age = today.getFullYear() - birthDate.getFullYear();
         var m = today.getMonth() - birthDate.getMonth();
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
@@ -104,41 +104,41 @@ if (!Date.getAge) {
         return age;
     };
 
-    // 示例
+    // 示例 Date.getAge
     // console.log(Date.getAge('1996-3-1')); // 21
 }
 
 if (!Date.prototype.diff) {
     /**
      * 计算时间差
-     * @param interval
-     * @param objDate 目标时间
+     * @param {string} interval
+     * @param {Date} target 目标时间
      * @return {number|undefined}
      */
-    Date.prototype.diff = function(interval, objDate) {
-        // 若参数不足或 objDate 不是日期类型則回传 undefined
-        if (arguments.length < 2 || objDate.constructor != Date) { return undefined; }
+    Date.prototype.diff = function(interval, target) {
+        // 若参数不匹配或 target 不是日期类型則回传 undefined
+        if (arguments.length < 2 || target.constructor != Date) { return undefined; }
         switch (interval) {
             //计算秒差
-            case 's': return parseInt((objDate - this) / 1000);
+            case 's': return parseInt((target - this) / 1000);
             //计算分差
-            case 'n': return parseInt((objDate - this) / 60000);
+            case 'n': return parseInt((target - this) / 60000);
             //计算時差
-            case 'h': return parseInt((objDate - this) / 3600000);
+            case 'h': return parseInt((target - this) / 3600000);
             //计算日差
-            case 'd': return parseInt((objDate - this) / 86400000);
+            case 'd': return parseInt((target - this) / 86400000);
             //计算周差
-            case 'w': return parseInt((objDate - this) / (86400000 * 7));
+            case 'w': return parseInt((target - this) / (86400000 * 7));
             //计算月差
-            case 'm': return (objDate.getMonth() + 1) + ((objDate.getFullYear() - this.getFullYear()) * 12) - (this.getMonth() + 1);
+            case 'm': return (target.getMonth() + 1) + ((target.getFullYear() - this.getFullYear()) * 12) - (this.getMonth() + 1);
             //计算年差
-            case 'y': return objDate.getFullYear() - this.getFullYear();
+            case 'y': return target.getFullYear() - this.getFullYear();
             //输入有误
             default: return undefined;
         }
     };
 
-    // 示例
+    // 示例 Date.prototype.diff
     // var date1 = new Date('2011-08-10 09:00:00');
     // console.log(date1.format('yyyy-MM-dd hh:mm:ss')); // 2011-08-10 09:00:00
     // var date2 = new Date('2011-08-10 18:00:00');
@@ -164,7 +164,7 @@ if (!Date.prototype.toCNDate) {
         return dateText;
     };
 
-    // 示例
+    // 示例 Date.prototype.toCNDate
     // var nowDate = new Date();
     // console.log('默认格式', nowDate); // 默认格式 2017-06-19T09:43:57.174Z
     // console.log('中文格式', nowDate.toCNDate()); // 中文格式 2017年05月19日17时43分57秒  星期一
