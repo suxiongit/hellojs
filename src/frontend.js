@@ -4,7 +4,7 @@
 
 /**
 * 判断是否PC访问
-* @return {Boolean}
+* @return {boolean}
 */
 function isPC() {
 	var userAgentInfo = navigator.userAgent;
@@ -28,8 +28,8 @@ function isPC() {
 
 /**
 * 获取Url参数值
-* @param  {String} name 参数名称
-* @return {String}      返回参数值
+* @param {string} name 参数名称
+* @return {string} 返回参数值
 */
 function getUrlParam(name) {
 	// var reg = new RegExp('(^|&)'+ name +'=([^&]*)(&|$)');//构造一个含有目标参数的正则表达式对象
@@ -42,7 +42,7 @@ function getUrlParam(name) {
 
 /**
 * 获取浏览器类型及主版本
-* @return {Object} 返回包含浏览器和版本的对象
+* @return {object} 返回包含浏览器和版本的对象
 */
 function getBrowserInfo() {
 	var Sys = {};
@@ -76,10 +76,10 @@ function getBrowserInfo() {
 
 /**
 * 设置cookie值
-* @param  {String} name   缓存名称
-* @param  {String} value  缓存值
-* @param  {Number} msec   缓存时间（毫秒，例如：一小时=1h * 60min * 60s * 1000ms）
-* @param  {String} domain 缓存域名
+* @param {string} name 缓存名称
+* @param {string} value 缓存值
+* @param {number} msec 缓存时间（毫秒，例如：一小时=1h * 60min * 60s * 1000ms）
+* @param {string} domain 缓存域名
 */
 function setCookie(name, value, msec, domain) {
 	var d = new Date();
@@ -93,8 +93,8 @@ function setCookie(name, value, msec, domain) {
 
 /**
 * 获取cookie值
-* @param  {String} name 缓存名称
-* @return {String}      缓存值
+* @param {string} name 缓存名称
+* @return {string} 缓存值
 */
 function getCookie(name) {
 	var arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
@@ -104,9 +104,9 @@ function getCookie(name) {
 
 /**
 * 加入收藏夹
-* @param  {String} url   链接
-* @param  {String} title 标题
-* @return {Boolean}       返回收藏结果
+* @param {string} url 链接
+* @param {string} title 标题
+* @return {boolean} 返回收藏结果
 */
 function addFavorite(url, title) {
 	try {
@@ -124,8 +124,8 @@ function addFavorite(url, title) {
 
 /**
 * 设为首页
-* @param  {String} homeurl 链接
-* @return {Boolean}
+* @param {string} homeurl 链接
+* @return {boolean}
 */
 function setHomepage(homeurl) {
 	if (document.all) {
