@@ -229,7 +229,7 @@ if (!Array.prototype.indexOf) {
 if (!Array.prototype.random) {
     /**
      * 数组随机排序
-     * @param {number} length 指定返回数组的长度，当不传值、0或者超出数组长度
+     * @param {number} [length] 指定返回数组的长度，当不传值、0或者超出数组长度返回数组的全部元素
      * @return {array} 返回已随机排序的数组
      */
     Array.prototype.random = function(length) {
@@ -271,7 +271,7 @@ if (!Array.prototype.shuffle) {
     /**
      * 数组随机排序
      * @alias Array.prototype.random(length)
-     * @param {number} length 指定返回数组的长度，当不传值、0或者超出数组长度
+     * @param {number} [length] 指定返回数组的长度，当不传值、0或者超出数组长度返回数组的全部元素
      * @return {array} 返回已随机排序的数组
      */
     Array.prototype.shuffle = function(length) {

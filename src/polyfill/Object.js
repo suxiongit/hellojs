@@ -88,14 +88,14 @@ if (!Object.isType) {
 if (!Object.prototype.remove) {
     /**
      * 删除对象属性
-     * @param {array} keys 要删除的属性
+     * @param {array} arr 要删除的属性
      * @return {array} 返回删除属性之后的对象
      */
-    Object.prototype.remove = function(keys) {
-        if (!keys) return;
+    Object.prototype.remove = function(arr) {
+        if (!arr) return;
         var that = this;
-        keys.forEach(function(key) {
-            delete(that[key]);
+        arr.forEach(function(name) {
+            delete(that[name]);
         });
     };
 
@@ -103,4 +103,46 @@ if (!Object.prototype.remove) {
     // var obj = {'name': 'zs', 'age': 17, 'car': 'suzuki'};
     // obj.remove(['age', 'car']);
     // console.log(obj); // { name: 'zs' }
+}
+
+if (!Object.prototype.extend) {
+    /**
+     * 扩展对象
+     * @param {object} obj 要扩展的对象
+     */
+    Object.prototype.extend = function(obj) {
+        if (!obj) return;
+        for(var name in obj) {
+            if (obj.hasOwnProperty(name)) {
+                this[name] = obj[name];
+            }
+        }
+    };
+
+    // 示例 Object.prototype.extend
+    // var objA = {'name': 'colin', 'car': 'suzuki'};
+    // var objB = {'name': 'james', 'age': 17};
+    // objA.extend(objB);
+    // console.log(objA); // { name: 'james', car: 'suzuki', age: 17 }
+}
+
+if (!Object.prototype.pick) {
+    /**
+     * 从对象中选择属性组成新的对象
+     * @param {array} arr 选择的属性
+     * @return {array}
+     */
+    Object.prototype.pick = function(arr) {
+        if (!arr) return {};
+        var that = this, obj = {};
+        arr.forEach(function(name) {
+            obj[name] = that[name];
+        });
+        return obj;
+    };
+
+    // 示例 Object.prototype.pick
+    // var objA = {'name': 'colin', 'car': 'suzuki', 'age': 17};
+    // var objB = objA.pick(['car', 'age']);
+    // console.log(objB); // { car: 'suzuki', age: 17 }
 }
