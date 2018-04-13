@@ -11,7 +11,7 @@ if (!Date.prototype.format) {
      * 示例：
      * format('yyyy-MM-dd hh:mm:ss.S') ==> 2006-07-02 08:09:04.423
      * format('yyyy-M-d h:m:s.S')      ==> 2006-7-2 8:9:4.18
-     * @param {string} format
+     * @param {string} format 日期格式
      * @return {string}
      */
     Date.prototype.format = function(format) {
@@ -51,10 +51,10 @@ if (!Date.prototype.format) {
     };
 
     // 示例 Date.prototype.format
-    // var newDate = new Date('2014-07-10 10:21:12');
-    // console.log(newDate.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2014年07月10日 10时21分12秒
-    // var newDate2 = new Date();
-    // console.log(newDate2.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2017年04月25日 21时40分32秒
+    // var date = new Date('2014-07-10 10:21:12');
+    // console.log(date.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2014年07月10日 10时21分12秒
+    // var date2 = new Date();
+    // console.log(date2.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2017年04月25日 21时40分32秒
 }
 
 if (!Date.prototype.isLeapYear) {
@@ -63,28 +63,18 @@ if (!Date.prototype.isLeapYear) {
      * 1.普通年能被4整除且不能被100整除的为闰年。如2004年就是闰年，1900年不是闰年
      * 2.世纪年能被400整除的是闰年。如2000年是闰年，1900年不是闰年
      * 注意：Date.prototype.getYear()获取的年份是减去1900，例如2017年值为117，而1900年值0
-     * @param {string} date
      * @return {boolean}
      */
-    Date.prototype.isLeapYear = function(date) {
-        var y;
-
-        if (null != date) {
-            var d = new Date(date);
-            y = d.getFullYear();
-        } else {
-            y = this.getFullYear();
-        }
-
-        // return (0 === y % 4 && ((y % 100 !== 0) || (y % 400 === 0)));
-        return !(y % (y % 100 ? 4 : 400));
+    Date.prototype.isLeapYear = function() {
+        var y = this.getFullYear();
+        return !(y % (y % 100 ? 4 : 400)); // return (0 === y % 4 && ((y % 100 !== 0) || (y % 400 === 0)));
     };
 
     // 示例 Date.prototype.isLeapYear
-    // var newDate = new Date('2016');
-    // console.log(newDate + ' 是否闰年 ' + newDate.isLeapYear()); // true
-    // var newDate2 = new Date();
-    // console.log(newDate2 + ' 是否闰年 ' + Date.prototype.isLeapYear(newDate2)); // false
+    // var date = new Date('2016');
+    // console.log(date.format('yyyy年') + ' 是否闰年 ' + date.isLeapYear()); // true
+    // var date2 = new Date();
+    // console.log(date2.format('yyyy年') + ' 是否闰年 ' + date2.isLeapYear()); // false
 }
 
 if (!Date.getAge) {
@@ -197,7 +187,7 @@ if (!Date.prototype.add) {
                 return new Date((date.getFullYear() + num), date.getMonth(), date.getDate(),
                     date.getHours(), date.getMinutes(), date.getSeconds());
         }
-    }
+    };
 
     // 示例 Date.prototype.add
     // var date = new Date();
