@@ -568,6 +568,44 @@ if (!Array.prototype.numberSum) {
     // console.log([].numberSum()); // 0
 }
 
+if (!Array.prototype.equals) {
+    /**
+     * 数组比较
+     * @param {array} array2 比较的目标数组
+     * @return {boolean}
+     */
+    Array.prototype.equals = function(array2) {
+        // if the other array is a falsy value, return
+        if (!array2)
+            return false;
+
+        // compare lengths - can save a lot of time
+        if (this.length != array2.length)
+            return false;
+
+        for (var i = 0, l = this.length; i < l; i++) {
+            // Check if we have nested arrays
+            if (this[i] instanceof Array && array2[i] instanceof Array) {
+                // recurse into the nested arrays
+                if (!this[i].equals(array2[i]))
+                    return false;
+            }
+            else if (this[i] != array2[i]) {
+                // Warning - two different object instances will never be equal: {x:20} != {x:20}
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // 示例 Array.prototype.equals
+    // console.log([1, 2, 3].equals([1, 2, 3])); // true
+    // console.log([1, 2, 3].equals([4, 5, 6])); // false
+    // console.log([1, [2, 3]].equals([1, [2, 3]])); // true
+    // console.log([{a:1}, {b:2}].equals([{a:1}, {b:2}])); // false
+}
+
 /**
  * Date 类型扩展
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
@@ -1034,6 +1072,71 @@ if (!Object.prototype.pick) {
     // var objA = {'name': 'colin', 'car': 'suzuki', 'age': 17};
     // var objB = objA.pick(['car', 'age']);
     // console.log(objB); // { car: 'suzuki', age: 17 }
+}
+
+if (!Object.prototype.equals) {
+    /**
+     * 对象比较
+     * @param {object} object2 比较的目标对象
+     * @return {boolean}
+     */
+    Object.prototype.equals = function(object2) {
+        // For the first loop, we only check for types
+        for (var propName in this) {
+            // Check for inherited methods and properties - like .equals itself
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
+            // Return false if the return value is different
+            if (this.hasOwnProperty(propName) != object2.hasOwnProperty(propName)) {
+                return false;
+            }
+            // Check instance type
+            else if (typeof this[propName] != typeof object2[propName]) {
+                // Different types => not equal
+                return false;
+            }
+        }
+        // Now a deeper check using other objects property names
+        for (var propName in object2) {
+            // We must check instances anyway, there may be a property that only exists in object2
+            // I wonder, if remembering the checked values from the first loop would be faster or not
+            if (this.hasOwnProperty(propName) != object2.hasOwnProperty(propName)) {
+                return false;
+            }
+            else if (typeof this[propName] != typeof object2[propName]) {
+                return false;
+            }
+            // If the property is inherited, do not check any more (it must be equa if both objects inherit it)
+            if (!this.hasOwnProperty(propName))
+                continue;
+
+            // Now the detail check and recursion
+
+            // This returns the script back to the array comparing
+            /**REQUIRES Array.equals**/
+            if (this[propName] instanceof Array && object2[propName] instanceof Array) {
+                // recurse into the nested arrays
+                if (!this[propName].equals(object2[propName]))
+                    return false;
+            }
+            else if (this[propName] instanceof Object && object2[propName] instanceof Object) {
+                // recurse into another objects
+                // console.log("Recursing to compare ", this[propName],"with",object2[propName], " both named \""+propName+"\"");
+                if (!this[propName].equals(object2[propName]))
+                    return false;
+            }
+            // Normal value comparison for strings and numbers
+            else if (this[propName] != object2[propName]) {
+                return false;
+            }
+        }
+        // If everything passed, let's say YES
+        return true;
+    }
+
+    // 示例 Object.prototype.equals
+    // console.log({a:1, b:2}.equals({a:1, b:2})); // true
+    // console.log({a:1, b:2}.equals({a:3, b:4})); // false
+    // console.log({a:1, b:2}.equals({a:1})); // false
 }
 
 /**

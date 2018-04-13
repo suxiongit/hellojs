@@ -567,3 +567,41 @@ if (!Array.prototype.numberSum) {
     // console.log([1, 2, 3, 4, 5].numberSum()); // 15
     // console.log([].numberSum()); // 0
 }
+
+if (!Array.prototype.equals) {
+    /**
+     * 数组比较
+     * @param {array} array2 比较的目标数组
+     * @return {boolean}
+     */
+    Array.prototype.equals = function(array2) {
+        // if the other array is a falsy value, return
+        if (!array2)
+            return false;
+
+        // compare lengths - can save a lot of time
+        if (this.length != array2.length)
+            return false;
+
+        for (var i = 0, l = this.length; i < l; i++) {
+            // Check if we have nested arrays
+            if (this[i] instanceof Array && array2[i] instanceof Array) {
+                // recurse into the nested arrays
+                if (!this[i].equals(array2[i]))
+                    return false;
+            }
+            else if (this[i] != array2[i]) {
+                // Warning - two different object instances will never be equal: {x:20} != {x:20}
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // 示例 Array.prototype.equals
+    // console.log([1, 2, 3].equals([1, 2, 3])); // true
+    // console.log([1, 2, 3].equals([4, 5, 6])); // false
+    // console.log([1, [2, 3]].equals([1, [2, 3]])); // true
+    // console.log([{a:1}, {b:2}].equals([{a:1}, {b:2}])); // false
+}
