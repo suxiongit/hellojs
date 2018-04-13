@@ -169,3 +169,43 @@ if (!Date.prototype.toCNDate) {
     // console.log('默认格式', nowDate); // 默认格式 2017-06-19T09:43:57.174Z
     // console.log('中文格式', nowDate.toCNDate()); // 中文格式 2017年05月19日17时43分57秒  星期一
 }
+
+if (!Date.prototype.add) {
+    /**
+     * 日期计算
+     * @param {string} type 时间类型（可选值 y 年 m月 d日 w星期 h时 n分 s秒）
+     * @param {number} num 时间数值
+     * @return {Date} 返回日期对象
+     */
+    Date.prototype.add = function(type, num) {
+        date = this;
+        switch (type) {
+            case 's' :
+                return new Date(date.getTime() + (1000 * num));
+            case 'n' :
+                return new Date(date.getTime() + (60000 * num));
+            case 'h' :
+                return new Date(date.getTime() + (3600000 * num));
+            case 'd' :
+                return new Date(date.getTime() + (86400000 * num));
+            case 'w' :
+                return new Date(date.getTime() + ((86400000 * 7) * num));
+            case 'm' :
+                return new Date(date.getFullYear(), (date.getMonth()) + num, date.getDate(),
+                    date.getHours(), date.getMinutes(), date.getSeconds());
+            case 'y' :
+                return new Date((date.getFullYear() + num), date.getMonth(), date.getDate(),
+                    date.getHours(), date.getMinutes(), date.getSeconds());
+        }
+    }
+
+    // 示例 Date.prototype.add
+    // var date = new Date();
+    // console.log(date.add('y', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一年
+    // console.log(date.add('m', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一个月
+    // console.log(date.add('d', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一天
+    // console.log(date.add('w', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一星期
+    // console.log(date.add('h', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一小时
+    // console.log(date.add('n', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一分钟
+    // console.log(date.add('s', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一秒
+}
