@@ -11,7 +11,7 @@ if (!Date.prototype.format) {
      * 示例：
      * format('yyyy-MM-dd hh:mm:ss.S') ==> 2006-07-02 08:09:04.423
      * format('yyyy-M-d h:m:s.S')      ==> 2006-7-2 8:9:4.18
-     * @param {string} format 日期格式
+     * @param {string} format 指定日期格式
      * @return {string}
      */
     Date.prototype.format = function(format) {
@@ -101,30 +101,40 @@ if (!Date.getAge) {
 if (!Date.prototype.diff) {
     /**
      * 计算时间差
-     * @param {string} interval
+     * @param {string} dateType 日期类型（可选值 y 年 m月 d日 w星期 ww周 h时 n分 s秒）
      * @param {Date} target 目标时间
      * @return {number|undefined}
      */
-    Date.prototype.diff = function(interval, target) {
+    Date.prototype.diff = function(dateType, target) {
         // 若参数不匹配或 target 不是日期类型則回传 undefined
-        if (arguments.length < 2 || target.constructor != Date) { return undefined; }
-        switch (interval) {
+        if (arguments.length < 2 || target.constructor != Date) {
+            return undefined;
+        }
+        switch (dateType) {
             //计算秒差
-            case 's': return parseInt((target - this) / 1000);
+            case 's':
+                return parseInt((target - this) / 1000);
             //计算分差
-            case 'n': return parseInt((target - this) / 60000);
+            case 'n':
+                return parseInt((target - this) / 60000);
             //计算時差
-            case 'h': return parseInt((target - this) / 3600000);
+            case 'h':
+                return parseInt((target - this) / 3600000);
             //计算日差
-            case 'd': return parseInt((target - this) / 86400000);
+            case 'd':
+                return parseInt((target - this) / 86400000);
             //计算周差
-            case 'w': return parseInt((target - this) / (86400000 * 7));
+            case 'w':
+                return parseInt((target - this) / (86400000 * 7));
             //计算月差
-            case 'm': return (target.getMonth() + 1) + ((target.getFullYear() - this.getFullYear()) * 12) - (this.getMonth() + 1);
+            case 'm':
+                return (target.getMonth() + 1) + ((target.getFullYear() - this.getFullYear()) * 12) - (this.getMonth() + 1);
             //计算年差
-            case 'y': return target.getFullYear() - this.getFullYear();
+            case 'y':
+                return target.getFullYear() - this.getFullYear();
             //输入有误
-            default: return undefined;
+            default:
+                return undefined;
         }
     };
 
@@ -133,7 +143,7 @@ if (!Date.prototype.diff) {
     // console.log(date1.format('yyyy-MM-dd hh:mm:ss')); // 2011-08-10 09:00:00
     // var date2 = new Date('2011-08-10 18:00:00');
     // console.log(date2.format('yyyy-MM-dd hh:mm:ss')); // 2011-08-10 18:00:00
-    // console.log('相差多少小时', date1.diff('h', date2)); // 9
+    // console.log('相差多少%s小时', date1.diff('h', date2)); // 9
 }
 
 if (!Date.prototype.toCNDate) {
@@ -163,28 +173,28 @@ if (!Date.prototype.toCNDate) {
 if (!Date.prototype.add) {
     /**
      * 日期计算
-     * @param {string} type 时间类型（可选值 y 年 m月 d日 w星期 h时 n分 s秒）
-     * @param {number} num 时间数值
+     * @param {string} dateType 日期类型（可选值 y 年 m月 d日 w星期 h时 n分 s秒）
+     * @param {number} timeNum 增加的时间
      * @return {Date} 返回日期对象
      */
-    Date.prototype.add = function(type, num) {
+    Date.prototype.add = function(dateType, timeNum) {
         date = this;
-        switch (type) {
+        switch (dateType) {
             case 's' :
-                return new Date(date.getTime() + (1000 * num));
+                return new Date(date.getTime() + (1000 * timeNum));
             case 'n' :
-                return new Date(date.getTime() + (60000 * num));
+                return new Date(date.getTime() + (60000 * timeNum));
             case 'h' :
-                return new Date(date.getTime() + (3600000 * num));
+                return new Date(date.getTime() + (3600000 * timeNum));
             case 'd' :
-                return new Date(date.getTime() + (86400000 * num));
+                return new Date(date.getTime() + (86400000 * timeNum));
             case 'w' :
-                return new Date(date.getTime() + ((86400000 * 7) * num));
+                return new Date(date.getTime() + ((86400000 * 7) * timeNum));
             case 'm' :
-                return new Date(date.getFullYear(), (date.getMonth()) + num, date.getDate(),
+                return new Date(date.getFullYear(), (date.getMonth()) + timeNum, date.getDate(),
                     date.getHours(), date.getMinutes(), date.getSeconds());
             case 'y' :
-                return new Date((date.getFullYear() + num), date.getMonth(), date.getDate(),
+                return new Date((date.getFullYear() + timeNum), date.getMonth(), date.getDate(),
                     date.getHours(), date.getMinutes(), date.getSeconds());
         }
     };
@@ -198,4 +208,95 @@ if (!Date.prototype.add) {
     // console.log(date.add('h', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一小时
     // console.log(date.add('n', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一分钟
     // console.log(date.add('s', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一秒
+}
+
+if (!Date.prototype.getMaxDay) {
+    /**
+     * 获取当前月份天数
+     * @return {number}
+     */
+    Date.prototype.getMaxDay = function() {
+        // 实现一
+        var y = this.getFullYear(), m = this.getMonth() + 1;
+        if (m === 4 || m === 6 || m === 9 || m === 11)
+            return 30;
+        if (m === 2)
+            if (y % 4 === 0 && y % 100 !== 0 || y % 400 === 0)
+                return 29;
+            else
+                return 28;
+        return 31;
+
+        // 实现二
+        // var date = this;
+        // date.setDate(1);
+        // date.setMonth(date.getMonth() + 1);
+        // var time = date.getTime() - 24 * 60 * 60 * 1000;
+        // var newDate = new Date(time);
+        // return newDate.getDate();
+    };
+
+    // 示例 Date.prototype.getMaxDay
+    // console.log('当前月份%s天', new Date().getMaxDay()); // 当前月份30天
+    // console.log('2018年2月份%s天', new Date('2018-02').getMaxDay()); // 2018年2月份28天
+    // console.log('2016年2月份%s天', new Date('2016-02').getMaxDay()); // 2016年2月份29天
+}
+
+if (!Date.analyze) {
+    /**
+     * 转化成中文时间
+     * @param {number} timestamp 需要分析的时间戳（支持10位秒和13位毫秒）
+     * @param {boolean} [stripTime] 不带时分秒
+     * @return {string}
+     */
+    Date.analyze = function(timestamp, stripTime) {
+        if (!timestamp) {
+            return '';
+        }
+
+        if (timestamp.toString().length < 11) {
+            timestamp = timestamp * 1000;
+        }
+
+        var week = ['日', '一', '二', '三', '四', '五', '六'];
+        var timeStr = '';
+        var newDate = new Date();
+        var stoday = new Date("00:00:00 " + newDate.getFullYear() + "/" + (newDate.getMonth() + 1) + "/" + newDate.getDate());
+        var syear = stoday.getFullYear();
+        var timeData = new Date(timestamp);
+        var timeyear = timeData.getFullYear();
+        var sevenday = 24 * 60 * 60 * 1000 * 7;
+        var oneday = 24 * 60 * 60 * 1000;
+
+        if (syear - timeyear != 0 && stoday.getTime() - timestamp > sevenday) { // 跨年大于七天
+            timeStr = timeData.getFullYear() + "年" + (timeData.getMonth() + 1) + "月" + timeData.getDate() + "日";
+            return timeStr;
+        } else if (stoday.getTime() - timestamp > sevenday) { // 大于七天不跨年
+            timeStr = (timeData.getMonth() + 1) + "月" + timeData.getDate() + "日";
+        } else if (stoday.getTime() - timestamp < sevenday && stoday.getTime() - timestamp > oneday) { // 一周内不是昨天
+            if (stripTime) {
+                timeStr = '星期' + week[timeData.getDay()];
+            } else {
+                timeStr = '星期' + week[timeData.getDay()] + ' ' + (timeData.getHours() > 9 ? timeData.getHours() : '0' + timeData.getHours()) + ":" + (timeData.getMinutes() > 9 ? timeData.getMinutes() : '0' + timeData.getMinutes());
+            }
+        } else if (stoday.getTime() - timestamp < oneday && stoday.getTime() - timestamp > 0) { // 昨天
+            if (stripTime) {
+                timeStr = '昨天';
+            } else {
+                timeStr = '昨天 ' + (timeData.getHours() > 9 ? timeData.getHours() : '0' + timeData.getHours()) + ":" + (timeData.getMinutes() > 9 ? timeData.getMinutes() : '0' + timeData.getMinutes());
+            }
+        } else { // 今天
+            if (stripTime) {
+                timeStr = '今天';
+            } else {
+                timeStr = (timeData.getHours() > 9 ? timeData.getHours() : '0' + timeData.getHours()) + ":" + (timeData.getMinutes() > 9 ? timeData.getMinutes() : '0' + timeData.getMinutes());
+            }
+        }
+
+        return timeStr;
+    }
+
+    // 示例 Date.analyze
+    // var timestamp = (new Date('2018-04-15 16:00')).getTime();
+    // console.log(Date.analyze(timestamp, true));
 }
