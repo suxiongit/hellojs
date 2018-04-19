@@ -39,3 +39,126 @@ remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.
 same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.same = function(arr1, arr2) {$/;"	function
 shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	function
 unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	function
+getBrowserInfo	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	getBrowserInfo: function() {$/;"	function	line:11
+Browser.getBrowserInfo	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^var Browser = {$/;"	method	line:5
+isPC	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	isPC: function() {$/;"	function	line:41
+Browser.isPC	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	},$/;"	method	line:35
+getUrlParam	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	getUrlParam: function(name) {$/;"	function	line:59
+Browser.getUrlParam	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	},$/;"	method	line:52
+setCookie	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	setCookie: function(name, value, msec, domain) {$/;"	function	line:75
+Browser.setCookie	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	},$/;"	method	line:66
+getCookie	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	getCookie: function(name) {$/;"	function	line:90
+Browser.getCookie	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	},$/;"	method	line:83
+removeCookie	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^    removeCookie: function(name) {$/;"	function	line:100
+Browser.removeCookie	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	},$/;"	method	line:94
+addFavorite	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	addFavorite: function(url, title) {$/;"	function	line:111
+Browser.addFavorite	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^    },$/;"	method	line:103
+setHomepage	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	setHomepage: function(homeurl) {$/;"	function	line:130
+Browser.setHomepage	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	},$/;"	method	line:123
+getKeyName	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	getKeyName: function(keycode) {$/;"	function	line:150
+Browser.getKeyName	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	},$/;"	method	line:148
+Browser.getKeyName.keyCodeMap.8	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		var keyCodeMap = {$/;"	property	line:151
+Browser.getKeyName.keyCodeMap.9	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    8: 'Backspace',$/;"	property	line:152
+Browser.getKeyName.keyCodeMap.13	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    9: 'Tab',$/;"	property	line:153
+Browser.getKeyName.keyCodeMap.16	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    13: 'Enter',$/;"	property	line:154
+Browser.getKeyName.keyCodeMap.17	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    16: 'Shift',$/;"	property	line:155
+Browser.getKeyName.keyCodeMap.18	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    17: 'Ctrl',$/;"	property	line:156
+Browser.getKeyName.keyCodeMap.19	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    18: 'Alt',$/;"	property	line:157
+Browser.getKeyName.keyCodeMap.20	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    19: 'Pause',$/;"	property	line:158
+Browser.getKeyName.keyCodeMap.27	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    20: 'Caps Lock',$/;"	property	line:159
+Browser.getKeyName.keyCodeMap.32	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    27: 'Escape',$/;"	property	line:160
+Browser.getKeyName.keyCodeMap.33	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    32: 'Space',$/;"	property	line:161
+Browser.getKeyName.keyCodeMap.34	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    33: 'Page Up',$/;"	property	line:162
+Browser.getKeyName.keyCodeMap.35	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    34: 'Page Down',$/;"	property	line:163
+Browser.getKeyName.keyCodeMap.36	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    35: 'End',$/;"	property	line:164
+Browser.getKeyName.keyCodeMap.37	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    36: 'Home',$/;"	property	line:165
+Browser.getKeyName.keyCodeMap.38	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    37: 'Left',$/;"	property	line:166
+Browser.getKeyName.keyCodeMap.39	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    38: 'Up',$/;"	property	line:167
+Browser.getKeyName.keyCodeMap.40	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    39: 'Right',$/;"	property	line:168
+Browser.getKeyName.keyCodeMap.42	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    40: 'Down',$/;"	property	line:169
+Browser.getKeyName.keyCodeMap.45	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    42: 'Print Screen',$/;"	property	line:170
+Browser.getKeyName.keyCodeMap.46	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    45: 'Insert',$/;"	property	line:171
+Browser.getKeyName.keyCodeMap.48	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    46: 'Delete',$/;"	property	line:172
+Browser.getKeyName.keyCodeMap.49	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    48: '0',$/;"	property	line:173
+Browser.getKeyName.keyCodeMap.50	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    49: '1',$/;"	property	line:174
+Browser.getKeyName.keyCodeMap.51	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    50: '2',$/;"	property	line:175
+Browser.getKeyName.keyCodeMap.52	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    51: '3',$/;"	property	line:176
+Browser.getKeyName.keyCodeMap.53	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    52: '4',$/;"	property	line:177
+Browser.getKeyName.keyCodeMap.54	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    53: '5',$/;"	property	line:178
+Browser.getKeyName.keyCodeMap.55	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    54: '6',$/;"	property	line:179
+Browser.getKeyName.keyCodeMap.56	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    55: '7',$/;"	property	line:180
+Browser.getKeyName.keyCodeMap.57	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    56: '8',$/;"	property	line:181
+Browser.getKeyName.keyCodeMap.65	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    57: '9',$/;"	property	line:182
+Browser.getKeyName.keyCodeMap.66	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    65: 'A',$/;"	property	line:183
+Browser.getKeyName.keyCodeMap.67	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    66: 'B',$/;"	property	line:184
+Browser.getKeyName.keyCodeMap.68	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    67: 'C',$/;"	property	line:185
+Browser.getKeyName.keyCodeMap.69	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    68: 'D',$/;"	property	line:186
+Browser.getKeyName.keyCodeMap.70	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    69: 'E',$/;"	property	line:187
+Browser.getKeyName.keyCodeMap.71	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    70: 'F',$/;"	property	line:188
+Browser.getKeyName.keyCodeMap.72	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    71: 'G',$/;"	property	line:189
+Browser.getKeyName.keyCodeMap.73	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    72: 'H',$/;"	property	line:190
+Browser.getKeyName.keyCodeMap.74	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    73: 'I',$/;"	property	line:191
+Browser.getKeyName.keyCodeMap.75	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    74: 'J',$/;"	property	line:192
+Browser.getKeyName.keyCodeMap.76	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    75: 'K',$/;"	property	line:193
+Browser.getKeyName.keyCodeMap.77	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    76: 'L',$/;"	property	line:194
+Browser.getKeyName.keyCodeMap.78	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    77: 'M',$/;"	property	line:195
+Browser.getKeyName.keyCodeMap.79	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    78: 'N',$/;"	property	line:196
+Browser.getKeyName.keyCodeMap.80	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    79: 'O',$/;"	property	line:197
+Browser.getKeyName.keyCodeMap.81	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    80: 'P',$/;"	property	line:198
+Browser.getKeyName.keyCodeMap.82	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    81: 'Q',$/;"	property	line:199
+Browser.getKeyName.keyCodeMap.83	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    82: 'R',$/;"	property	line:200
+Browser.getKeyName.keyCodeMap.84	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    83: 'S',$/;"	property	line:201
+Browser.getKeyName.keyCodeMap.85	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    84: 'T',$/;"	property	line:202
+Browser.getKeyName.keyCodeMap.86	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    85: 'U',$/;"	property	line:203
+Browser.getKeyName.keyCodeMap.87	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    86: 'V',$/;"	property	line:204
+Browser.getKeyName.keyCodeMap.88	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    87: 'W',$/;"	property	line:205
+Browser.getKeyName.keyCodeMap.89	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    88: 'X',$/;"	property	line:206
+Browser.getKeyName.keyCodeMap.90	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    89: 'Y',$/;"	property	line:207
+Browser.getKeyName.keyCodeMap.91	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    90: 'Z',$/;"	property	line:208
+Browser.getKeyName.keyCodeMap.93	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    91: 'Windows',$/;"	property	line:209
+Browser.getKeyName.keyCodeMap.96	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    93: 'Right Click',$/;"	property	line:210
+Browser.getKeyName.keyCodeMap.97	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    96: 'Numpad 0',$/;"	property	line:211
+Browser.getKeyName.keyCodeMap.98	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    97: 'Numpad 1',$/;"	property	line:212
+Browser.getKeyName.keyCodeMap.99	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    98: 'Numpad 2',$/;"	property	line:213
+Browser.getKeyName.keyCodeMap.100	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    99: 'Numpad 3',$/;"	property	line:214
+Browser.getKeyName.keyCodeMap.101	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    100: 'Numpad 4',$/;"	property	line:215
+Browser.getKeyName.keyCodeMap.102	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    101: 'Numpad 5',$/;"	property	line:216
+Browser.getKeyName.keyCodeMap.103	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    102: 'Numpad 6',$/;"	property	line:217
+Browser.getKeyName.keyCodeMap.104	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    103: 'Numpad 7',$/;"	property	line:218
+Browser.getKeyName.keyCodeMap.105	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    104: 'Numpad 8',$/;"	property	line:219
+Browser.getKeyName.keyCodeMap.106	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    105: 'Numpad 9',$/;"	property	line:220
+Browser.getKeyName.keyCodeMap.107	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    106: 'Numpad *',$/;"	property	line:221
+Browser.getKeyName.keyCodeMap.109	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    107: 'Numpad +',$/;"	property	line:222
+Browser.getKeyName.keyCodeMap.110	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    109: 'Numpad -',$/;"	property	line:223
+Browser.getKeyName.keyCodeMap.111	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    110: 'Numpad .',$/;"	property	line:224
+Browser.getKeyName.keyCodeMap.112	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    111: 'Numpad \/',$/;"	property	line:225
+Browser.getKeyName.keyCodeMap.113	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    112: 'F1',$/;"	property	line:226
+Browser.getKeyName.keyCodeMap.114	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    113: 'F2',$/;"	property	line:227
+Browser.getKeyName.keyCodeMap.115	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    114: 'F3',$/;"	property	line:228
+Browser.getKeyName.keyCodeMap.116	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    115: 'F4',$/;"	property	line:229
+Browser.getKeyName.keyCodeMap.117	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    116: 'F5',$/;"	property	line:230
+Browser.getKeyName.keyCodeMap.118	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    117: 'F6',$/;"	property	line:231
+Browser.getKeyName.keyCodeMap.119	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    118: 'F7',$/;"	property	line:232
+Browser.getKeyName.keyCodeMap.120	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    119: 'F8',$/;"	property	line:233
+Browser.getKeyName.keyCodeMap.121	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    120: 'F9',$/;"	property	line:234
+Browser.getKeyName.keyCodeMap.122	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    121: 'F10',$/;"	property	line:235
+Browser.getKeyName.keyCodeMap.123	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    122: 'F11',$/;"	property	line:236
+Browser.getKeyName.keyCodeMap.144	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    123: 'F12',$/;"	property	line:237
+Browser.getKeyName.keyCodeMap.145	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    144: 'Num Lock',$/;"	property	line:238
+Browser.getKeyName.keyCodeMap.182	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    145: 'Scroll Lock',$/;"	property	line:239
+Browser.getKeyName.keyCodeMap.183	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    182: 'My Computer',$/;"	property	line:240
+Browser.getKeyName.keyCodeMap.186	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    183: 'My Calculator',$/;"	property	line:241
+Browser.getKeyName.keyCodeMap.187	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    186: ';',$/;"	property	line:242
+Browser.getKeyName.keyCodeMap.188	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    187: '=',$/;"	property	line:243
+Browser.getKeyName.keyCodeMap.189	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    188: ',',$/;"	property	line:244
+Browser.getKeyName.keyCodeMap.190	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    189: '-',$/;"	property	line:245
+Browser.getKeyName.keyCodeMap.191	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    190: '.',$/;"	property	line:246
+Browser.getKeyName.keyCodeMap.192	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    191: '\/',$/;"	property	line:247
+Browser.getKeyName.keyCodeMap.219	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    192: '`',$/;"	property	line:248
+Browser.getKeyName.keyCodeMap.220	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    219: '[',$/;"	property	line:249
+Browser.getKeyName.keyCodeMap.221	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    220: '\\\\',$/;"	property	line:250
+Browser.getKeyName.keyCodeMap.222	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^		    221: ']',$/;"	property	line:251
+uuid	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	uuid: function(prefix) {$/;"	function	line:12
+Server.uuid	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^var Server = {$/;"	method	line:5
+genNonDuplicateID	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	genNonDuplicateID: function(length) {$/;"	function	line:28
+Server.genNonDuplicateID	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	},$/;"	method	line:21

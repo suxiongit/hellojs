@@ -30,14 +30,14 @@ var Server = {
 	},
 };
 
-// 示例 uuid
+// 示例 Server.uuid
 // console.log(Server.uuid());
 // console.log(Server.uuid('uuid-'));
 // for (var i = 0; i < 10; i ++) {
 //     console.log(Server.uuid());
 // }
 
-// 示例 genNonDuplicateID
+// 示例 Server.genNonDuplicateID
 // for (var i = 0; i < 10; i ++) {
 //     console.log(Server.genNonDuplicateID());
 // }

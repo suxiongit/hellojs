@@ -5,6 +5,36 @@
 var Browser = {
 
 	/**
+	 * 获取浏览器类型及主版本
+	 * @return {object} 返回包含浏览器和版本的对象
+	 */
+	getBrowserInfo: function() {
+		var sys = {};
+		var ua = navigator.userAgent.toLowerCase();
+		if (window.ActiveXObject) {
+			sys.b = 'ie';
+			sys.v = parseInt(ua.match(/msie ([\d.]+)/)[1]);
+		}
+		else if (document.getBoxObjectFor) {
+			sys.b = 'firefox';
+			sys.v = parseInt(ua.match(/firefox\/([\d.]+)/)[1]);
+		}
+		else if (window.MessageEvent && !document.getBoxObjectFor) {
+			sys.b = 'chrome';
+			sys.v == parseInt(ua.match(/chrome\/([\d.]+)/)[1]);
+		}
+		else if (window.opera) {
+			sys.b = 'opera';
+			sys.v == parseInt(ua.match(/opera.([\d.]+)/)[1]);
+		}
+		else if (window.openDatabase) {
+			sys.b = 'safari';
+			sys.v == parseInt(ua.match(/version\/([\d.]+)/)[1]);
+		}
+		return sys;
+	},
+
+	/**
 	 * 判断是否PC访问
 	 * @return {boolean}
 	 */
@@ -12,7 +42,7 @@ var Browser = {
 		var userAgentInfo = navigator.userAgent;
 		var agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
 		var flag = true;
-		for (var v = 0; v < agents.length; v++) {
+		for (var v = 0, n = agents.length; v < n; v++) {
 			if (userAgentInfo.indexOf(agents[v]) > 0) {
 				flag = false;
 				break;
@@ -33,36 +63,6 @@ var Browser = {
 
 		var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
 		return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-	},
-
-	/**
-	 * 获取浏览器类型及主版本
-	 * @return {object} 返回包含浏览器和版本的对象
-	 */
-	getBrowserInfo: function() {
-		var Sys = {};
-		var ua = navigator.userAgent.toLowerCase();
-		if (window.ActiveXObject) {
-			Sys.b = 'ie';
-			Sys.v = parseInt(ua.match(/msie ([\d.]+)/)[1]);
-		}
-		else if (document.getBoxObjectFor) {
-			Sys.b = 'firefox';
-			Sys.v = parseInt(ua.match(/firefox\/([\d.]+)/)[1]);
-		}
-		else if (window.MessageEvent && !document.getBoxObjectFor) {
-			Sys.b = 'chrome';
-			Sys.v == parseInt(ua.match(/chrome\/([\d.]+)/)[1]);
-		}
-		else if (window.opera) {
-			Sys.b = 'opera';
-			Sys.v == parseInt(ua.match(/opera.([\d.]+)/)[1]);
-		}
-		else if (window.openDatabase) {
-			Sys.b = 'safari';
-			Sys.v == parseInt(ua.match(/version\/([\d.]+)/)[1]);
-		}
-		return Sys;
 	},
 
 	/**
@@ -92,6 +92,15 @@ var Browser = {
 		if (arr != null) return unescape(arr[2]);
 		return null
 	},
+
+	/**
+     * 删除cookie值
+     * @param {string} name 缓存名称
+     */
+    removeCookie: function(name) {
+        // 设置已过期，系统会立刻删除cookie
+        setCookie(name, '1', -1);
+    },
 
 	/**
 	 * 加入收藏夹
@@ -137,15 +146,127 @@ var Browser = {
 			return true;
 		}
 	},
+
+	getKeyName: function(keycode) {
+		var keyCodeMap = {
+		    8: 'Backspace',
+		    9: 'Tab',
+		    13: 'Enter',
+		    16: 'Shift',
+		    17: 'Ctrl',
+		    18: 'Alt',
+		    19: 'Pause',
+		    20: 'Caps Lock',
+		    27: 'Escape',
+		    32: 'Space',
+		    33: 'Page Up',
+		    34: 'Page Down',
+		    35: 'End',
+		    36: 'Home',
+		    37: 'Left',
+		    38: 'Up',
+		    39: 'Right',
+		    40: 'Down',
+		    42: 'Print Screen',
+		    45: 'Insert',
+		    46: 'Delete',
+		    48: '0',
+		    49: '1',
+		    50: '2',
+		    51: '3',
+		    52: '4',
+		    53: '5',
+		    54: '6',
+		    55: '7',
+		    56: '8',
+		    57: '9',
+		    65: 'A',
+		    66: 'B',
+		    67: 'C',
+		    68: 'D',
+		    69: 'E',
+		    70: 'F',
+		    71: 'G',
+		    72: 'H',
+		    73: 'I',
+		    74: 'J',
+		    75: 'K',
+		    76: 'L',
+		    77: 'M',
+		    78: 'N',
+		    79: 'O',
+		    80: 'P',
+		    81: 'Q',
+		    82: 'R',
+		    83: 'S',
+		    84: 'T',
+		    85: 'U',
+		    86: 'V',
+		    87: 'W',
+		    88: 'X',
+		    89: 'Y',
+		    90: 'Z',
+		    91: 'Windows',
+		    93: 'Right Click',
+		    96: 'Numpad 0',
+		    97: 'Numpad 1',
+		    98: 'Numpad 2',
+		    99: 'Numpad 3',
+		    100: 'Numpad 4',
+		    101: 'Numpad 5',
+		    102: 'Numpad 6',
+		    103: 'Numpad 7',
+		    104: 'Numpad 8',
+		    105: 'Numpad 9',
+		    106: 'Numpad *',
+		    107: 'Numpad +',
+		    109: 'Numpad -',
+		    110: 'Numpad .',
+		    111: 'Numpad /',
+		    112: 'F1',
+		    113: 'F2',
+		    114: 'F3',
+		    115: 'F4',
+		    116: 'F5',
+		    117: 'F6',
+		    118: 'F7',
+		    119: 'F8',
+		    120: 'F9',
+		    121: 'F10',
+		    122: 'F11',
+		    123: 'F12',
+		    144: 'Num Lock',
+		    145: 'Scroll Lock',
+		    182: 'My Computer',
+		    183: 'My Calculator',
+		    186: ';',
+		    187: '=',
+		    188: ',',
+		    189: '-',
+		    190: '.',
+		    191: '/',
+		    192: '`',
+		    219: '[',
+		    220: '\\',
+		    221: ']',
+		    222: '\''
+		};
+	    if (keyCodeMap[keycode]) {
+	        return keyCodeMap[keycode];
+	    } else {
+	        console.log('Unknown Key(Key Code:' + keycode + ')');
+	        return '';
+	    }
+	},
 };
 
-// 示例 isPC
-// if (isPC()) {
+// 示例 Browser.isPC
+// if (Browser.isPC()) {
 //     console.log('PC');
 // } else {
 //     console.log('移动设备');
 // }
 
-// 示例 getBrowserInfo
-// var bi = getBrowserInfo();
-// document.write('Browser:'+bi.b+'    Version:'+bi.v); // Browser:ie Version:10
+// 示例 Browser.getBrowserInfo
+// var bi = Browser.getBrowserInfo();
+// document.write('Browser:'+bi.b+' Version:'+bi.v); // Browser:ie Version:10
