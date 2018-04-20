@@ -38,6 +38,8 @@ if (!String.prototype.firstUpperCase) {
     // console.log('HELLO WORLD'.firstUpperCase()); // Hello world
     // console.log('hello world'.firstUpperCase(1)); // Hello World
     // console.log('HELLO WORLD'.firstUpperCase(1)); // Hello World
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.firstUpperCase');
 }
 
 if (!String.prototype.cnLength) {
@@ -65,6 +67,8 @@ if (!String.prototype.cnLength) {
     // var str = 'hello你好';
     // console.log(str.length); // 7
     // console.log(str.cnLength()); // 9
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.cnLength');
 }
 
 if (!String.prototype.replaceAll) {
@@ -88,6 +92,8 @@ if (!String.prototype.replaceAll) {
     // console.log(str.replace('Hello', 'Welcome to')); // Welcome to China, Hello World
     // console.log(str.replaceAll('hello', 'Welcome to', true)); // Welcome to China, Welcome to World
     // console.log(str.replace(/hello/gi, 'Welcome to')); // Welcome to China, Welcome to World
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.replaceAll');
 }
 
 if (!String.prototype.trimCRLF) {
@@ -103,6 +109,8 @@ if (!String.prototype.trimCRLF) {
     // var str = '\r\nhe\n';
     // console.log('去除前=' + str); // \r\nhe\n
     // console.log('去除后=' + str.trimCRLF()); // he
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.trimCRLF');
 }
 
 if (!String.prototype.reverse) {
@@ -121,6 +129,8 @@ if (!String.prototype.reverse) {
     // 示例 String.prototype.reverse
     // var str = 'abcdefg';
     // console.log(str + ' 反转为 ' + str.reverse()); // gfedcba
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.reverse');
 }
 
 if (!String.prototype.contains) {
@@ -136,24 +146,8 @@ if (!String.prototype.contains) {
     // 示例 String.prototype.contains
     // var str = 'Welcome to Beijing!';
     // console.log(str.contains('Beijing')); // true
-}
-
-if (!String.format) {
-    /**
-     * 格式化字符串
-     * @param {string} str
-     * @return {string}
-     */
-    String.format = function(str) {
-        var args = Array.prototype.slice.call(arguments, 1);
-        return str.replace(/\{(\d+)\}/g, function(match, i) {
-            return (typeof args[i] == 'undefined') ? match : args[i];
-        });
-    };
-
-    // 示例 String.format
-    // var str = 'I love {0}, but I don\'t love {1}';
-    // console.log(String.format(str, 'China', 'Japan')); // I love China, but I don't love Japan
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.contains');
 }
 
 if (!String.prototype.format) {
@@ -171,6 +165,8 @@ if (!String.prototype.format) {
     // 示例 String.prototype.format
     // var str = 'I love {0}, but I don\'t love {1}';
     // console.log(str.format('China', 'Japan')); // I love China, but I don't love Japan
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.format');
 }
 
 if (!String.prototype.number) {
@@ -191,6 +187,8 @@ if (!String.prototype.number) {
     // console.log(str.match(/\d/g)); // [ '1', '0', '1', '9', '9', '6' ]
     // console.log(str.match(/\d+/g)); // [ '1', '0', '1996' ]
     // console.log(str.match(/\d+.\d+/g)); // [ '1.0', '1996' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.number');
 }
 
 if (!String.prototype.chinese) {
@@ -208,6 +206,8 @@ if (!String.prototype.chinese) {
     // console.log(str.chinese()); // 你好中国
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]/g)); // [ '你', '好', '中', '国' ]
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]+/g)); // [ '你好', '中国' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.chinese');
 }
 
 if (!String.prototype.english) {
@@ -225,6 +225,8 @@ if (!String.prototype.english) {
     // console.log(str.english()); // ThisisEnglish
     // console.log(str.match(/[A-Za-z]/g)); // [ 'T', 'h', 'i', 's', 'i', 's', 'E', 'n', 'g', 'l', 'i', 's', 'h' ]
     // console.log(str.match(/[A-Za-z]+/g)); // [ 'This', 'is', 'English' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.english');
 }
 
 if (!String.prototype.filename) {
@@ -240,6 +242,8 @@ if (!String.prototype.filename) {
     // 示例 String.prototype.filename
     // var str = 'D:/bearsu/workspace/hellojs/extensions/polyfill.js';
     // console.log(str.filename()); // polyfill.js
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.filename');
 }
 
 if (!String.prototype.extname) {
@@ -255,6 +259,8 @@ if (!String.prototype.extname) {
     // 示例 String.prototype.extname
     // var str = 'D:/bearsu/workspace/hellojs/extensions/polyfill.js';
     // console.log(str.extname()); // .js
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.extname');
 }
 
 if (!String.prototype.toInt) {
@@ -269,6 +275,8 @@ if (!String.prototype.toInt) {
     // 示例 String.prototype.toInt
     // console.log(typeof '123'.toInt()); // number: 123
     // console.log(typeof 'abc'.toInt()); // string: abc
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.toInt');
 }
 
 if (!String.prototype.resetBlank) {
@@ -283,4 +291,6 @@ if (!String.prototype.resetBlank) {
 
     // 示例 String.prototype.resetBlank
     // console.log('hello      world'.resetBlank()); // hello world
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.resetBlank');
 }

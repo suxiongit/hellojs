@@ -36,6 +36,8 @@ if (!Array.prototype.contains) {
     // console.log(arr.contains('1')); // true
     // console.log(arr.contains(1, true)); // 严格模式 true
     // console.log(arr.contains('1', true)); // 严格模式 false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.contains');
 }
 
 if (!Array.prototype.forEach) {
@@ -73,18 +75,15 @@ if (!Array.prototype.forEach) {
     };
 
     // 示例 Array.prototype.forEach
-    // var arr = [];
-    // arr.push('a');
-    // arr.push('b');
-    // arr.push('c');
-    // arr.push('d');
-    // arr.push('e');
+    // var arr = ['a', 'b', 'c', 'd', 'e'];
     // arr.forEach(function(value) {
     //     console.log(value);
     // });
     // arr.forEach(function(value, index, array) {
     //     console.log(value + ' ' + index + ' ' + array);
     // });
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.forEach');
 }
 
 if (!Array.prototype.remove) {
@@ -135,6 +134,8 @@ if (!Array.prototype.remove) {
     //
     // arr.remove(-1, true); // 通过索引删除
     // console.log(arr);
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.remove');
 }
 
 if (!Array.prototype.indexOf) {
@@ -224,6 +225,8 @@ if (!Array.prototype.indexOf) {
     // 示例 Array.prototype.indexOf
     // var arr = ['a', 'b', 'c', 'd', 'e'];
     // console.log(arr.indexOf('e'));
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.indexOf');
 }
 
 if (!Array.prototype.random) {
@@ -265,6 +268,8 @@ if (!Array.prototype.random) {
     // for (var i = 0; i < 10; i ++) {
     //     console.log(items.random());
     // }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.random');
 }
 
 if (!Array.prototype.shuffle) {
@@ -283,6 +288,8 @@ if (!Array.prototype.shuffle) {
     // for (var i = 0; i < 10; i ++) {
     //     console.log(items.shuffle());
     // }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.shuffle');
 }
 
 if (!Array.prototype.empty) {
@@ -298,6 +305,8 @@ if (!Array.prototype.empty) {
     // console.log(arr);
     // arr.empty();
     // console.log(arr);
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.empty');
 }
 
 if (!Array.prototype.filterEmpty) {
@@ -318,6 +327,8 @@ if (!Array.prototype.filterEmpty) {
     // var arr = ['a', '', 'b', ' ', 'c', '  ', 'd', , 'e', 0];
     // console.log(arr);
     // console.log(arr.filterEmpty());
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.filterEmpty');
 }
 
 if (!Array.prototype.unique) {
@@ -341,6 +352,8 @@ if (!Array.prototype.unique) {
     // var arr2 = arr.unique();
     // console.log(arr); // [ '1', 1, 2 ]
     // console.log(arr2); // [ '1', 2 ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.unique');
 }
 
 if (!Array.diff) {
@@ -410,6 +423,8 @@ if (!Array.diff) {
     // var arr1 = 'a';
     // var arr2 = ['a', 'b', 'c', 'd', 'e', 'f'];
     // console.log(Array.diff(arr1, arr2)); // TypeError: Parameter is not an array
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.diff');
 }
 
 if (!Array.same) {
@@ -452,6 +467,8 @@ if (!Array.same) {
     // var arr1 = 'a';
     // var arr2 = ['a', 'b', 'c', 'd', 'e', 'f'];
     // console.log(Array.same(arr1, arr2)); // TypeError: Parameter is not an array
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.same');
 }
 
 if (!Array.prototype.max) {
@@ -474,6 +491,8 @@ if (!Array.prototype.max) {
     // console.log(arr + ' 最大值 ' + arr.max()); // 5
     // var arr = ['a', 'b', 'c', 'd', 'e'];
     // console.log(arr + ' 最大值 ' + arr.max()); // e
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.max');
 }
 
 if (!Array.prototype.min) {
@@ -496,6 +515,8 @@ if (!Array.prototype.min) {
     // console.log(arr + ' 最小值 ' + arr.min()); // 1
     // var arr = ['a', 'b', 'c', 'd', 'e'];
     // console.log(arr + ' 最小值 ' + arr.min()); // a
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.min');
 }
 
 if (!Array.isEmpty) {
@@ -515,6 +536,8 @@ if (!Array.isEmpty) {
     // console.log(Array.isEmpty([])); // true
     // console.log(Array.isEmpty(1)); // true
     // console.log(Array.isEmpty([1])); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.isEmpty');
 }
 
 if (!Array.prototype.copy) {
@@ -533,6 +556,8 @@ if (!Array.prototype.copy) {
     // var arr = ['a', 'b', 'c', 'd'];
     // var arr2 = arr.copy();
     // console.log(arr2); // [ 'a', 'b', 'c', 'd' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.copy');
 }
 
 if (!Array.prototype.numberSort) {
@@ -551,6 +576,8 @@ if (!Array.prototype.numberSort) {
     // console.log([1, 10, 21, 2].sort()); // [ 1, 10, 2, 21 ]
     // console.log([1, 10, 21, 2].numberSort()); // [ 1, 2, 10, 21 ]
     // console.log([1, 10, 21, 2].numberSort(1)); // [ 21, 10, 2, 1 ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.numberSort');
 }
 
 if (!Array.prototype.numberSum) {
@@ -566,6 +593,8 @@ if (!Array.prototype.numberSum) {
     // 示例 Array.prototype.numberSum
     // console.log([1, 2, 3, 4, 5].numberSum()); // 15
     // console.log([].numberSum()); // 0
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.numberSum');
 }
 
 if (!Array.prototype.equals) {
@@ -604,6 +633,8 @@ if (!Array.prototype.equals) {
     // console.log([1, 2, 3].equals([4, 5, 6])); // false
     // console.log([1, [2, 3]].equals([1, [2, 3]])); // true
     // console.log([{a:1}, {b:2}].equals([{a:1}, {b:2}])); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.equals');
 }
 
 /**
@@ -663,6 +694,8 @@ if (!Date.prototype.format) {
     // console.log(date.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2014年07月10日 10时21分12秒
     // var date2 = new Date();
     // console.log(date2.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2017年04月25日 21时40分32秒
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.format');
 }
 
 if (!Date.prototype.isLeapYear) {
@@ -683,6 +716,8 @@ if (!Date.prototype.isLeapYear) {
     // console.log(date.format('yyyy年') + ' 是否闰年 ' + date.isLeapYear()); // true
     // var date2 = new Date();
     // console.log(date2.format('yyyy年') + ' 是否闰年 ' + date2.isLeapYear()); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.isLeapYear');
 }
 
 if (!Date.getAge) {
@@ -704,6 +739,8 @@ if (!Date.getAge) {
 
     // 示例 Date.getAge
     // console.log(Date.getAge('1996-3-1')); // 21
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.getAge');
 }
 
 if (!Date.prototype.diff) {
@@ -752,6 +789,8 @@ if (!Date.prototype.diff) {
     // var date2 = new Date('2011-08-10 18:00:00');
     // console.log(date2.format('yyyy-MM-dd hh:mm:ss')); // 2011-08-10 18:00:00
     // console.log('相差多少%s小时', date1.diff('h', date2)); // 9
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.diff');
 }
 
 if (!Date.prototype.toCNDate) {
@@ -776,6 +815,8 @@ if (!Date.prototype.toCNDate) {
     // var nowDate = new Date();
     // console.log('默认格式', nowDate); // 默认格式 2017-06-19T09:43:57.174Z
     // console.log('中文格式', nowDate.toCNDate()); // 中文格式 2017年05月19日17时43分57秒  星期一
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.toCNDate');
 }
 
 if (!Date.prototype.add) {
@@ -816,6 +857,8 @@ if (!Date.prototype.add) {
     // console.log(date.add('h', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一小时
     // console.log(date.add('n', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一分钟
     // console.log(date.add('s', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一秒
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.add');
 }
 
 if (!Date.prototype.getMaxDay) {
@@ -848,6 +891,8 @@ if (!Date.prototype.getMaxDay) {
     // console.log('当前月份%s天', new Date().getMaxDay()); // 当前月份30天
     // console.log('2018年2月份%s天', new Date('2018-02').getMaxDay()); // 2018年2月份28天
     // console.log('2016年2月份%s天', new Date('2016-02').getMaxDay()); // 2016年2月份29天
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.getMaxDay');
 }
 
 if (!Date.analyze) {
@@ -907,6 +952,8 @@ if (!Date.analyze) {
     // 示例 Date.analyze
     // var timestamp = (new Date('2018-04-15 16:00')).getTime();
     // console.log(Date.analyze(timestamp, true));
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.analyze');
 }
 
 /**
@@ -935,6 +982,8 @@ if (!Math.randomArbitrary) {
     // for (var i = 0; i < 10; i ++) {
     //     console.log(Math.randomArbitrary(1, 2)); // 1.2152592913032378
     // }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Math.randomArbitrary');
 }
 
 if (!Math.randomInt) {
@@ -960,6 +1009,8 @@ if (!Math.randomInt) {
     // for (var i = 0; i < 10; i ++) {
     //     console.log(Math.randomInt(1, 10, 1)); // 1-10
     // }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Math.randomInt');
 }
 
 /**
@@ -984,6 +1035,8 @@ if (!Number.toInt) {
     // console.log(Number.toInt('a')); // 0
     // console.log(parseInt('a')); // NaN
     // console.log(Number.parseInt('a')); // NaN
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.toInt');
 }
 
 if (!Number.toDouble) {
@@ -1001,6 +1054,8 @@ if (!Number.toDouble) {
     // console.log(Number.toDouble('.2')); // 0.2
     // console.log(Number.toDouble('.1') + Number.toDouble('.2')); // 0.30000000000000004
     // console.log(Number.toDouble('a')); // 0
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.toDouble');
 }
 
 if (!Number.prototype.withZero) {
@@ -1019,6 +1074,8 @@ if (!Number.prototype.withZero) {
 
     // 示例 Number.prototype.withZero
     // console.log(Number(7).withZero(3)); // 007
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.prototype.withZero');
 }
 
 if (!Number.prototype.chrW) {
@@ -1032,6 +1089,8 @@ if (!Number.prototype.chrW) {
 
     // 示例 Number.prototype.chrW
     // console.log(Number(65).chrW()); // A
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.prototype.chrW');
 }
 
 if (!Number.prototype.splitPow) {
@@ -1054,6 +1113,8 @@ if (!Number.prototype.splitPow) {
     // 示例 Number.prototype.splitPow
     // console.log(Number(15).splitPow()); // [ 8, 4, 2, 1 ]
     // console.log(Number(0).splitPow()); // []
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.prototype.splitPow');
 }
 
 if (!Number.prototype.digitUppercase) {
@@ -1095,6 +1156,8 @@ if (!Number.prototype.digitUppercase) {
 
     // 示例 Number.prototype.digitUppercase
     // console.log(Number(10000).digitUppercase()); // 壹万元整
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.prototype.digitUppercase');
 }
 
 /**
@@ -1117,6 +1180,8 @@ if (!Object.clone) {
     // var copy = Object.clone(obj);
     // obj.a = 2;
     // console.log(copy); // { a: 1 }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.clone');
 }
 
 if (!Object.isEmpty) {
@@ -1139,6 +1204,8 @@ if (!Object.isEmpty) {
     // console.log(Object.isEmpty(0)); // true
     // console.log(Object.isEmpty(1)); // true
     // console.log(Object.isEmpty({'a': 1})); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.isEmpty');
 }
 
 if (!Object.isType) {
@@ -1182,6 +1249,8 @@ if (!Object.isType) {
     // illegal
     // console.log(Object.isType(1, 'test')); // TypeError: Parameter "type" value is illegal
     // console.log(Object.isType(1, 'test', 1)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.isType');
 }
 
 if (!Object.prototype.remove) {
@@ -1202,6 +1271,8 @@ if (!Object.prototype.remove) {
     // var obj = {'name': 'zs', 'age': 17, 'car': 'suzuki'};
     // obj.remove(['age', 'car']);
     // console.log(obj); // { name: 'zs' }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.prototype.remove');
 }
 
 if (!Object.prototype.extend) {
@@ -1223,6 +1294,8 @@ if (!Object.prototype.extend) {
     // var objB = {'name': 'james', 'age': 17};
     // objA.extend(objB);
     // console.log(objA); // { name: 'james', car: 'suzuki', age: 17 }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.prototype.extend');
 }
 
 if (!Object.prototype.pick) {
@@ -1244,6 +1317,8 @@ if (!Object.prototype.pick) {
     // var objA = {'name': 'colin', 'car': 'suzuki', 'age': 17};
     // var objB = objA.pick(['car', 'age']);
     // console.log(objB); // { car: 'suzuki', age: 17 }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.prototype.equals');
 }
 
 if (!Object.prototype.equals) {
@@ -1309,6 +1384,8 @@ if (!Object.prototype.equals) {
     // console.log({a:1, b:2}.equals({a:1, b:2})); // true
     // console.log({a:1, b:2}.equals({a:3, b:4})); // false
     // console.log({a:1, b:2}.equals({a:1})); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.prototype.equals');
 }
 
 /**
@@ -1332,6 +1409,8 @@ if (!RegExp.isEmpty) {
     // 示例 RegExp.isEmpty
     // console.log(RegExp.isEmpty('')); // true
     // console.log(RegExp.isEmpty(' ')); // true
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isEmpty');
 }
 
 if (!RegExp.isDate) {
@@ -1349,6 +1428,8 @@ if (!RegExp.isDate) {
     // console.log(value, RegExp.isDate(value)); // true
     // var value = '2016-05-19 00';
     // console.log(value, RegExp.isDate(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isDate');
 }
 
 if (!RegExp.isDomain) {
@@ -1366,6 +1447,8 @@ if (!RegExp.isDomain) {
     // console.log(value, RegExp.isDomain(value)); // true
     // var value = 'test-domain';
     // console.log(value, RegExp.isDomain(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isDomain');
 }
 
 if (!RegExp.isEmail) {
@@ -1383,6 +1466,8 @@ if (!RegExp.isEmail) {
     // console.log(value, RegExp.isEmail(value)); // true
     // var value = 'test-email@domain';
     // console.log(value, RegExp.isEmail(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isEmail');
 }
 
 if (!RegExp.isHtmlTag) {
@@ -1406,6 +1491,8 @@ if (!RegExp.isHtmlTag) {
     // console.log(value, RegExp.isHtmlTag(value)); // true
     // var value = '<br/>';
     // console.log(value, RegExp.isHtmlTag(value)); // true
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isHtmlTag');
 }
 
 if (!RegExp.isIdCard) {
@@ -1423,6 +1510,8 @@ if (!RegExp.isIdCard) {
     // console.log(value, RegExp.isIdCard(value)); // true
     // var value = '0000000000000000000'; // 超出18位
     // console.log(value, RegExp.isIdCard(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isIdCard');
 }
 
 if (!RegExp.isIP) {
@@ -1440,6 +1529,8 @@ if (!RegExp.isIP) {
     // console.log(value, RegExp.isIP(value)); // true
     // var value = '127.0.0.1 0';
     // console.log(value, RegExp.isIP(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isIP');
 }
 
 if (!RegExp.isMobilePhone) {
@@ -1459,6 +1550,8 @@ if (!RegExp.isMobilePhone) {
     // console.log(value, RegExp.isMobilePhone(value)); // false
     // var value = '800138000';
     // console.log(value, RegExp.isMobilePhone(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isMobilePhone');
 }
 
 if (!RegExp.isQQ) {
@@ -1476,6 +1569,8 @@ if (!RegExp.isQQ) {
     // console.log(value, RegExp.isQQ(value)); // true
     // var value = '01000';
     // console.log(value, RegExp.isQQ(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isQQ');
 }
 
 if (!RegExp.isTelephone) {
@@ -1491,6 +1586,8 @@ if (!RegExp.isTelephone) {
     // 示例 RegExp.isTelephone
     // console.log(RegExp.isTelephone('010-12345678')); // true
     // console.log(RegExp.isTelephone('12345678')); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isTelephone');
 }
 
 if (!RegExp.isUrl) {
@@ -1510,6 +1607,8 @@ if (!RegExp.isUrl) {
     // console.log(value, RegExp.isUrl(value)); // true
     // var value = 'www.test-url.com';
     // console.log(value, RegExp.isUrl(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isUrl');
 }
 
 if (!RegExp.isUsername) {
@@ -1527,6 +1626,8 @@ if (!RegExp.isUsername) {
     // console.log(value, RegExp.isUsername(value)); // true
     // var value = 'abc-123';
     // console.log(value, RegExp.isUsername(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isUsername');
 }
 
 if (!RegExp.isVersion) {
@@ -1544,6 +1645,8 @@ if (!RegExp.isVersion) {
     // console.log(value, RegExp.isVersion(value)); // true
     // var value = '382';
     // console.log(value, RegExp.isVersion(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isVersion');
 }
 
 if (!RegExp.isZipCode) {
@@ -1561,6 +1664,8 @@ if (!RegExp.isZipCode) {
     // console.log(value, RegExp.isZipCode(value)); // true
     // var value = '5180001'; // 已超出6位
     // console.log(value, RegExp.isZipCode(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isZipCode');
 }
 
 if (!RegExp.isPassword) {
@@ -1583,6 +1688,8 @@ if (!RegExp.isPassword) {
     // console.log(RegExp.isPassword('Abcd1234')); // true
     // console.log(RegExp.isPassword('abc123', 1)); // false
     // console.log(RegExp.isPassword('Abcd1234', 1)); // true
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isPassword');
 }
 
 if (!RegExp.isMoney) {
@@ -1607,6 +1714,8 @@ if (!RegExp.isMoney) {
     // console.log(RegExp.isMoney('10,000.00')); // false
     // console.log(RegExp.isMoney('10,000', 1)); // true
     // console.log(RegExp.isMoney('10,000.00', 1)); // true
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isMoney');
 }
 
 if (!RegExp.isNumber) {
@@ -1633,6 +1742,8 @@ if (!RegExp.isNumber) {
     //
     // console.log(RegExp.isNumber(123, 3)); // true
     // console.log(RegExp.isNumber(1234, 3)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isNumber');
 }
 
 if (!RegExp.isRangeNumber) {
@@ -1658,6 +1769,8 @@ if (!RegExp.isRangeNumber) {
     // 示例 RegExp.isRangeNumber
     // console.log(RegExp.isRangeNumber(123, 1, 3)); // true
     // console.log(RegExp.isRangeNumber(1234, 1, 3)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isRangeNumber');
 }
 
 /**
@@ -1700,6 +1813,8 @@ if (!String.prototype.firstUpperCase) {
     // console.log('HELLO WORLD'.firstUpperCase()); // Hello world
     // console.log('hello world'.firstUpperCase(1)); // Hello World
     // console.log('HELLO WORLD'.firstUpperCase(1)); // Hello World
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.firstUpperCase');
 }
 
 if (!String.prototype.cnLength) {
@@ -1727,6 +1842,8 @@ if (!String.prototype.cnLength) {
     // var str = 'hello你好';
     // console.log(str.length); // 7
     // console.log(str.cnLength()); // 9
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.cnLength');
 }
 
 if (!String.prototype.replaceAll) {
@@ -1750,6 +1867,8 @@ if (!String.prototype.replaceAll) {
     // console.log(str.replace('Hello', 'Welcome to')); // Welcome to China, Hello World
     // console.log(str.replaceAll('hello', 'Welcome to', true)); // Welcome to China, Welcome to World
     // console.log(str.replace(/hello/gi, 'Welcome to')); // Welcome to China, Welcome to World
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.replaceAll');
 }
 
 if (!String.prototype.trimCRLF) {
@@ -1765,6 +1884,8 @@ if (!String.prototype.trimCRLF) {
     // var str = '\r\nhe\n';
     // console.log('去除前=' + str); // \r\nhe\n
     // console.log('去除后=' + str.trimCRLF()); // he
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.trimCRLF');
 }
 
 if (!String.prototype.reverse) {
@@ -1783,6 +1904,8 @@ if (!String.prototype.reverse) {
     // 示例 String.prototype.reverse
     // var str = 'abcdefg';
     // console.log(str + ' 反转为 ' + str.reverse()); // gfedcba
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.reverse');
 }
 
 if (!String.prototype.contains) {
@@ -1798,24 +1921,8 @@ if (!String.prototype.contains) {
     // 示例 String.prototype.contains
     // var str = 'Welcome to Beijing!';
     // console.log(str.contains('Beijing')); // true
-}
-
-if (!String.format) {
-    /**
-     * 格式化字符串
-     * @param {string} str
-     * @return {string}
-     */
-    String.format = function(str) {
-        var args = Array.prototype.slice.call(arguments, 1);
-        return str.replace(/\{(\d+)\}/g, function(match, i) {
-            return (typeof args[i] == 'undefined') ? match : args[i];
-        });
-    };
-
-    // 示例 String.format
-    // var str = 'I love {0}, but I don\'t love {1}';
-    // console.log(String.format(str, 'China', 'Japan')); // I love China, but I don't love Japan
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.contains');
 }
 
 if (!String.prototype.format) {
@@ -1833,6 +1940,8 @@ if (!String.prototype.format) {
     // 示例 String.prototype.format
     // var str = 'I love {0}, but I don\'t love {1}';
     // console.log(str.format('China', 'Japan')); // I love China, but I don't love Japan
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.format');
 }
 
 if (!String.prototype.number) {
@@ -1853,6 +1962,8 @@ if (!String.prototype.number) {
     // console.log(str.match(/\d/g)); // [ '1', '0', '1', '9', '9', '6' ]
     // console.log(str.match(/\d+/g)); // [ '1', '0', '1996' ]
     // console.log(str.match(/\d+.\d+/g)); // [ '1.0', '1996' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.number');
 }
 
 if (!String.prototype.chinese) {
@@ -1870,6 +1981,8 @@ if (!String.prototype.chinese) {
     // console.log(str.chinese()); // 你好中国
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]/g)); // [ '你', '好', '中', '国' ]
     // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]+/g)); // [ '你好', '中国' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.chinese');
 }
 
 if (!String.prototype.english) {
@@ -1887,6 +2000,8 @@ if (!String.prototype.english) {
     // console.log(str.english()); // ThisisEnglish
     // console.log(str.match(/[A-Za-z]/g)); // [ 'T', 'h', 'i', 's', 'i', 's', 'E', 'n', 'g', 'l', 'i', 's', 'h' ]
     // console.log(str.match(/[A-Za-z]+/g)); // [ 'This', 'is', 'English' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.english');
 }
 
 if (!String.prototype.filename) {
@@ -1902,6 +2017,8 @@ if (!String.prototype.filename) {
     // 示例 String.prototype.filename
     // var str = 'D:/bearsu/workspace/hellojs/extensions/polyfill.js';
     // console.log(str.filename()); // polyfill.js
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.filename');
 }
 
 if (!String.prototype.extname) {
@@ -1917,6 +2034,8 @@ if (!String.prototype.extname) {
     // 示例 String.prototype.extname
     // var str = 'D:/bearsu/workspace/hellojs/extensions/polyfill.js';
     // console.log(str.extname()); // .js
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.extname');
 }
 
 if (!String.prototype.toInt) {
@@ -1931,6 +2050,8 @@ if (!String.prototype.toInt) {
     // 示例 String.prototype.toInt
     // console.log(typeof '123'.toInt()); // number: 123
     // console.log(typeof 'abc'.toInt()); // string: abc
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.toInt');
 }
 
 if (!String.prototype.resetBlank) {
@@ -1945,4 +2066,6 @@ if (!String.prototype.resetBlank) {
 
     // 示例 String.prototype.resetBlank
     // console.log('hello      world'.resetBlank()); // hello world
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.resetBlank');
 }

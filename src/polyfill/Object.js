@@ -18,6 +18,8 @@ if (!Object.clone) {
     // var copy = Object.clone(obj);
     // obj.a = 2;
     // console.log(copy); // { a: 1 }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.clone');
 }
 
 if (!Object.isEmpty) {
@@ -40,6 +42,8 @@ if (!Object.isEmpty) {
     // console.log(Object.isEmpty(0)); // true
     // console.log(Object.isEmpty(1)); // true
     // console.log(Object.isEmpty({'a': 1})); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.isEmpty');
 }
 
 if (!Object.isType) {
@@ -83,6 +87,8 @@ if (!Object.isType) {
     // illegal
     // console.log(Object.isType(1, 'test')); // TypeError: Parameter "type" value is illegal
     // console.log(Object.isType(1, 'test', 1)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.isType');
 }
 
 if (!Object.prototype.remove) {
@@ -103,6 +109,8 @@ if (!Object.prototype.remove) {
     // var obj = {'name': 'zs', 'age': 17, 'car': 'suzuki'};
     // obj.remove(['age', 'car']);
     // console.log(obj); // { name: 'zs' }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.prototype.remove');
 }
 
 if (!Object.prototype.extend) {
@@ -124,6 +132,8 @@ if (!Object.prototype.extend) {
     // var objB = {'name': 'james', 'age': 17};
     // objA.extend(objB);
     // console.log(objA); // { name: 'james', car: 'suzuki', age: 17 }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.prototype.extend');
 }
 
 if (!Object.prototype.pick) {
@@ -145,6 +155,8 @@ if (!Object.prototype.pick) {
     // var objA = {'name': 'colin', 'car': 'suzuki', 'age': 17};
     // var objB = objA.pick(['car', 'age']);
     // console.log(objB); // { car: 'suzuki', age: 17 }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.prototype.equals');
 }
 
 if (!Object.prototype.equals) {
@@ -210,4 +222,6 @@ if (!Object.prototype.equals) {
     // console.log({a:1, b:2}.equals({a:1, b:2})); // true
     // console.log({a:1, b:2}.equals({a:3, b:4})); // false
     // console.log({a:1, b:2}.equals({a:1})); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Object.prototype.equals');
 }

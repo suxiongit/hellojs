@@ -4,41 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Array	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.prototype.contains) {$/;"	class
-Array.contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	method
-Array.copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	method
-Array.diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.diff) {$/;"	function
-Array.empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	method
-Array.filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	method
-Array.forEach	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.forEach = function(callback\/*, thisArg*\/) {$/;"	method
-Array.indexOf	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.indexOf = function(searchElement, fromIndex) {$/;"	method
-Array.isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.isEmpty) {$/;"	function
-Array.max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	method
-Array.min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	method
-Array.numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	method
-Array.numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	method
-Array.random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	method
-Array.remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	method
-Array.same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.same) {$/;"	function
-Array.shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	method
-Array.unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	method
-contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	function
-copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	function
-diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.diff = function(arr1, arr2, onlyFirst) {$/;"	function
-empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	function
-filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	function
-forEach	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.forEach = function(callback\/*, thisArg*\/) {$/;"	function
-indexOf	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.indexOf = function(searchElement, fromIndex) {$/;"	function
-isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.isEmpty = function(arr) {$/;"	function
-max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	function
-min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	function
-numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	function
-numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	function
-random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	function
-remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	function
-same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.same = function(arr1, arr2) {$/;"	function
-shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	function
-unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	function
 getBrowserInfo	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	getBrowserInfo: function() {$/;"	function	line:11
 Browser.getBrowserInfo	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^var Browser = {$/;"	method	line:5
 isPC	/Users/suxiong/Sites/hellojs/src/frontend/Browser.js	/^	isPC: function() {$/;"	function	line:41
@@ -162,3 +127,166 @@ uuid	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	uuid: function(prefix
 Server.uuid	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^var Server = {$/;"	method	line:5
 genNonDuplicateID	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	genNonDuplicateID: function(length) {$/;"	function	line:28
 Server.genNonDuplicateID	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	},$/;"	method	line:21
+contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	function	line:14
+Array	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.prototype.contains) {$/;"	class	line:6
+Array.contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	method	line:14
+forEach	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.forEach = function(callback\/*, thisArg*\/) {$/;"	function	line:49
+Array.forEach	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.forEach = function(callback\/*, thisArg*\/) {$/;"	method	line:49
+remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	function	line:95
+Array.remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	method	line:95
+indexOf	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.indexOf = function(searchElement, fromIndex) {$/;"	function	line:163
+Array.indexOf	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.indexOf = function(searchElement, fromIndex) {$/;"	method	line:163
+random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	function	line:238
+Array.random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	method	line:238
+shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	function	line:282
+Array.shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	method	line:282
+empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	function	line:299
+Array.empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	method	line:299
+filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	function	line:317
+Array.filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	method	line:317
+unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	function	line:339
+Array.unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	method	line:339
+diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.diff = function(arr1, arr2, leftDiff) {$/;"	function	line:367
+Array.diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.diff) {$/;"	function	line:359
+same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.same = function(arr1, arr2) {$/;"	function	line:437
+Array.same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.same) {$/;"	function	line:430
+max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	function	line:479
+Array.max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	method	line:479
+min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	function	line:503
+Array.min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	method	line:503
+isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.isEmpty = function(arr) {$/;"	function	line:528
+Array.isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.isEmpty) {$/;"	function	line:522
+copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	function	line:548
+Array.copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	method	line:548
+numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	function	line:569
+Array.numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	method	line:569
+numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	function	line:588
+Array.numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	method	line:588
+equals	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.equals = function(array2) {$/;"	function	line:606
+Array.equals	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.equals = function(array2) {$/;"	method	line:606
+format	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.format = function(format) {$/;"	function	line:17
+Date	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^if (!Date.prototype.format) {$/;"	class	line:6
+Date.format	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.format = function(format) {$/;"	method	line:17
+Date.var.date.M+	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^        var date = {$/;"	property	line:18
+var.week.0	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^        var week = {$/;"	property	line:27
+var.week.1	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^            "0": "\\u65e5",$/;"	property	line:28
+var.week.2	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^            "1": "\\u4e00",$/;"	property	line:29
+var.week.3	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^            "2": "\\u4e8c",$/;"	property	line:30
+var.week.4	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^            "3": "\\u4e09",$/;"	property	line:31
+var.week.5	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^            "4": "\\u56db",$/;"	property	line:32
+var.week.6	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^            "5": "\\u4e94",$/;"	property	line:33
+isLeapYear	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.isLeapYear = function() {$/;"	function	line:70
+Date.isLeapYear	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.isLeapYear = function() {$/;"	method	line:70
+getAge	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.getAge = function(dateStr) {$/;"	function	line:90
+Date.getAge	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^if (!Date.getAge) {$/;"	function	line:84
+diff	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.diff = function(dateType, target) {$/;"	function	line:114
+Date.diff	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.diff = function(dateType, target) {$/;"	method	line:114
+switch	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^        switch (dateType) {$/;"	function	line:119
+toCNDate	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.toCNDate = function() {$/;"	function	line:162
+Date.toCNDate	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.toCNDate = function() {$/;"	method	line:162
+add	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.add = function(dateType, timeNum) {$/;"	function	line:190
+Date.add	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.add = function(dateType, timeNum) {$/;"	method	line:190
+switch	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^        switch (dateType) {$/;"	function	line:192
+getMaxDay	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.getMaxDay = function() {$/;"	function	line:230
+Date.getMaxDay	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.getMaxDay = function() {$/;"	method	line:230
+analyze	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.analyze = function(timestamp, stripTime) {$/;"	function	line:266
+Date.analyze	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^if (!Date.analyze) {$/;"	function	line:259
+randomArbitrary	/Users/suxiong/Sites/hellojs/src/polyfill/Math.js	/^    Math.randomArbitrary = function(min, max) {$/;"	function	line:15
+Math.randomArbitrary	/Users/suxiong/Sites/hellojs/src/polyfill/Math.js	/^if (!Math.randomArbitrary) {$/;"	function	line:8
+randomInt	/Users/suxiong/Sites/hellojs/src/polyfill/Math.js	/^    Math.randomInt = function(min, max, inclusive) {$/;"	function	line:39
+Math.randomInt	/Users/suxiong/Sites/hellojs/src/polyfill/Math.js	/^if (!Math.randomInt) {$/;"	function	line:31
+toInt	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.toInt = function(numStr) {$/;"	function	line:12
+Number.toInt	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^if (!Number.toInt) {$/;"	function	line:6
+toDouble	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.toDouble = function(numStr) {$/;"	function	line:33
+Number.toDouble	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^if (!Number.toDouble) {$/;"	function	line:27
+withZero	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.prototype.withZero = function(length) {$/;"	function	line:52
+Number	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^if (!Number.prototype.withZero) {$/;"	class	line:46
+Number.withZero	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.prototype.withZero = function(length) {$/;"	method	line:52
+chrW	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.prototype.chrW = function() {$/;"	function	line:71
+Number.chrW	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.prototype.chrW = function() {$/;"	method	line:71
+splitPow	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.prototype.splitPow = function() {$/;"	function	line:86
+Number.splitPow	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.prototype.splitPow = function() {$/;"	method	line:86
+digitUppercase	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.prototype.digitUppercase = function() {$/;"	function	line:110
+Number.digitUppercase	/Users/suxiong/Sites/hellojs/src/polyfill/Number.js	/^    Number.prototype.digitUppercase = function() {$/;"	method	line:110
+clone	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.clone = function(obj) {$/;"	function	line:12
+Object.clone	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^if (!Object.clone) {$/;"	function	line:6
+isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.isEmpty = function(obj) {$/;"	function	line:31
+Object.isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^if (!Object.isEmpty) {$/;"	function	line:25
+isType	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.isType = function(obj, type, illegal) {$/;"	function	line:57
+return	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^        }$/;"	class	line:72
+return.toString	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^        return Object.prototype.toString.call(obj) === '[object ' + type + ']';$/;"	method	line:73
+Object.isType	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^if (!Object.isType) {$/;"	function	line:49
+remove	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.prototype.remove = function(arr) {$/;"	function	line:100
+Object	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^if (!Object.prototype.remove) {$/;"	class	line:94
+Object.remove	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.prototype.remove = function(arr) {$/;"	method	line:100
+extend	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.prototype.extend = function(obj) {$/;"	function	line:121
+Object.extend	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.prototype.extend = function(obj) {$/;"	method	line:121
+pick	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.prototype.pick = function(arr) {$/;"	function	line:145
+Object.pick	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.prototype.pick = function(arr) {$/;"	method	line:145
+equals	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.prototype.equals = function(object2) {$/;"	function	line:168
+Object.equals	/Users/suxiong/Sites/hellojs/src/polyfill/Object.js	/^    Object.prototype.equals = function(object2) {$/;"	method	line:168
+isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isEmpty = function(value) {$/;"	function	line:15
+RegExp.isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isEmpty) {$/;"	function	line:9
+isDate	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isDate = function(value) {$/;"	function	line:32
+RegExp.isDate	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isDate) {$/;"	function	line:26
+isDomain	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isDomain = function(value) {$/;"	function	line:51
+RegExp.isDomain	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isDomain) {$/;"	function	line:45
+isEmail	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isEmail = function(value) {$/;"	function	line:70
+RegExp.isEmail	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isEmail) {$/;"	function	line:64
+isHtmlTag	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isHtmlTag = function(value) {$/;"	function	line:89
+RegExp.isHtmlTag	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isHtmlTag) {$/;"	function	line:83
+isIdCard	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isIdCard = function(value) {$/;"	function	line:114
+RegExp.isIdCard	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isIdCard) {$/;"	function	line:108
+isIP	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isIP = function(value) {$/;"	function	line:133
+RegExp.isIP	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isIP) {$/;"	function	line:127
+isMobilePhone	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isMobilePhone = function(value) {$/;"	function	line:152
+RegExp.isMobilePhone	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isMobilePhone) {$/;"	function	line:146
+isQQ	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isQQ = function(value) {$/;"	function	line:173
+RegExp.isQQ	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isQQ) {$/;"	function	line:167
+isTelephone	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isTelephone = function(value) {$/;"	function	line:192
+RegExp.isTelephone	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isTelephone) {$/;"	function	line:186
+isUrl	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isUrl = function(value) {$/;"	function	line:209
+RegExp.isUrl	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isUrl) {$/;"	function	line:203
+isUsername	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isUsername = function(value) {$/;"	function	line:230
+RegExp.isUsername	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isUsername) {$/;"	function	line:224
+isVersion	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isVersion = function(value) {$/;"	function	line:249
+RegExp.isVersion	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isVersion) {$/;"	function	line:243
+isZipCode	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isZipCode = function(value) {$/;"	function	line:268
+RegExp.isZipCode	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isZipCode) {$/;"	function	line:262
+isPassword	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isPassword = function(value, isStrong) {$/;"	function	line:288
+RegExp.isPassword	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isPassword) {$/;"	function	line:281
+isMoney	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isMoney = function(value, isThousand) {$/;"	function	line:312
+RegExp.isMoney	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isMoney) {$/;"	function	line:305
+isNumber	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isNumber = function(value, length) {$/;"	function	line:338
+RegExp.isNumber	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isNumber) {$/;"	function	line:331
+isRangeNumber	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^    RegExp.isRangeNumber = function(value, min, max) {$/;"	function	line:367
+RegExp.isRangeNumber	/Users/suxiong/Sites/hellojs/src/polyfill/RegExp.js	/^if (!RegExp.isRangeNumber) {$/;"	function	line:359
+firstUpperCase	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.firstUpperCase = function(isPerword) {$/;"	function	line:13
+String	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^if (!String.prototype.firstUpperCase) {$/;"	class	line:6
+String.firstUpperCase	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.firstUpperCase = function(isPerword) {$/;"	method	line:13
+cnLength	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.cnLength = function() {$/;"	function	line:50
+String.cnLength	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.cnLength = function() {$/;"	method	line:50
+replaceAll	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.replaceAll = function(findStr, replaceStr, ignoreCase) {$/;"	function	line:82
+String.replaceAll	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.replaceAll = function(findStr, replaceStr, ignoreCase) {$/;"	method	line:82
+trimCRLF	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.trimCRLF = function() {$/;"	function	line:104
+String.trimCRLF	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.trimCRLF = function() {$/;"	method	line:104
+reverse	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.reverse = function() {$/;"	function	line:121
+String.reverse	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.reverse = function() {$/;"	method	line:121
+contains	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.contains = function(chr) {$/;"	function	line:142
+String.contains	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.contains = function(chr) {$/;"	method	line:142
+format	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.format = function() {$/;"	function	line:158
+String.format	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.format = function() {$/;"	method	line:158
+number	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.number = function(isFloat) {$/;"	function	line:178
+String.number	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.number = function(isFloat) {$/;"	method	line:178
+chinese	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.chinese = function() {$/;"	function	line:199
+String.chinese	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.chinese = function() {$/;"	method	line:199
+english	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.english = function() {$/;"	function	line:218
+String.english	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.english = function() {$/;"	method	line:218
+filename	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.filename = function() {$/;"	function	line:237
+String.filename	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.filename = function() {$/;"	method	line:237
+extname	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.extname = function() {$/;"	function	line:254
+String.extname	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.extname = function() {$/;"	method	line:254
+toInt	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.toInt = function() {$/;"	function	line:271
+String.toInt	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.toInt = function() {$/;"	method	line:271
+resetBlank	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.resetBlank = function() {$/;"	function	line:287
+String.resetBlank	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.resetBlank = function() {$/;"	method	line:287

@@ -24,6 +24,8 @@ if (!Math.randomArbitrary) {
     // for (var i = 0; i < 10; i ++) {
     //     console.log(Math.randomArbitrary(1, 2)); // 1.2152592913032378
     // }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Math.randomArbitrary');
 }
 
 if (!Math.randomInt) {
@@ -49,4 +51,6 @@ if (!Math.randomInt) {
     // for (var i = 0; i < 10; i ++) {
     //     console.log(Math.randomInt(1, 10, 1)); // 1-10
     // }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Math.randomInt');
 }

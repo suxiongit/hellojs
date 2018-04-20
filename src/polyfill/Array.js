@@ -36,6 +36,8 @@ if (!Array.prototype.contains) {
     // console.log(arr.contains('1')); // true
     // console.log(arr.contains(1, true)); // 严格模式 true
     // console.log(arr.contains('1', true)); // 严格模式 false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.contains');
 }
 
 if (!Array.prototype.forEach) {
@@ -73,18 +75,15 @@ if (!Array.prototype.forEach) {
     };
 
     // 示例 Array.prototype.forEach
-    // var arr = [];
-    // arr.push('a');
-    // arr.push('b');
-    // arr.push('c');
-    // arr.push('d');
-    // arr.push('e');
+    // var arr = ['a', 'b', 'c', 'd', 'e'];
     // arr.forEach(function(value) {
     //     console.log(value);
     // });
     // arr.forEach(function(value, index, array) {
     //     console.log(value + ' ' + index + ' ' + array);
     // });
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.forEach');
 }
 
 if (!Array.prototype.remove) {
@@ -135,6 +134,8 @@ if (!Array.prototype.remove) {
     //
     // arr.remove(-1, true); // 通过索引删除
     // console.log(arr);
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.remove');
 }
 
 if (!Array.prototype.indexOf) {
@@ -224,6 +225,8 @@ if (!Array.prototype.indexOf) {
     // 示例 Array.prototype.indexOf
     // var arr = ['a', 'b', 'c', 'd', 'e'];
     // console.log(arr.indexOf('e'));
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.indexOf');
 }
 
 if (!Array.prototype.random) {
@@ -265,6 +268,8 @@ if (!Array.prototype.random) {
     // for (var i = 0; i < 10; i ++) {
     //     console.log(items.random());
     // }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.random');
 }
 
 if (!Array.prototype.shuffle) {
@@ -283,6 +288,8 @@ if (!Array.prototype.shuffle) {
     // for (var i = 0; i < 10; i ++) {
     //     console.log(items.shuffle());
     // }
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.shuffle');
 }
 
 if (!Array.prototype.empty) {
@@ -298,6 +305,8 @@ if (!Array.prototype.empty) {
     // console.log(arr);
     // arr.empty();
     // console.log(arr);
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.empty');
 }
 
 if (!Array.prototype.filterEmpty) {
@@ -318,6 +327,8 @@ if (!Array.prototype.filterEmpty) {
     // var arr = ['a', '', 'b', ' ', 'c', '  ', 'd', , 'e', 0];
     // console.log(arr);
     // console.log(arr.filterEmpty());
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.filterEmpty');
 }
 
 if (!Array.prototype.unique) {
@@ -341,6 +352,8 @@ if (!Array.prototype.unique) {
     // var arr2 = arr.unique();
     // console.log(arr); // [ '1', 1, 2 ]
     // console.log(arr2); // [ '1', 2 ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.unique');
 }
 
 if (!Array.diff) {
@@ -410,6 +423,8 @@ if (!Array.diff) {
     // var arr1 = 'a';
     // var arr2 = ['a', 'b', 'c', 'd', 'e', 'f'];
     // console.log(Array.diff(arr1, arr2)); // TypeError: Parameter is not an array
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.diff');
 }
 
 if (!Array.same) {
@@ -452,6 +467,8 @@ if (!Array.same) {
     // var arr1 = 'a';
     // var arr2 = ['a', 'b', 'c', 'd', 'e', 'f'];
     // console.log(Array.same(arr1, arr2)); // TypeError: Parameter is not an array
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.same');
 }
 
 if (!Array.prototype.max) {
@@ -474,6 +491,8 @@ if (!Array.prototype.max) {
     // console.log(arr + ' 最大值 ' + arr.max()); // 5
     // var arr = ['a', 'b', 'c', 'd', 'e'];
     // console.log(arr + ' 最大值 ' + arr.max()); // e
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.max');
 }
 
 if (!Array.prototype.min) {
@@ -496,6 +515,8 @@ if (!Array.prototype.min) {
     // console.log(arr + ' 最小值 ' + arr.min()); // 1
     // var arr = ['a', 'b', 'c', 'd', 'e'];
     // console.log(arr + ' 最小值 ' + arr.min()); // a
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.min');
 }
 
 if (!Array.isEmpty) {
@@ -515,6 +536,8 @@ if (!Array.isEmpty) {
     // console.log(Array.isEmpty([])); // true
     // console.log(Array.isEmpty(1)); // true
     // console.log(Array.isEmpty([1])); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.isEmpty');
 }
 
 if (!Array.prototype.copy) {
@@ -533,6 +556,8 @@ if (!Array.prototype.copy) {
     // var arr = ['a', 'b', 'c', 'd'];
     // var arr2 = arr.copy();
     // console.log(arr2); // [ 'a', 'b', 'c', 'd' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.copy');
 }
 
 if (!Array.prototype.numberSort) {
@@ -551,6 +576,8 @@ if (!Array.prototype.numberSort) {
     // console.log([1, 10, 21, 2].sort()); // [ 1, 10, 2, 21 ]
     // console.log([1, 10, 21, 2].numberSort()); // [ 1, 2, 10, 21 ]
     // console.log([1, 10, 21, 2].numberSort(1)); // [ 21, 10, 2, 1 ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.numberSort');
 }
 
 if (!Array.prototype.numberSum) {
@@ -566,6 +593,8 @@ if (!Array.prototype.numberSum) {
     // 示例 Array.prototype.numberSum
     // console.log([1, 2, 3, 4, 5].numberSum()); // 15
     // console.log([].numberSum()); // 0
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.numberSum');
 }
 
 if (!Array.prototype.equals) {
@@ -604,4 +633,6 @@ if (!Array.prototype.equals) {
     // console.log([1, 2, 3].equals([4, 5, 6])); // false
     // console.log([1, [2, 3]].equals([1, [2, 3]])); // true
     // console.log([{a:1}, {b:2}].equals([{a:1}, {b:2}])); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.equals');
 }

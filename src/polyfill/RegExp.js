@@ -19,6 +19,8 @@ if (!RegExp.isEmpty) {
     // 示例 RegExp.isEmpty
     // console.log(RegExp.isEmpty('')); // true
     // console.log(RegExp.isEmpty(' ')); // true
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isEmpty');
 }
 
 if (!RegExp.isDate) {
@@ -36,6 +38,8 @@ if (!RegExp.isDate) {
     // console.log(value, RegExp.isDate(value)); // true
     // var value = '2016-05-19 00';
     // console.log(value, RegExp.isDate(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isDate');
 }
 
 if (!RegExp.isDomain) {
@@ -53,6 +57,8 @@ if (!RegExp.isDomain) {
     // console.log(value, RegExp.isDomain(value)); // true
     // var value = 'test-domain';
     // console.log(value, RegExp.isDomain(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isDomain');
 }
 
 if (!RegExp.isEmail) {
@@ -70,6 +76,8 @@ if (!RegExp.isEmail) {
     // console.log(value, RegExp.isEmail(value)); // true
     // var value = 'test-email@domain';
     // console.log(value, RegExp.isEmail(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isEmail');
 }
 
 if (!RegExp.isHtmlTag) {
@@ -93,6 +101,8 @@ if (!RegExp.isHtmlTag) {
     // console.log(value, RegExp.isHtmlTag(value)); // true
     // var value = '<br/>';
     // console.log(value, RegExp.isHtmlTag(value)); // true
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isHtmlTag');
 }
 
 if (!RegExp.isIdCard) {
@@ -110,6 +120,8 @@ if (!RegExp.isIdCard) {
     // console.log(value, RegExp.isIdCard(value)); // true
     // var value = '0000000000000000000'; // 超出18位
     // console.log(value, RegExp.isIdCard(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isIdCard');
 }
 
 if (!RegExp.isIP) {
@@ -127,6 +139,8 @@ if (!RegExp.isIP) {
     // console.log(value, RegExp.isIP(value)); // true
     // var value = '127.0.0.1 0';
     // console.log(value, RegExp.isIP(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isIP');
 }
 
 if (!RegExp.isMobilePhone) {
@@ -146,6 +160,8 @@ if (!RegExp.isMobilePhone) {
     // console.log(value, RegExp.isMobilePhone(value)); // false
     // var value = '800138000';
     // console.log(value, RegExp.isMobilePhone(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isMobilePhone');
 }
 
 if (!RegExp.isQQ) {
@@ -163,6 +179,8 @@ if (!RegExp.isQQ) {
     // console.log(value, RegExp.isQQ(value)); // true
     // var value = '01000';
     // console.log(value, RegExp.isQQ(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isQQ');
 }
 
 if (!RegExp.isTelephone) {
@@ -178,6 +196,8 @@ if (!RegExp.isTelephone) {
     // 示例 RegExp.isTelephone
     // console.log(RegExp.isTelephone('010-12345678')); // true
     // console.log(RegExp.isTelephone('12345678')); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isTelephone');
 }
 
 if (!RegExp.isUrl) {
@@ -197,6 +217,8 @@ if (!RegExp.isUrl) {
     // console.log(value, RegExp.isUrl(value)); // true
     // var value = 'www.test-url.com';
     // console.log(value, RegExp.isUrl(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isUrl');
 }
 
 if (!RegExp.isUsername) {
@@ -214,6 +236,8 @@ if (!RegExp.isUsername) {
     // console.log(value, RegExp.isUsername(value)); // true
     // var value = 'abc-123';
     // console.log(value, RegExp.isUsername(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isUsername');
 }
 
 if (!RegExp.isVersion) {
@@ -231,6 +255,8 @@ if (!RegExp.isVersion) {
     // console.log(value, RegExp.isVersion(value)); // true
     // var value = '382';
     // console.log(value, RegExp.isVersion(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isVersion');
 }
 
 if (!RegExp.isZipCode) {
@@ -248,6 +274,8 @@ if (!RegExp.isZipCode) {
     // console.log(value, RegExp.isZipCode(value)); // true
     // var value = '5180001'; // 已超出6位
     // console.log(value, RegExp.isZipCode(value)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isZipCode');
 }
 
 if (!RegExp.isPassword) {
@@ -270,6 +298,8 @@ if (!RegExp.isPassword) {
     // console.log(RegExp.isPassword('Abcd1234')); // true
     // console.log(RegExp.isPassword('abc123', 1)); // false
     // console.log(RegExp.isPassword('Abcd1234', 1)); // true
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isPassword');
 }
 
 if (!RegExp.isMoney) {
@@ -294,6 +324,8 @@ if (!RegExp.isMoney) {
     // console.log(RegExp.isMoney('10,000.00')); // false
     // console.log(RegExp.isMoney('10,000', 1)); // true
     // console.log(RegExp.isMoney('10,000.00', 1)); // true
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isMoney');
 }
 
 if (!RegExp.isNumber) {
@@ -320,6 +352,8 @@ if (!RegExp.isNumber) {
     //
     // console.log(RegExp.isNumber(123, 3)); // true
     // console.log(RegExp.isNumber(1234, 3)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isNumber');
 }
 
 if (!RegExp.isRangeNumber) {
@@ -345,4 +379,6 @@ if (!RegExp.isRangeNumber) {
     // 示例 RegExp.isRangeNumber
     // console.log(RegExp.isRangeNumber(123, 1, 3)); // true
     // console.log(RegExp.isRangeNumber(1234, 1, 3)); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'RegExp.isRangeNumber');
 }

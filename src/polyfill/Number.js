@@ -20,6 +20,8 @@ if (!Number.toInt) {
     // console.log(Number.toInt('a')); // 0
     // console.log(parseInt('a')); // NaN
     // console.log(Number.parseInt('a')); // NaN
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.toInt');
 }
 
 if (!Number.toDouble) {
@@ -37,6 +39,8 @@ if (!Number.toDouble) {
     // console.log(Number.toDouble('.2')); // 0.2
     // console.log(Number.toDouble('.1') + Number.toDouble('.2')); // 0.30000000000000004
     // console.log(Number.toDouble('a')); // 0
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.toDouble');
 }
 
 if (!Number.prototype.withZero) {
@@ -55,6 +59,8 @@ if (!Number.prototype.withZero) {
 
     // 示例 Number.prototype.withZero
     // console.log(Number(7).withZero(3)); // 007
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.prototype.withZero');
 }
 
 if (!Number.prototype.chrW) {
@@ -68,6 +74,8 @@ if (!Number.prototype.chrW) {
 
     // 示例 Number.prototype.chrW
     // console.log(Number(65).chrW()); // A
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.prototype.chrW');
 }
 
 if (!Number.prototype.splitPow) {
@@ -90,6 +98,8 @@ if (!Number.prototype.splitPow) {
     // 示例 Number.prototype.splitPow
     // console.log(Number(15).splitPow()); // [ 8, 4, 2, 1 ]
     // console.log(Number(0).splitPow()); // []
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.prototype.splitPow');
 }
 
 if (!Number.prototype.digitUppercase) {
@@ -131,4 +141,6 @@ if (!Number.prototype.digitUppercase) {
 
     // 示例 Number.prototype.digitUppercase
     // console.log(Number(10000).digitUppercase()); // 壹万元整
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Number.prototype.digitUppercase');
 }

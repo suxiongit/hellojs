@@ -55,6 +55,8 @@ if (!Date.prototype.format) {
     // console.log(date.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2014年07月10日 10时21分12秒
     // var date2 = new Date();
     // console.log(date2.format('yyyy年MM月dd日 hh时mm分ss秒')); // 2017年04月25日 21时40分32秒
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.format');
 }
 
 if (!Date.prototype.isLeapYear) {
@@ -75,6 +77,8 @@ if (!Date.prototype.isLeapYear) {
     // console.log(date.format('yyyy年') + ' 是否闰年 ' + date.isLeapYear()); // true
     // var date2 = new Date();
     // console.log(date2.format('yyyy年') + ' 是否闰年 ' + date2.isLeapYear()); // false
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.isLeapYear');
 }
 
 if (!Date.getAge) {
@@ -96,6 +100,8 @@ if (!Date.getAge) {
 
     // 示例 Date.getAge
     // console.log(Date.getAge('1996-3-1')); // 21
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.getAge');
 }
 
 if (!Date.prototype.diff) {
@@ -144,6 +150,8 @@ if (!Date.prototype.diff) {
     // var date2 = new Date('2011-08-10 18:00:00');
     // console.log(date2.format('yyyy-MM-dd hh:mm:ss')); // 2011-08-10 18:00:00
     // console.log('相差多少%s小时', date1.diff('h', date2)); // 9
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.diff');
 }
 
 if (!Date.prototype.toCNDate) {
@@ -168,6 +176,8 @@ if (!Date.prototype.toCNDate) {
     // var nowDate = new Date();
     // console.log('默认格式', nowDate); // 默认格式 2017-06-19T09:43:57.174Z
     // console.log('中文格式', nowDate.toCNDate()); // 中文格式 2017年05月19日17时43分57秒  星期一
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.toCNDate');
 }
 
 if (!Date.prototype.add) {
@@ -208,6 +218,8 @@ if (!Date.prototype.add) {
     // console.log(date.add('h', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一小时
     // console.log(date.add('n', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一分钟
     // console.log(date.add('s', 1).format('yyyy-MM-dd hh:mm:ss')); // 增加一秒
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.add');
 }
 
 if (!Date.prototype.getMaxDay) {
@@ -240,6 +252,8 @@ if (!Date.prototype.getMaxDay) {
     // console.log('当前月份%s天', new Date().getMaxDay()); // 当前月份30天
     // console.log('2018年2月份%s天', new Date('2018-02').getMaxDay()); // 2018年2月份28天
     // console.log('2016年2月份%s天', new Date('2016-02').getMaxDay()); // 2016年2月份29天
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.prototype.getMaxDay');
 }
 
 if (!Date.analyze) {
@@ -299,4 +313,6 @@ if (!Date.analyze) {
     // 示例 Date.analyze
     // var timestamp = (new Date('2018-04-15 16:00')).getTime();
     // console.log(Date.analyze(timestamp, true));
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'Date.analyze');
 }
