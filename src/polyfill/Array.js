@@ -40,51 +40,51 @@ if (!Array.prototype.contains) {
     console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.contains');
 }
 
-if (!Array.prototype.forEach) {
-    /**
-     * 数组循环遍历（让IE兼容forEach方法）
-     * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-     * @param {function} callback 回调函数
-     */
-    Array.prototype.forEach = function(callback/*, thisArg*/) {
-        var T, k;
-        if (this == null) {
-            throw new TypeError('"this" is null or not defined');
-        }
-
-        var O = Object(this);
-        var len = O.length >>> 0; // Hack to convert O.length to a UInt32
-
-        if (typeof callback !== 'function') { // {}.toString.call(callback) != '[object Function]'
-            throw new TypeError(callback + ' is not a function');
-        }
-
-        if (arguments.length > 1) { // thisArg
-            T = arguments[1]; // T = thisArg
-        }
-
-        k = 0;
-        while (k < len) {
-            var kValue;
-            if (k in O) {
-                kValue = O[k];
-                callback.call(T, kValue, k, O);
-            }
-            k++;
-        }
-    };
-
-    // 示例 Array.prototype.forEach
-    // var arr = ['a', 'b', 'c', 'd', 'e'];
-    // arr.forEach(function(value) {
-    //     console.log(value);
-    // });
-    // arr.forEach(function(value, index, array) {
-    //     console.log(value + ' ' + index + ' ' + array);
-    // });
-} else {
-    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.forEach');
-}
+// if (!Array.prototype.forEach) {
+//     /**
+//      * 数组循环遍历（让IE兼容forEach方法）
+//      * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+//      * @param {function} callback 回调函数
+//      */
+//     Array.prototype.forEach = function(callback/*, thisArg*/) {
+//         var T, k;
+//         if (this == null) {
+//             throw new TypeError('"this" is null or not defined');
+//         }
+//
+//         var O = Object(this);
+//         var len = O.length >>> 0; // Hack to convert O.length to a UInt32
+//
+//         if (typeof callback !== 'function') { // {}.toString.call(callback) != '[object Function]'
+//             throw new TypeError(callback + ' is not a function');
+//         }
+//
+//         if (arguments.length > 1) { // thisArg
+//             T = arguments[1]; // T = thisArg
+//         }
+//
+//         k = 0;
+//         while (k < len) {
+//             var kValue;
+//             if (k in O) {
+//                 kValue = O[k];
+//                 callback.call(T, kValue, k, O);
+//             }
+//             k++;
+//         }
+//     };
+//
+//     // 示例 Array.prototype.forEach
+//     // var arr = ['a', 'b', 'c', 'd', 'e'];
+//     // arr.forEach(function(value) {
+//     //     console.log(value);
+//     // });
+//     // arr.forEach(function(value, index, array) {
+//     //     console.log(value + ' ' + index + ' ' + array);
+//     // });
+// } else {
+//     console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.forEach');
+// }
 
 if (!Array.prototype.remove) {
     /**
@@ -138,96 +138,96 @@ if (!Array.prototype.remove) {
     console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.remove');
 }
 
-if (!Array.prototype.indexOf) {
-    /**
-     * 查找指定的元素在数组中的位置（索引）
-     * @param {string} value 要查找的元素
-     * @return {number} 返回元素在数组中的索引位置
-     */
-    // Array.prototype.indexOf = function(value) {
-    //     for (var i = 0, n = this.length; i < n; i ++) {
-    //         if (this[i] == value) {
-    //             return i;
-    //         }
-    //     }
-    //     return -1;
-    // };
-
-    /**
-     * 查找指定的元素在数组中的位置（索引）
-     * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
-     * @param {string} searchElement 要查找的元素
-     * @param {number} [fromIndex] 开始查找的位置
-     * @return {number} 返回元素在数组中的索引位置
-     */
-    Array.prototype.indexOf = function(searchElement, fromIndex) {
-
-        var k;
-
-        // 1. Let O be the result of calling ToObject passing
-        //    the this value as the argument.
-        if (this == null) {
-            throw new TypeError('"this" is null or not defined');
-        }
-
-        var O = Object(this);
-
-        // 2. Let lenValue be the result of calling the Get
-        //    internal method of O with the argument "length".
-        // 3. Let len be ToUint32(lenValue).
-        var len = O.length >>> 0;
-
-        // 4. If len is 0, return -1.
-        if (len === 0) {
-            return -1;
-        }
-
-        // 5. If argument fromIndex was passed let n be
-        //    ToInteger(fromIndex); else let n be 0.
-        var n = +fromIndex || 0;
-
-        if (Math.abs(n) === Infinity) {
-            n = 0;
-        }
-
-        // 6. If n >= len, return -1.
-        if (n >= len) {
-            return -1;
-        }
-
-        // 7. If n >= 0, then Let k be n.
-        // 8. Else, n<0, Let k be len - abs(n).
-        //    If k is less than 0, then let k be 0.
-        k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
-
-        // 9. Repeat, while k < len
-        while (k < len) {
-            // a. Let Pk be ToString(k).
-            //   This is implicit for LHS operands of the in operator
-            // b. Let kPresent be the result of calling the
-            //    HasProperty internal method of O with argument Pk.
-            //   This step can be combined with c
-            // c. If kPresent is true, then
-            //    i.  Let elementK be the result of calling the Get
-            //        internal method of O with the argument ToString(k).
-            //   ii.  Let same be the result of applying the
-            //        Strict Equality Comparison Algorithm to
-            //        searchElement and elementK.
-            //  iii.  If same is true, return k.
-            if (k in O && O[k] === searchElement) {
-                return k;
-            }
-            k++;
-        }
-        return -1;
-    };
-
-    // 示例 Array.prototype.indexOf
-    // var arr = ['a', 'b', 'c', 'd', 'e'];
-    // console.log(arr.indexOf('e'));
-} else {
-    console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.indexOf');
-}
+// if (!Array.prototype.indexOf) {
+//     /**
+//      * 查找指定的元素在数组中的位置（索引）
+//      * @param {string} value 要查找的元素
+//      * @return {number} 返回元素在数组中的索引位置
+//      */
+//     // Array.prototype.indexOf = function(value) {
+//     //     for (var i = 0, n = this.length; i < n; i ++) {
+//     //         if (this[i] == value) {
+//     //             return i;
+//     //         }
+//     //     }
+//     //     return -1;
+//     // };
+//
+//     /**
+//      * 查找指定的元素在数组中的位置（索引）
+//      * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+//      * @param {string} searchElement 要查找的元素
+//      * @param {number} [fromIndex] 开始查找的位置
+//      * @return {number} 返回元素在数组中的索引位置
+//      */
+//     Array.prototype.indexOf = function(searchElement, fromIndex) {
+//
+//         var k;
+//
+//         // 1. Let O be the result of calling ToObject passing
+//         //    the this value as the argument.
+//         if (this == null) {
+//             throw new TypeError('"this" is null or not defined');
+//         }
+//
+//         var O = Object(this);
+//
+//         // 2. Let lenValue be the result of calling the Get
+//         //    internal method of O with the argument "length".
+//         // 3. Let len be ToUint32(lenValue).
+//         var len = O.length >>> 0;
+//
+//         // 4. If len is 0, return -1.
+//         if (len === 0) {
+//             return -1;
+//         }
+//
+//         // 5. If argument fromIndex was passed let n be
+//         //    ToInteger(fromIndex); else let n be 0.
+//         var n = +fromIndex || 0;
+//
+//         if (Math.abs(n) === Infinity) {
+//             n = 0;
+//         }
+//
+//         // 6. If n >= len, return -1.
+//         if (n >= len) {
+//             return -1;
+//         }
+//
+//         // 7. If n >= 0, then Let k be n.
+//         // 8. Else, n<0, Let k be len - abs(n).
+//         //    If k is less than 0, then let k be 0.
+//         k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+//
+//         // 9. Repeat, while k < len
+//         while (k < len) {
+//             // a. Let Pk be ToString(k).
+//             //   This is implicit for LHS operands of the in operator
+//             // b. Let kPresent be the result of calling the
+//             //    HasProperty internal method of O with argument Pk.
+//             //   This step can be combined with c
+//             // c. If kPresent is true, then
+//             //    i.  Let elementK be the result of calling the Get
+//             //        internal method of O with the argument ToString(k).
+//             //   ii.  Let same be the result of applying the
+//             //        Strict Equality Comparison Algorithm to
+//             //        searchElement and elementK.
+//             //  iii.  If same is true, return k.
+//             if (k in O && O[k] === searchElement) {
+//                 return k;
+//             }
+//             k++;
+//         }
+//         return -1;
+//     };
+//
+//     // 示例 Array.prototype.indexOf
+//     // var arr = ['a', 'b', 'c', 'd', 'e'];
+//     // console.log(arr.indexOf('e'));
+// } else {
+//     console.warn('Polyfill Error: \'%s\' already exists.', 'Array.prototype.indexOf');
+// }
 
 if (!Array.prototype.random) {
     /**

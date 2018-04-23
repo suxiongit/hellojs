@@ -127,43 +127,6 @@ uuid	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	uuid: function(prefix
 Server.uuid	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^var Server = {$/;"	method	line:5
 genNonDuplicateID	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	genNonDuplicateID: function(length) {$/;"	function	line:28
 Server.genNonDuplicateID	/Users/suxiong/Sites/hellojs/src/backend/Server.js	/^	},$/;"	method	line:21
-contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	function	line:14
-Array	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.prototype.contains) {$/;"	class	line:6
-Array.contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	method	line:14
-forEach	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.forEach = function(callback\/*, thisArg*\/) {$/;"	function	line:49
-Array.forEach	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.forEach = function(callback\/*, thisArg*\/) {$/;"	method	line:49
-remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	function	line:95
-Array.remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	method	line:95
-indexOf	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.indexOf = function(searchElement, fromIndex) {$/;"	function	line:163
-Array.indexOf	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.indexOf = function(searchElement, fromIndex) {$/;"	method	line:163
-random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	function	line:238
-Array.random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	method	line:238
-shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	function	line:282
-Array.shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	method	line:282
-empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	function	line:299
-Array.empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	method	line:299
-filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	function	line:317
-Array.filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	method	line:317
-unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	function	line:339
-Array.unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	method	line:339
-diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.diff = function(arr1, arr2, leftDiff) {$/;"	function	line:367
-Array.diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.diff) {$/;"	function	line:359
-same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.same = function(arr1, arr2) {$/;"	function	line:437
-Array.same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.same) {$/;"	function	line:430
-max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	function	line:479
-Array.max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	method	line:479
-min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	function	line:503
-Array.min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	method	line:503
-isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.isEmpty = function(arr) {$/;"	function	line:528
-Array.isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.isEmpty) {$/;"	function	line:522
-copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	function	line:548
-Array.copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	method	line:548
-numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	function	line:569
-Array.numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	method	line:569
-numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	function	line:588
-Array.numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	method	line:588
-equals	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.equals = function(array2) {$/;"	function	line:606
-Array.equals	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.equals = function(array2) {$/;"	method	line:606
 format	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.format = function(format) {$/;"	function	line:17
 Date	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^if (!Date.prototype.format) {$/;"	class	line:6
 Date.format	/Users/suxiong/Sites/hellojs/src/polyfill/Date.js	/^    Date.prototype.format = function(format) {$/;"	method	line:17
@@ -290,3 +253,39 @@ toInt	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype
 String.toInt	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.toInt = function() {$/;"	method	line:271
 resetBlank	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.resetBlank = function() {$/;"	function	line:287
 String.resetBlank	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.resetBlank = function() {$/;"	method	line:287
+contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	function	line:14
+Array	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.prototype.contains) {$/;"	class	line:6
+Array.contains	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.contains = function(element, strict) {$/;"	method	line:14
+remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	function	line:95
+Array.remove	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.remove = function(element, isIndex) {$/;"	method	line:95
+random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	function	line:238
+Array.random	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.random = function(length) {$/;"	method	line:238
+shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	function	line:282
+Array.shuffle	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.shuffle = function(length) {$/;"	method	line:282
+empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	function	line:299
+Array.empty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.empty = function() {$/;"	method	line:299
+filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	function	line:317
+Array.filterEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.filterEmpty = function() {$/;"	method	line:317
+unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	function	line:339
+Array.unique	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.unique = function() {$/;"	method	line:339
+diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.diff = function(arr1, arr2, leftDiff) {$/;"	function	line:367
+Array.diff	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.diff) {$/;"	function	line:359
+same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.same = function(arr1, arr2) {$/;"	function	line:437
+Array.same	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.same) {$/;"	function	line:430
+max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	function	line:479
+Array.max	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.max = function() {$/;"	method	line:479
+min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	function	line:503
+Array.min	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.min = function() {$/;"	method	line:503
+isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.isEmpty = function(arr) {$/;"	function	line:528
+Array.isEmpty	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^if (!Array.isEmpty) {$/;"	function	line:522
+copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	function	line:548
+Array.copy	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.copy = function() {$/;"	method	line:548
+numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	function	line:569
+Array.numberSort	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSort = function(descOrder) {$/;"	method	line:569
+numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	function	line:588
+Array.numberSum	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.numberSum = function() {$/;"	method	line:588
+equals	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.equals = function(array2) {$/;"	function	line:606
+Array.equals	/Users/suxiong/Sites/hellojs/src/polyfill/Array.js	/^    Array.prototype.equals = function(array2) {$/;"	method	line:606
+待办事项	/Users/suxiong/Sites/hellojs/TODO.md	/^# 待办事项$/;"	function	line:1
+重要的	/Users/suxiong/Sites/hellojs/TODO.md	/^## 重要的$/;"	function	line:3
+一般的	/Users/suxiong/Sites/hellojs/TODO.md	/^## 一般的$/;"	function	line:15

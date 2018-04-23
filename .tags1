@@ -4,32 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-firstUpperCase	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.firstUpperCase = function(isPerword) {$/;"	function	line:13
-String	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^if (!String.prototype.firstUpperCase) {$/;"	class	line:6
-String.firstUpperCase	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.firstUpperCase = function(isPerword) {$/;"	method	line:13
-cnLength	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.cnLength = function() {$/;"	function	line:50
-String.cnLength	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.cnLength = function() {$/;"	method	line:50
-replaceAll	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.replaceAll = function(findStr, replaceStr, ignoreCase) {$/;"	function	line:82
-String.replaceAll	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.replaceAll = function(findStr, replaceStr, ignoreCase) {$/;"	method	line:82
-trimCRLF	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.trimCRLF = function() {$/;"	function	line:104
-String.trimCRLF	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.trimCRLF = function() {$/;"	method	line:104
-reverse	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.reverse = function() {$/;"	function	line:121
-String.reverse	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.reverse = function() {$/;"	method	line:121
-contains	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.contains = function(chr) {$/;"	function	line:142
-String.contains	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.contains = function(chr) {$/;"	method	line:142
-format	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.format = function() {$/;"	function	line:158
-String.format	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.format = function() {$/;"	method	line:158
-number	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.number = function(isFloat) {$/;"	function	line:178
-String.number	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.number = function(isFloat) {$/;"	method	line:178
-chinese	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.chinese = function() {$/;"	function	line:199
-String.chinese	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.chinese = function() {$/;"	method	line:199
-english	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.english = function() {$/;"	function	line:218
-String.english	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.english = function() {$/;"	method	line:218
-filename	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.filename = function() {$/;"	function	line:237
-String.filename	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.filename = function() {$/;"	method	line:237
-extname	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.extname = function() {$/;"	function	line:254
-String.extname	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.extname = function() {$/;"	method	line:254
-toInt	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.toInt = function() {$/;"	function	line:271
-String.toInt	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.toInt = function() {$/;"	method	line:271
-resetBlank	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.resetBlank = function() {$/;"	function	line:287
-String.resetBlank	/Users/suxiong/Sites/hellojs/src/polyfill/String.js	/^    String.prototype.resetBlank = function() {$/;"	method	line:287
+待办事项	/Users/suxiong/Sites/hellojs/TODO.md	/^# 待办事项$/;"	function	line:1
+重要的	/Users/suxiong/Sites/hellojs/TODO.md	/^## 重要的$/;"	function	line:3
+一般的	/Users/suxiong/Sites/hellojs/TODO.md	/^## 一般的$/;"	function	line:15
