@@ -4,6 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-待办事项	/Users/suxiong/Sites/hellojs/TODO.md	/^# 待办事项$/;"	function	line:1
-重要的	/Users/suxiong/Sites/hellojs/TODO.md	/^## 重要的$/;"	function	line:3
-一般的	/Users/suxiong/Sites/hellojs/TODO.md	/^## 一般的$/;"	function	line:15
+get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:35
+prepareStackTrace	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^            Error.prepareStackTrace = function(_, stack) { return stack; };$/;"	function	line:37
+get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:54
+get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:67
+get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:80
+get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:93
+get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function(){$/;"	function	line:106
+get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:119
