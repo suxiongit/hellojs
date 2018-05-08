@@ -259,59 +259,62 @@ if (!Date.prototype.getMaxDay) {
 if (!Date.analyze) {
     /**
      * 转化成中文时间
+     *
+     * 时间的显示逻辑：
+     * 1、大于当前时间，返回 “未来”
+     * 2、今年，同一月，但是也是今天，返回 “今天”
+     * 3、今年，同一月，但是和今天相隔天数为 1，返回 "昨天"
+     * 4、今年，同一月，但是和今天相隔天数小于 7 大于 2，返回 “星期几”
+     * 5、今年，但是月份更早 或者 同一月但是相隔天数大于等于 7，返回 “MM月DD日”
+     * 6、去年甚至更久以前，返回 “YYYY年MM月DD日”
+     *
      * @param {number} timestamp 需要分析的时间戳（支持10位秒和13位毫秒）
-     * @param {boolean} [stripTime] 不带时分秒
      * @return {string}
      */
-    Date.analyze = function(timestamp, stripTime) {
+    Date.analyze = function(timestamp) {
         if (!timestamp) {
-            return '';
+            throw new Erorr('"timestamp" is null');
         }
 
         if (timestamp.toString().length < 11) {
             timestamp = timestamp * 1000;
         }
 
-        var week = ['日', '一', '二', '三', '四', '五', '六'];
-        var timeStr = '';
-        var newDate = new Date();
-        var stoday = new Date("00:00:00 " + newDate.getFullYear() + "/" + (newDate.getMonth() + 1) + "/" + newDate.getDate());
-        var syear = stoday.getFullYear();
-        var timeData = new Date(timestamp);
-        var timeyear = timeData.getFullYear();
-        var sevenday = 24 * 60 * 60 * 1000 * 7;
-        var oneday = 24 * 60 * 60 * 1000;
-
-        if (syear - timeyear != 0 && stoday.getTime() - timestamp > sevenday) { // 跨年大于七天
-            timeStr = timeData.getFullYear() + "年" + (timeData.getMonth() + 1) + "月" + timeData.getDate() + "日";
-            return timeStr;
-        } else if (stoday.getTime() - timestamp > sevenday) { // 大于七天不跨年
-            timeStr = (timeData.getMonth() + 1) + "月" + timeData.getDate() + "日";
-        } else if (stoday.getTime() - timestamp < sevenday && stoday.getTime() - timestamp > oneday) { // 一周内不是昨天
-            if (stripTime) {
-                timeStr = '星期' + week[timeData.getDay()];
-            } else {
-                timeStr = '星期' + week[timeData.getDay()] + ' ' + (timeData.getHours() > 9 ? timeData.getHours() : '0' + timeData.getHours()) + ":" + (timeData.getMinutes() > 9 ? timeData.getMinutes() : '0' + timeData.getMinutes());
-            }
-        } else if (stoday.getTime() - timestamp < oneday && stoday.getTime() - timestamp > 0) { // 昨天
-            if (stripTime) {
-                timeStr = '昨天';
-            } else {
-                timeStr = '昨天 ' + (timeData.getHours() > 9 ? timeData.getHours() : '0' + timeData.getHours()) + ":" + (timeData.getMinutes() > 9 ? timeData.getMinutes() : '0' + timeData.getMinutes());
-            }
-        } else { // 今天
-            if (stripTime) {
-                timeStr = '今天';
-            } else {
-                timeStr = (timeData.getHours() > 9 ? timeData.getHours() : '0' + timeData.getHours()) + ":" + (timeData.getMinutes() > 9 ? timeData.getMinutes() : '0' + timeData.getMinutes());
-            }
+        var today = new Date();
+        if (timestamp > today.getTime()) {
+            return '未来';
         }
 
-        return timeStr;
+        var timeStr = '';
+        var week = ['日', '一', '二', '三', '四', '五', '六'];
+        var thatDay = new Date(timestamp);
+        // var thatHour = thatDay.getHours() > 9 ? thatDay.getHours() : '0' + thatDay.getHours(); // 小时
+        // var thatMinute = thatDay.getMinutes() > 9 ? thatDay.getMinutes() : '0' + thatDay.getMinutes(); // 分钟
+        var sameYear = today.getFullYear() === thatDay.getFullYear();
+        var sameMonth = today.getMonth() === thatDay.getMonth();
+        var diffDays = Math.abs(today.getDate() - thatDay.getDate());
+
+        if (diffDays === 0) {
+            return '今天';
+        }
+
+        if (diffDays === 1 && sameMonth && sameYear) {
+            return '昨天';
+        }
+
+        if (diffDays >= 2 && diffDays < 7 && sameMonth && sameYear) {
+            return ['星期', week[thatDay.getDay()]].join('');
+        }
+
+        if ((diffDays >= 7 || !sameMonth) && sameYear) {
+            return [thatDay.getMonth() + 1, '月', thatDay.getDate(), '日'].join('');
+        }
+
+        return [thatDay.getFullYear(), '年', thatDay.getMonth() + 1, '月', thatDay.getDate(), '日'].join('');
     }
 
     // 示例 Date.analyze
-    // var timestamp = (new Date('2018-04-15 16:00')).getTime();
+    // var timestamp = (new Date('2018-05-05')).getTime();
     // console.log(Date.analyze(timestamp, true));
 } else {
     console.warn('Polyfill Error: \'%s\' already exists.', 'Date.analyze');
