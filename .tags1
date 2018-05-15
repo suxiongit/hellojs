@@ -4,11 +4,16 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:35
-prepareStackTrace	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^            Error.prepareStackTrace = function(_, stack) { return stack; };$/;"	function	line:37
-get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:54
-get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:67
-get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:80
-get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:93
-get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function(){$/;"	function	line:106
-get	D:\bearsu\workspace\hellojs\src\magic-globals.js	/^        get: function() {$/;"	function	line:119
+toInt	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.toInt = function(numStr) {$/;"	function	line:12
+Number.toInt	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.toInt = function(numStr) {$/;"	function	line:12
+toDouble	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.toDouble = function(numStr) {$/;"	function	line:33
+Number.toDouble	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.toDouble = function(numStr) {$/;"	function	line:33
+withZero	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.withZero = function(length) {$/;"	function	line:52
+Number	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.withZero = function(length) {$/;"	class	line:52
+Number.withZero	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.withZero = function(length) {$/;"	method	line:52
+chrW	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.chrW = function() {$/;"	function	line:71
+Number.chrW	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.chrW = function() {$/;"	method	line:71
+splitPow	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.splitPow = function() {$/;"	function	line:86
+Number.splitPow	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.splitPow = function() {$/;"	method	line:86
+digitUppercase	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.digitUppercase = function() {$/;"	function	line:110
+Number.digitUppercase	D:\bearsu\workspace\hellojs\src\polyfill\Number.js	/^    Number.prototype.digitUppercase = function() {$/;"	method	line:110

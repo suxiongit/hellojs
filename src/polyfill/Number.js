@@ -43,7 +43,7 @@ if (!Number.toDouble) {
     console.warn('Polyfill Error: \'%s\' already exists.', 'Number.toDouble');
 }
 
-if (!Number.prototype.withZero) {
+if (!Number.prototype.withZero) { // ZeroPadding
     /**
      * 数字补零
      * @param {number} length 指定长度
