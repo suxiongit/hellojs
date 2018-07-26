@@ -8,7 +8,7 @@
  * __function
  * __meta => {}
  *
- * 已经支持：
+ * 原生支持：
  * __filename => /Users/suxiong/example.js
  * __dirname => /Users/suxiong
  *

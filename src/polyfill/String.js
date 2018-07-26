@@ -71,6 +71,43 @@ if (!String.prototype.cnLength) {
     console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.cnLength');
 }
 
+if (!String.prototype.cnSubstr) {
+    /**
+     * 截取字符串（中文占2个字符）
+     * @param {number} length 截取长度
+     * @return {string}
+     */
+    String.prototype.cnSubstr = function(length) {
+        var _tmp = this;
+        if (_tmp.replace(/[\u4e00-\u9fa5]/g, '**').length <= length) {
+            return this;
+        }
+
+        var _len = 0;
+        var _str = '';
+        for (var i = 0, n = _tmp.length; i < n; i ++) { // 遍历字符串
+            if (/[\u4e00-\u9fa5]/.test(_tmp[i])) { // 中文 长度为两字节
+                _len += 2;
+            } else {
+                _len += 1;
+            }
+
+            if (_len > length) {
+                break;
+            } else {
+                _str += this[i];
+            }
+        }
+
+        return _str;
+    };
+
+    // 示例 String.prototype.cnSubstr
+    // console.log('生命在于折腾'.cnSubstr(4)); // 生命
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.cnLength');
+}
+
 if (!String.prototype.replaceAll) {
     /**
      * 全部替换
@@ -169,64 +206,100 @@ if (!String.prototype.format) {
     console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.format');
 }
 
-if (!String.prototype.number) {
+if (!String.prototype.getNumber) {
     /**
-     * 获取数字部分
-     * @param {boolean} [isFloat] 浮点数
-     * @return {string}
+     * 提取数字（支持浮点数）
+     * @return {array}
      */
-    String.prototype.number = function(isFloat) {
-        var regEx = isFloat ? /[^\d.]/g: /[^\d]/g;
-        return this.replace(regEx, '');
+    String.prototype.getNumber = function() {
+        return this.match(/\d+.\d+/g);
     };
 
-    // 示例 String.prototype.number
+    // 示例 String.prototype.getNumber
     // var str = 'Version 1.0, released in 1996';
-    // console.log(str.number()); // 101996
-    // console.log(str.number(1)); // 1.01996
-    // console.log(str.match(/\d/g)); // [ '1', '0', '1', '9', '9', '6' ]
-    // console.log(str.match(/\d+/g)); // [ '1', '0', '1996' ]
-    // console.log(str.match(/\d+.\d+/g)); // [ '1.0', '1996' ]
+    // console.log(str.getNumber()); // [ '1.0', '1996' ]
 } else {
-    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.number');
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.getNumber');
 }
 
-if (!String.prototype.chinese) {
+if (!String.prototype.removeNumber) {
     /**
-     * 获取中文部分
+     * 去掉数字（支持浮点数）
      * @return {string}
      */
-    String.prototype.chinese = function() {
-        var regEx = /[^\u4e00-\u9fa5\uf900-\ufa2d]/g;
-        return this.replace(regEx, '');
+    String.prototype.removeNumber = function(hasFloat) {
+        return this.replace(/\d+.\d+/g, '');
     };
 
-    // 示例 String.prototype.chinese
-    // var str = '你好，中国';
-    // console.log(str.chinese()); // 你好中国
-    // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]/g)); // [ '你', '好', '中', '国' ]
-    // console.log(str.match(/[\u4e00-\u9fa5\uf900-\ufa2d]+/g)); // [ '你好', '中国' ]
+    // 示例 String.prototype.removeNumber
+    // var str = 'Version 1.0, released in 1996';
+    // console.log(str.removeNumber()); // Version , released in
 } else {
-    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.chinese');
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.removeNumber');
 }
 
-if (!String.prototype.english) {
+if (!String.prototype.getChinese) {
     /**
-     * 获取英文部分
-     * @return {string}
+     * 提取中文
+     * @return {array}
      */
-    String.prototype.english = function() {
-        var regEx = /[^A-Za-z]/g;
-        return this.replace(regEx, '');
+    String.prototype.getChinese = function() {
+        return this.match(/[\u4e00-\u9fa5\uf900-\ufa2d]+/g);
     };
 
-    // 示例 String.prototype.english
-    // var str = 'This is English';
-    // console.log(str.english()); // ThisisEnglish
-    // console.log(str.match(/[A-Za-z]/g)); // [ 'T', 'h', 'i', 's', 'i', 's', 'E', 'n', 'g', 'l', 'i', 's', 'h' ]
-    // console.log(str.match(/[A-Za-z]+/g)); // [ 'This', 'is', 'English' ]
+    // 示例 String.prototype.getChinese
+    // var str = 'Welcome to 中国';
+    // console.log(str.getChinese()); // [ '中国' ]
 } else {
-    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.english');
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.getChinese');
+}
+
+if (!String.prototype.removeChinese) {
+    /**
+     * 去掉中文
+     * @return {string}
+     */
+    String.prototype.removeChinese = function() {
+        return this.replace(/[\u4e00-\u9fa5\uf900-\ufa2d]/g, '');
+    };
+
+    // 示例 String.prototype.removeChinese
+    // var str = 'Welcome to 中国';
+    // console.log(str.removeChinese()); // Welcome to
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.removeChinese');
+}
+
+if (!String.prototype.getEnglish) {
+    /**
+     * 提取英文
+     * @return {array}
+     */
+    String.prototype.getEnglish = function() {
+        return this.match(/[A-Za-z]+/g);
+    };
+
+    // 示例 String.prototype.getEnglish
+    // var str = 'Welcome to 中国';
+    // console.log(str.getEnglish()); // [ 'Welcome', 'to' ]
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.getEnglish');
+}
+
+if (!String.prototype.removeEnglish) {
+    /**
+     * 去掉英文
+     * @return {string}
+     */
+    String.prototype.removeEnglish = function() {
+        return this.replace(/[A-Za-z]/g, '');
+    };
+
+    // 示例 String.prototype.removeEnglish
+    // var str = 'Welcome to 中国';
+    // console.log(str.removeEnglish()); //   中国
+} else {
+    console.warn('Polyfill Error: \'%s\' already exists.', 'String.prototype.removeEnglish');
 }
 
 if (!String.prototype.filename) {

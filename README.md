@@ -47,3 +47,9 @@ $ npm install --save-dev gulp-babel @babel/core @babel/preset-env # 将es6转成
 ```
 $ npm install
 ```
+
+合并文件
+
+```
+$ gulp
+```
